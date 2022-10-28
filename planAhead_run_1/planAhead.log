@@ -1,0 +1,139 @@
+#-----------------------------------------------------------
+# PlanAhead v14.7 (64-bit)
+# Build 321239 by xbuild on Fri Sep 27 19:24:36 MDT 2013
+# Start of session at: Wed Sep 21 13:51:31 2022
+# Process ID: 22446
+# Log file: /home/ise/git/DC_backwards/DC_backwards/planAhead_run_1/planAhead.log
+# Journal file: /home/ise/git/DC_backwards/DC_backwards/planAhead_run_1/planAhead.jou
+#-----------------------------------------------------------
+INFO: [Common 17-78] Attempting to get a license: PlanAhead
+INFO: [Common 17-290] Got license for PlanAhead
+INFO: [Common 17-86] Your PlanAhead license expires in -1970 day(s)
+INFO: [Device 21-36] Loading parts and site information from /opt/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/arch.xml
+Parsing RTL primitives file [/opt/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+Finished parsing RTL primitives file [/opt/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/rtl/prims/rtl_prims.xml]
+start_gui
+source /home/ise/git/DC_backwards/DC_backwards/pa.fromNetlist.tcl
+# create_project -name DC_backwards -dir "/home/ise/git/DC_backwards/DC_backwards/planAhead_run_1" -part xc6slx4tqg144-3
+# set_property design_mode GateLvl [get_property srcset [current_run -impl]]
+# set_property edif_top_file "/home/ise/git/DC_backwards/DC_backwards/DC_FPGA_TOP_cs.ngc" [ get_property srcset [ current_run ] ]
+# add_files -norecurse { {/home/ise/git/DC_backwards/DC_backwards} {cores/coregen} {cores/ipcore_dir} }
+# add_files [list {cores/coregen/bram8x3000.ncf}] -fileset [get_property constrset [current_run]]
+# add_files [list {cores/coregen/CMD_FIFO_w1r8.ncf}] -fileset [get_property constrset [current_run]]
+# add_files [list {cores/coregen/CMD_FIFO_w8r32.ncf}] -fileset [get_property constrset [current_run]]
+# add_files [list {cores/coregen/fifo16x64.ncf}] -fileset [get_property constrset [current_run]]
+# add_files [list {cores/coregen/fifo18x16.ncf}] -fileset [get_property constrset [current_run]]
+# add_files [list {cores/coregen/fifo32x512RxAxi.ncf}] -fileset [get_property constrset [current_run]]
+# add_files [list {cores/coregen/fifo8x64.ncf}] -fileset [get_property constrset [current_run]]
+# add_files [list {cores/coregen/fifoDist8x16.ncf}] -fileset [get_property constrset [current_run]]
+# add_files [list {cores/coregen/QBLtxFIFO.ncf}] -fileset [get_property constrset [current_run]]
+# add_files [list {cores/coregen/serializationFifo.ncf}] -fileset [get_property constrset [current_run]]
+# add_files [list {cores/coregen/srout_bram_blkmem.ncf}] -fileset [get_property constrset [current_run]]
+# add_files [list {cores/coregen/udp64kfifo.ncf}] -fileset [get_property constrset [current_run]]
+# add_files [list {cores/coregen/waveform_fifo_wr32_rd32.ncf}] -fileset [get_property constrset [current_run]]
+# add_files [list {cores/ipcore_dir/axi_fifo_32w_32d.ncf}] -fileset [get_property constrset [current_run]]
+# set_param project.pinAheadLayout  yes
+# set_property target_constrs_file "/home/ise/git/DC_backwards/DC_backwards/constraint/HMB_DC.ucf" [current_fileset -constrset]
+Adding file '/home/ise/git/DC_backwards/DC_backwards/constraint/HMB_DC.ucf' to fileset 'constrs_1'
+# add_files [list {/home/ise/git/DC_backwards/DC_backwards/constraint/HMB_DC.ucf}] -fileset [get_property constrset [current_run]]
+# link_design
+Design is defaulting to srcset: sources_1
+Design is defaulting to constrset: constrs_1
+Design is defaulting to project part: xc6slx4tqg144-3
+Release 14.7 - ngc2edif P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+Release 14.7 - ngc2edif P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+Reading design DC_FPGA_TOP_cs.ngc ...
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+WARNING:NetListWriters:306 - Signal bus
+   U0/I_NO_D.U_ILA/U_RST/U_HALT_XFER/iDOUT_dly<2 : 0> on block ila_pro_0 is not
+   reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   U0/I_NO_D.U_ILA/U_RST/U_ARM_XFER/iDOUT_dly<4 : 0> on block ila_pro_0 is not
+   reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus U0/U_ICON/iCORE_ID_SEL<15 : 0> on block
+   icon_pro is not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/ngwrdrst.grst.rd_
+   rst_reg<2 : 0> on block axi_fifo_32w_32d is not reconstructed, because there
+   are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus r_alignCnt<10 : 0> on block ByteLink is
+   not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus v_counter<10 : 0> on block QBlink is not
+   reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus v_counter[31]_GND_12_o_sub_38_OUT<31 :
+   0> on block QBlink is not reconstructed, because there are some missing bus
+   signals.
+WARNING:NetListWriters:306 - Signal bus
+   Msub_v_counter[31]_GND_12_o_sub_38_OUT<31:0>_lut<10 : 1> on block QBlink is
+   not reconstructed, because there are some missing bus signals.
+  finished :Prep
+Writing EDIF netlist file DC_FPGA_TOP_cs.edif ...
+ngc2edif: Total memory usage is 109932 kilobytes
+
+Parsing EDIF File [./planAhead_run_1/DC_backwards.data/cache/DC_FPGA_TOP_cs_ngc_943480d8.edif]
+Finished Parsing EDIF File [./planAhead_run_1/DC_backwards.data/cache/DC_FPGA_TOP_cs_ngc_943480d8.edif]
+INFO: [Netlist 29-17] Analyzing 16 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+Loading clock regions from /opt/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/spartan6/spartan6lx/xc6slx4/ClockRegion.xml
+Loading clock buffers from /opt/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/spartan6/spartan6lx/xc6slx4/ClockBuffers.xml
+Loading package pin functions from /opt/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/spartan6/PinFunctions.xml...
+Loading package from /opt/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/spartan6/spartan6lx/xc6slx4/tqg144/Package.xml
+Loading io standards from /opt/Xilinx/14.7/ISE_DS/PlanAhead/data/./parts/xilinx/spartan6/IOStandards.xml
+Loading device configuration modes from /opt/Xilinx/14.7/ISE_DS/PlanAhead/data/parts/xilinx/spartan6/ConfigModes.xml
+Loading list of drcs for the architecture : /opt/Xilinx/14.7/ISE_DS/PlanAhead/data/./parts/xilinx/spartan6/drc.xml
+WARNING: [Timing 38-83] Timing library cell SRLC32E does not define port A[4] which is referred to in the netlist. The library cell will be ignored and the cell will be treated as a black box for timing purposes.
+WARNING: [Timing 38-83] Timing library cell SRLC32E does not define port A[3] which is referred to in the netlist. The library cell will be ignored and the cell will be treated as a black box for timing purposes.
+WARNING: [Timing 38-83] Timing library cell SRLC32E does not define port A[2] which is referred to in the netlist. The library cell will be ignored and the cell will be treated as a black box for timing purposes.
+WARNING: [Timing 38-83] Timing library cell SRLC32E does not define port A[1] which is referred to in the netlist. The library cell will be ignored and the cell will be treated as a black box for timing purposes.
+WARNING: [Timing 38-83] Timing library cell SRLC32E does not define port A[0] which is referred to in the netlist. The library cell will be ignored and the cell will be treated as a black box for timing purposes.
+Parsing UCF File [/home/ise/git/DC_backwards/DC_backwards/cores/coregen/QBLtxFIFO.ncf]
+Finished Parsing UCF File [/home/ise/git/DC_backwards/DC_backwards/cores/coregen/QBLtxFIFO.ncf]
+Parsing UCF File [/home/ise/git/DC_backwards/DC_backwards/cores/coregen/serializationFifo.ncf]
+Finished Parsing UCF File [/home/ise/git/DC_backwards/DC_backwards/cores/coregen/serializationFifo.ncf]
+Parsing UCF File [/home/ise/git/DC_backwards/DC_backwards/cores/ipcore_dir/axi_fifo_32w_32d.ncf]
+Finished Parsing UCF File [/home/ise/git/DC_backwards/DC_backwards/cores/ipcore_dir/axi_fifo_32w_32d.ncf]
+Parsing UCF File [/home/ise/git/DC_backwards/DC_backwards/.Xil/PlanAhead-22446-localhost.localdomain/ngc2edif/DC_FPGA_TOP_cs.xncf]
+Finished Parsing UCF File [/home/ise/git/DC_backwards/DC_backwards/.Xil/PlanAhead-22446-localhost.localdomain/ngc2edif/DC_FPGA_TOP_cs.xncf]
+Parsing UCF File [/home/ise/git/DC_backwards/DC_backwards/constraint/HMB_DC.ucf]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'RX_DC_N' [/home/ise/git/DC_backwards/DC_backwards/constraint/HMB_DC.ucf:46]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'RX_DC_N' [/home/ise/git/DC_backwards/DC_backwards/constraint/HMB_DC.ucf:46]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'RX_DC_N' [/home/ise/git/DC_backwards/DC_backwards/constraint/HMB_DC.ucf:46]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'RX_DC_P' [/home/ise/git/DC_backwards/DC_backwards/constraint/HMB_DC.ucf:47]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'RX_DC_P' [/home/ise/git/DC_backwards/DC_backwards/constraint/HMB_DC.ucf:47]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'RX_DC_P' [/home/ise/git/DC_backwards/DC_backwards/constraint/HMB_DC.ucf:47]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'TX_DC_N' [/home/ise/git/DC_backwards/DC_backwards/constraint/HMB_DC.ucf:52]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'TX_DC_N' [/home/ise/git/DC_backwards/DC_backwards/constraint/HMB_DC.ucf:52]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'TX_DC_N' [/home/ise/git/DC_backwards/DC_backwards/constraint/HMB_DC.ucf:52]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'TX_DC_P' [/home/ise/git/DC_backwards/DC_backwards/constraint/HMB_DC.ucf:53]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'TX_DC_P' [/home/ise/git/DC_backwards/DC_backwards/constraint/HMB_DC.ucf:53]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'TX_DC_P' [/home/ise/git/DC_backwards/DC_backwards/constraint/HMB_DC.ucf:53]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'SYNC_N' [/home/ise/git/DC_backwards/DC_backwards/constraint/HMB_DC.ucf:58]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'SYNC_N' [/home/ise/git/DC_backwards/DC_backwards/constraint/HMB_DC.ucf:58]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'SYNC_N' [/home/ise/git/DC_backwards/DC_backwards/constraint/HMB_DC.ucf:58]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'SYNC_P' [/home/ise/git/DC_backwards/DC_backwards/constraint/HMB_DC.ucf:59]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'SYNC_P' [/home/ise/git/DC_backwards/DC_backwards/constraint/HMB_DC.ucf:59]
+CRITICAL WARNING: [Constraints 18-11] Could not find net or pin 'SYNC_P' [/home/ise/git/DC_backwards/DC_backwards/constraint/HMB_DC.ucf:59]
+Finished Parsing UCF File [/home/ise/git/DC_backwards/DC_backwards/constraint/HMB_DC.ucf]
+INFO: [Designutils 20-20] Invalid constraints found, use command 'write_ucf -constraints invalid <file>' to save all the invalid constraints to a file
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 16 instances were transformed.
+  RAM32X1S => RAM32X1S (RAMS32): 16 instances
+
+Phase 0 | Netlist Checksum: 04f07485
+link_design: Time (s): cpu = 00:00:06 ; elapsed = 00:00:09 . Memory (MB): peak = 2807.965 ; gain = 165.535
+close_design
+exit
+ERROR: [#UNDEF] *** Exception: ui.h.b: Found deleted key in HTclEventBroker. Verify if the classes listed here call cleanup()
+HTclEvent: DEBUG_PORT_CONFIG_CHANGE   Classes: ui.views.aR 
+HTclEvent: DEBUG_CORE_CONFIG_CHANGE   Classes: ui.views.aR 
+HTclEvent: SIGNAL_BUS_MODIFY   Classes: ui.views.aR 
+HTclEvent: SIGNAL_MODIFY   Classes: ui.views.aR 
+ (See /home/ise/git/DC_backwards/DC_backwards/planAhead_pid22446.debug)
+ERROR: [Common 17-39] 'stop_gui' failed due to earlier errors.
+INFO: [Common 17-206] Exiting PlanAhead at Wed Sep 21 13:53:49 2022...
+INFO: [Common 17-83] Releasing license: PlanAhead

@@ -1,0 +1,28 @@
+Command line:
+   DC_Comm_QBLinkTB_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  54903
+
+Tue Oct 11 09:06:15 2022
+
+
+ Elaboration Time: 0.23 sec
+
+ Current Memory Usage: 266.809 Meg
+
+ Total Signals          : 5546
+ Total Nets             : 80214
+ Total Signal Drivers   : 2603
+ Total Blocks           : 338
+ Total Primitive Blocks : 199
+ Total Processes        : 1371
+ Total Traceable Variables  : 2957
+ Total Scalar Nets and Variables : 88876
+
+ Total Simulation Time: 1.44 sec
+
+ Current Memory Usage: 344.408 Meg
+
+Tue Oct 11 09:16:13 2022
+

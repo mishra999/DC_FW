@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "secureip" -o "/home/ise/git/DC_backwards/DC_backwards/DC_Comm_QBLinkTB_isim_beh.exe" -prj "/home/ise/git/DC_backwards/DC_backwards/DC_Comm_QBLinkTB_beh.prj" "work.DC_Comm_QBLinkTB" 

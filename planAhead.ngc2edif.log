@@ -1,0 +1,32 @@
+Release 14.7 - ngc2edif P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+Reading design DC_FPGA_TOP_cs.ngc ...
+Processing design ...
+   Preping design's networks ...
+   Preping design's macros ...
+WARNING:NetListWriters:306 - Signal bus
+   U0/I_NO_D.U_ILA/U_RST/U_HALT_XFER/iDOUT_dly<2 : 0> on block ila_pro_0 is not
+   reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   U0/I_NO_D.U_ILA/U_RST/U_ARM_XFER/iDOUT_dly<4 : 0> on block ila_pro_0 is not
+   reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus U0/U_ICON/iCORE_ID_SEL<15 : 0> on block
+   icon_pro is not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus
+   U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/ngwrdrst.grst.rd_
+   rst_reg<2 : 0> on block axi_fifo_32w_32d is not reconstructed, because there
+   are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus r_alignCnt<10 : 0> on block ByteLink is
+   not reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus v_counter<10 : 0> on block QBlink is not
+   reconstructed, because there are some missing bus signals.
+WARNING:NetListWriters:306 - Signal bus v_counter[31]_GND_12_o_sub_38_OUT<31 :
+   0> on block QBlink is not reconstructed, because there are some missing bus
+   signals.
+WARNING:NetListWriters:306 - Signal bus
+   Msub_v_counter[31]_GND_12_o_sub_38_OUT<31:0>_lut<10 : 1> on block QBlink is
+   not reconstructed, because there are some missing bus signals.
+  finished :Prep
+Writing EDIF netlist file DC_FPGA_TOP_cs.edif ...
+ngc2edif: Total memory usage is 109932 kilobytes
+

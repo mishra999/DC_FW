@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=/home/ise/git/DC_backwards/DC_backwards/DC_FPGA_TOP.ncd
+OUTFILE=/home/ise/git/DC_backwards/DC_backwards/DC_FPGA_TOP.bit
+FAMILY=Spartan6
+PART=xc6slx4-3tqg144
+WORKINGDIR=/home/ise/git/DC_backwards/DC_backwards
+LICENSE=ISE
+USER_INFO=8416_11442_1478797146_620

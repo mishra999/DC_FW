@@ -1,0 +1,11 @@
+#-----------------------------------------------------------
+# PlanAhead v14.7 (64-bit)
+# Build 321239 by xbuild on Fri Sep 27 19:24:36 MDT 2013
+# Start of session at: Wed Sep 21 13:51:31 2022
+# Process ID: 22446
+# Log file: /home/ise/git/DC_backwards/DC_backwards/planAhead_run_1/planAhead.log
+# Journal file: /home/ise/git/DC_backwards/DC_backwards/planAhead_run_1/planAhead.jou
+#-----------------------------------------------------------
+start_gui
+source /home/ise/git/DC_backwards/DC_backwards/pa.fromNetlist.tcl
+close_design
