@@ -58,10 +58,10 @@ NGDBUILD Design Results Summary:
   Number of errors:     0
   Number of warnings:   0
 
-Total memory usage is 532572 kilobytes
+Total memory usage is 532732 kilobytes
 
 Writing NGD file "DC_FPGA_TOP.ngd" ...
-Total REAL time to NGDBUILD completion:  3 sec
-Total CPU time to NGDBUILD completion:   3 sec
+Total REAL time to NGDBUILD completion:  5 sec
+Total CPU time to NGDBUILD completion:   4 sec
 
 Writing NGDBUILD log file "DC_FPGA_TOP.bld"...

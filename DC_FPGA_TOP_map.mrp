@@ -11,49 +11,49 @@ Target Device  : xc6slx4
 Target Package : tqg144
 Target Speed   : -3
 Mapper Version : spartan6 -- $Revision: 1.55 $
-Mapped Date    : Wed Oct 12 02:00:13 2022
+Mapped Date    : Sun Oct 30 10:32:35 2022
 
 Design Summary
 --------------
 Number of errors:      0
-Number of warnings:    7
+Number of warnings:    8
 Slice Logic Utilization:
-  Number of Slice Registers:                 1,334 out of   4,800   27%
-    Number used as Flip Flops:               1,332
-    Number used as Latches:                      2
+  Number of Slice Registers:                 1,347 out of   4,800   28%
+    Number used as Flip Flops:               1,343
+    Number used as Latches:                      4
     Number used as Latch-thrus:                  0
     Number used as AND/OR logics:                0
-  Number of Slice LUTs:                      1,131 out of   2,400   47%
-    Number used as logic:                      837 out of   2,400   34%
-      Number using O6 output only:             522
+  Number of Slice LUTs:                      1,149 out of   2,400   47%
+    Number used as logic:                      821 out of   2,400   34%
+      Number using O6 output only:             504
       Number using O5 output only:             138
-      Number using O5 and O6:                  177
+      Number using O5 and O6:                  179
       Number used as ROM:                        0
-    Number used as Memory:                     189 out of   1,200   15%
+    Number used as Memory:                     194 out of   1,200   16%
       Number used as Dual Port RAM:              0
       Number used as Single Port RAM:            8
         Number using O6 output only:             0
         Number using O5 output only:             0
         Number using O5 and O6:                  8
-      Number used as Shift Register:           181
-        Number using O6 output only:           159
-        Number using O5 output only:             3
-        Number using O5 and O6:                 19
-    Number used exclusively as route-thrus:    105
-      Number with same-slice register load:     91
+      Number used as Shift Register:           186
+        Number using O6 output only:           162
+        Number using O5 output only:             4
+        Number using O5 and O6:                 20
+    Number used exclusively as route-thrus:    134
+      Number with same-slice register load:    120
       Number with same-slice carry load:        14
       Number with other load:                    0
 
 Slice Logic Distribution:
-  Number of occupied Slices:                   541 out of     600   90%
-  Number of MUXCYs used:                       412 out of   1,200   34%
-  Number of LUT Flip Flop pairs used:        1,532
-    Number with an unused Flip Flop:           419 out of   1,532   27%
-    Number with an unused LUT:                 401 out of   1,532   26%
-    Number of fully used LUT-FF pairs:         712 out of   1,532   46%
-    Number of unique control sets:             171
+  Number of occupied Slices:                   532 out of     600   88%
+  Number of MUXCYs used:                       420 out of   1,200   35%
+  Number of LUT Flip Flop pairs used:        1,525
+    Number with an unused Flip Flop:           428 out of   1,525   28%
+    Number with an unused LUT:                 376 out of   1,525   24%
+    Number of fully used LUT-FF pairs:         721 out of   1,525   47%
+    Number of unique control sets:             174
     Number of slice register sites lost
-      to control set restrictions:             802 out of   4,800   16%
+      to control set restrictions:             807 out of   4,800   16%
 
   A LUT Flip Flop pair for this architecture represents one LUT paired with
   one Flip Flop within a slice.  A control set is a unique combination of
@@ -102,12 +102,12 @@ Specific Feature Utilization:
   Number of STARTUPs:                            0 out of       1    0%
   Number of SUSPEND_SYNCs:                       0 out of       1    0%
 
-  Number of RPM macros:           26
-Average Fanout of Non-Clock Nets:                3.06
+  Number of RPM macros:           27
+Average Fanout of Non-Clock Nets:                3.09
 
 Peak Memory Usage:  787 MB
-Total REAL time to MAP completion:  18 secs 
-Total CPU time to MAP completion:   18 secs 
+Total REAL time to MAP completion:  24 secs 
+Total CPU time to MAP completion:   23 secs 
 
 Table of Contents
 -----------------
@@ -139,6 +139,9 @@ WARNING:PhysDesignRules:372 - Gated clock. Clock net icon_control1<13> is
 WARNING:PhysDesignRules:372 - Gated clock. Clock net icon_control0<13> is
    sourced by a combinatorial pin. This is not good design practice. Use the CE
    pin to control the loading of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net u_dc_receiver/stateNum_0_G
+   is sourced by a combinatorial pin. This is not good design practice. Use the
+   CE pin to control the loading of data into the flip-flop.
 WARNING:PhysDesignRules:1176 - Issue with pin connections and/or configuration
    on
    block:<U_ila_pro_0/U0/I_NO_D.U_ILA/U_CAPSTOR/I_CASE1.I_YES_TB.U_TRACE_BUFFER/
@@ -197,9 +200,9 @@ INFO:PhysDesignRules:1861 - To achieve optimal frequency synthesis performance
 
 Section 4 - Removed Logic Summary
 ---------------------------------
-  75 block(s) removed
- 123 block(s) optimized away
-  68 signal(s) removed
+  73 block(s) removed
+ 127 block(s) optimized away
+  67 signal(s) removed
 
 Section 5 - Removed Logic
 -------------------------
@@ -254,7 +257,6 @@ The signal "icon_control0<31>" is sourceless and has been removed.
 The signal "icon_control0<30>" is sourceless and has been removed.
 The signal "icon_control0<29>" is sourceless and has been removed.
 The signal "icon_control0<28>" is sourceless and has been removed.
-The signal "icon_control0<27>" is sourceless and has been removed.
 The signal "icon_control0<18>" is sourceless and has been removed.
 The signal "icon_control0<17>" is sourceless and has been removed.
 The signal "icon_control0<16>" is sourceless and has been removed.
@@ -421,18 +423,12 @@ removed.
 (ROM) removed.
  Sourceless block "U_icon_pro/U0/U_ICON/U_CTRL_OUT/F_NCP[1].F_CMD[11].U_LCE"
 (ROM) removed.
-The signal "U_icon_pro/U0/U_ICON/iCOMMAND_SEL<7>" is sourceless and has been
-removed.
- Sourceless block "U_icon_pro/U0/U_ICON/U_CTRL_OUT/F_NCP[0].F_CMD[7].U_HCE" (ROM)
-removed.
- Sourceless block "U_icon_pro/U0/U_ICON/U_CTRL_OUT/F_NCP[0].F_CMD[7].U_LCE" (ROM)
-removed.
- Sourceless block "U_icon_pro/U0/U_ICON/U_CTRL_OUT/F_NCP[1].F_CMD[7].U_HCE" (ROM)
-removed.
- Sourceless block "U_icon_pro/U0/U_ICON/U_CTRL_OUT/F_NCP[1].F_CMD[7].U_LCE" (ROM)
-removed.
 The signal
 "U_ila_pro_0/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I
+_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_NE0.U
+_GAND_SRL_SET/SRL_Q_O" is sourceless and has been removed.
+The signal
+"U_ila_pro_0/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[7].U_M/U_MU/I_MUT_GANDX.U_match/I
 _CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_NE0.U
 _GAND_SRL_SET/SRL_Q_O" is sourceless and has been removed.
 The signal
@@ -479,8 +475,6 @@ Unused block "U_icon_pro/U0/U_ICON/U_CMD/U_COMMAND_SEL/I4.FI[13].U_LUT" (ROM)
 removed.
 Unused block "U_icon_pro/U0/U_ICON/U_CMD/U_COMMAND_SEL/I4.FI[14].U_LUT" (ROM)
 removed.
-Unused block "U_icon_pro/U0/U_ICON/U_CMD/U_COMMAND_SEL/I4.FI[7].U_LUT" (ROM)
-removed.
 Unused block "U_icon_pro/U0/U_ICON/U_CTRL_OUT/F_NCP[0].F_CMD[10].U_HCE" (ROM)
 removed.
 Unused block "U_icon_pro/U0/U_ICON/U_CTRL_OUT/F_NCP[0].F_CMD[15].U_HCE" (ROM)
@@ -488,6 +482,8 @@ removed.
 Unused block "U_icon_pro/U0/U_ICON/U_CTRL_OUT/F_NCP[0].F_CMD[3].U_LCE" (ROM)
 removed.
 Unused block "U_icon_pro/U0/U_ICON/U_CTRL_OUT/F_NCP[0].F_CMD[6].U_LCE" (ROM)
+removed.
+Unused block "U_icon_pro/U0/U_ICON/U_CTRL_OUT/F_NCP[0].F_CMD[7].U_LCE" (ROM)
 removed.
 Unused block "U_icon_pro/U0/U_ICON/U_CTRL_OUT/F_NCP[0].F_CMD[8].U_HCE" (ROM)
 removed.
@@ -508,6 +504,10 @@ removed.
 Unused block "U_icon_pro/U0/U_ICON/U_CTRL_OUT/F_NCP[1].F_CMD[6].U_HCE" (ROM)
 removed.
 Unused block "U_icon_pro/U0/U_ICON/U_CTRL_OUT/F_NCP[1].F_CMD[6].U_LCE" (ROM)
+removed.
+Unused block "U_icon_pro/U0/U_ICON/U_CTRL_OUT/F_NCP[1].F_CMD[7].U_HCE" (ROM)
+removed.
+Unused block "U_icon_pro/U0/U_ICON/U_CTRL_OUT/F_NCP[1].F_CMD[7].U_LCE" (ROM)
 removed.
 Unused block "U_icon_pro/U0/U_ICON/U_CTRL_OUT/F_NCP[1].F_CMD[8].U_HCE" (ROM)
 removed.
@@ -668,6 +668,14 @@ VCC
 		U_ila_pro_0/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[6].U_M/U_MU/I_MUT_GANDX.U_match/
 I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_NE0.
 U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[1].U_GAND_SRL_SLICE/XST_VCC
+GND
+		U_ila_pro_0/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[7].U_M/U_MU/I_MUT_GANDX.U_match/
+I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_NE0.
+U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[0].U_GAND_SRL_SLICE/XST_GND
+VCC
+		U_ila_pro_0/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[7].U_M/U_MU/I_MUT_GANDX.U_match/
+I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_NE0.
+U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[0].U_GAND_SRL_SLICE/XST_VCC
 GND 		U_ila_pro_0/XST_GND
 VCC 		U_ila_pro_0/XST_VCC
 GND
@@ -827,6 +835,9 @@ U_ila_pro_0/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[5].U_M/U_MU/I_MUT_GANDX.U_match/I_
 CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_NE0.U_
 GAND_SRL_SET/MSET
 U_ila_pro_0/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[6].U_M/U_MU/I_MUT_GANDX.U_match/I_
+CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_NE0.U_
+GAND_SRL_SET/MSET
+U_ila_pro_0/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[7].U_M/U_MU/I_MUT_GANDX.U_match/I_
 CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_NE0.U_
 GAND_SRL_SET/MSET
 U_ila_pro_1/U0/I_NO_D.U_ILA/U_G2_SQ.U_CAPCTRL/U_CAP_ADDRGEN/U_SCNT_CMP/I_CS_GAND

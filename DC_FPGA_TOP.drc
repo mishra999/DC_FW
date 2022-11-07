@@ -1,7 +1,7 @@
 Release 14.7 Drc P.20131013 (lin64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-Wed Oct 12 02:01:03 2022
+Sun Oct 30 10:33:32 2022
 
 drc -z DC_FPGA_TOP.ncd DC_FPGA_TOP.pcf
 
@@ -11,6 +11,9 @@ WARNING:PhysDesignRules:372 - Gated clock. Clock net icon_control1<13> is
 WARNING:PhysDesignRules:372 - Gated clock. Clock net icon_control0<13> is
    sourced by a combinatorial pin. This is not good design practice. Use the CE
    pin to control the loading of data into the flip-flop.
+WARNING:PhysDesignRules:372 - Gated clock. Clock net u_dc_receiver/stateNum_0_G
+   is sourced by a combinatorial pin. This is not good design practice. Use the
+   CE pin to control the loading of data into the flip-flop.
 WARNING:PhysDesignRules:1176 - Issue with pin connections and/or configuration
    on
    block:<U_ila_pro_0/U0/I_NO_D.U_ILA/U_CAPSTOR/I_CASE1.I_YES_TB.U_TRACE_BUFFER/
@@ -42,5 +45,5 @@ WARNING:PhysDesignRules:2410 - This design is using one or more 9K Block RAMs
    (RAMB8BWER).  9K Block RAM initialization data, both user defined and
    default, may be incorrect and should not be used.  For more information,
    please reference Xilinx Answer Record 39999.
-DRC detected 0 errors and 7 warnings.  Please see the previously displayed
+DRC detected 0 errors and 8 warnings.  Please see the previously displayed
 individual error or warning messages for more details.

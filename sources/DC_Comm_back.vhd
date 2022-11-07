@@ -60,13 +60,13 @@ signal serialClkLck : slv(num_DC downto 0):= (others => '0');
 -- signal CtrlRegister : GPR:= (others => x"9987");
 signal i_sync : slv(num_DC downto 0) := (others => '0');
 
-type StateType     is (IDLE,DECODE_COMMAND,READ_ADDR_VALUE);  
+type StateType     is (IDLE,DECODE_COMMAND);  
 
 type RegType is record
     state       : StateType;
     rd_req     : slv(num_DC downto 0);
-    read   : slv(1 downto 0);
-    write   : slv(1 downto 0);
+    -- read   : slv(1 downto 0);
+    -- write   : slv(1 downto 0);
     timeoutCnt  : slv(31 downto 0);
     regAddr  : slv(15 downto 0);
     regWrData  : slv(15 downto 0);
@@ -78,8 +78,8 @@ end record RegType;
 constant REG_INIT_C : RegType := (
     state   => IDLE,
     rd_req  => (others => '0'),
-    read   => "00",
-    write   => "00",
+    -- read   => "00",
+    -- write   => "00",
     timeoutCnt   => (others => '0'),
     regAddr   => (others => '0'),
     regReq     => '0',
@@ -92,6 +92,9 @@ constant REG_INIT_C : RegType := (
 
 signal r   : RegType := REG_INIT_C;
 signal rin : RegType;
+signal stateNum : sl;
+attribute mark_debug : string;
+attribute mark_debug of stateNum : signal is "true";
 
 constant WORD_READ_C      : slv(31 downto 0) := x"72656164";
 constant WORD_WRITE_C     : slv(31 downto 0) := x"72697465";
@@ -109,10 +112,9 @@ SERIAL_CLK_LCK <= serialClkLck;
 -- Event_trig <= evnt_trig;
 i_sync <= sync;
 
--- StateNum <= 	"00" when r.state = IDLE else
--- 						"01" when r.state = DECODE_COMMAND else
--- 						"10" when r.state = SEND_RESPONSE else
---                         "11";   -- Locked state
+StateNum <= 	'0' when r.state = IDLE else
+						'1' when r.state = DECODE_COMMAND; -- else
+						-- "10" when r.state = READ_ADDR_VALUE;
   
 
 -- DC_resp : Process(dc_cmd, DATA_CLK) --DC_sel,evnt_trig
@@ -146,7 +148,7 @@ PORT MAP(
 
 
    -- Master state machine (combinatorial)
-   comb : process(QB_RST,r,dc_cmdValid) is --, DC_RESPONSE, RES_VALID
+   comb : process(QB_RST,r,dc_cmdValid,cmd_data) is --, DC_RESPONSE, RES_VALID
       variable v : RegType;
    begin
       v := r;
@@ -156,60 +158,67 @@ PORT MAP(
     case(r.state) is
         when IDLE =>
             v.rd_req := (others => '1');
-            v.read := "00";
-            v.write := "00";
             v.regReq := '0';
             v.regOp := '0';
-            v.regReq := '0';
             v.timeoutCnt  := (others => '0');
             if dc_cmdValid(0) = '1' then
                 v.rd_req(0) := '1';
                 v.state := DECODE_COMMAND;
             end if;
         when DECODE_COMMAND =>
+            v.regReq := '0';
+            v.regOp := '0';
             v.timeoutCnt := r.timeoutCnt + 1;
             v.rd_req(0) := '1';
-            if (cmd_data(0)=WORD_READ_C) then
-                v.read := "01";
-                v.state := READ_ADDR_VALUE;
+            if (cmd_data(0)(31 downto 16)= x"0000") then
+                v.regAddr := cmd_data(0)(15 downto 0);
+                v.rd_req(0) := '0';
+                v.regReq := '1';
+                v.regOp := '0';
                 v.timeoutCnt  := (others => '0');
-            elsif (cmd_data(0)=WORD_WRITE_C) then
-                v.write := "01";
-                v.state := READ_ADDR_VALUE;
+                v.state    := IDLE;
+            elsif (cmd_data(0)(31 downto 16) /= x"0000") then
+                v.regAddr := cmd_data(0)(15 downto 0); 
+                v.regWrData := cmd_data(0)(31 downto 16);
+                v.rd_req(0) := '0';
+                -- v.write := "11";
+                v.regOp := '1';
+                v.regReq := '1';
                 v.timeoutCnt  := (others => '0');
+                v.state    := IDLE;
             elsif r.timeoutCnt = TIMEOUT_G then 
 				v.state    := IDLE;
             end if;
-        when READ_ADDR_VALUE => 
-            v.timeoutCnt := r.timeoutCnt + 1;
-            if dc_cmdValid(0) = '1' then
-                if (v.read = "01") then
-                    v.regAddr := cmd_data(0)(15 downto 0);
-                    v.rd_req(0) := '0';
-                    v.read := "11";
-                    v.regReq := '1';
-                    v.regOp := '0';
-                    v.timeoutCnt  := (others => '0');
-                    v.state    := IDLE;
+        -- when READ_ADDR_VALUE => 
+        --     v.timeoutCnt := r.timeoutCnt + 1;
+        --     if dc_cmdValid(0) = '1' then
+        --         if (v.read = "01") then
+        --             v.regAddr := cmd_data(0)(15 downto 0);
+        --             v.rd_req(0) := '0';
+        --             v.read := "11";
+        --             v.regReq := '1';
+        --             v.regOp := '0';
+        --             v.timeoutCnt  := (others => '0');
+        --             v.state    := IDLE;
                     
-                elsif (v.write = "01") then
-                    v.regAddr := cmd_data(0)(15 downto 0); 
-                    v.regWrData := cmd_data(0)(31 downto 16);
-                    v.rd_req(0) := '0';
-                    v.write := "11";
-                    v.regOp := '1';
-                    v.regReq := '1';
-                    v.timeoutCnt  := (others => '0');
-                    v.state    := IDLE;
+        --         elsif (v.write = "01") then
+        --             v.regAddr := cmd_data(0)(15 downto 0); 
+        --             v.regWrData := cmd_data(0)(31 downto 16);
+        --             v.rd_req(0) := '0';
+        --             v.write := "11";
+        --             v.regOp := '1';
+        --             v.regReq := '1';
+        --             v.timeoutCnt  := (others => '0');
+        --             v.state    := IDLE;
                     
-                else 
-                    v.state    := IDLE;
-                    v.timeoutCnt  := (others => '0');
-                end if;
-            elsif r.timeoutCnt = TIMEOUT_G then 
-				v.state    := IDLE;
+        --         else 
+        --             v.state    := IDLE;
+        --             v.timeoutCnt  := (others => '0');
+        --         end if;
+        --     elsif r.timeoutCnt = TIMEOUT_G then 
+		-- 		v.state    := IDLE;
                 
-            end if;
+        --     end if;
       end case; 
 
     --   -- Reset logic

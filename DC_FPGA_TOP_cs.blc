@@ -24,12 +24,12 @@ NGCBUILD Design Results Summary:
   Number of errors:     0
   Number of warnings:   0
 
-Total memory usage is 494308 kilobytes
+Total memory usage is 494320 kilobytes
 
 Writing NGC file "/home/ise/git/DC_backwards/DC_backwards/DC_FPGA_TOP_cs.ngc"
 ...
-Total REAL time to NGCBUILD completion:  2 sec
-Total CPU time to NGCBUILD completion:   2 sec
+Total REAL time to NGCBUILD completion:  1 sec
+Total CPU time to NGCBUILD completion:   1 sec
 
 Writing NGCBUILD log file
 "/home/ise/git/DC_backwards/DC_backwards/DC_FPGA_TOP_cs.blc"...

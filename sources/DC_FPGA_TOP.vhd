@@ -32,7 +32,7 @@ entity DC_FPGA_TOP is
  
         -- DC_RESET        : in slv(NUM_DCs DOWNTO 0)		-- Commented by Shivang on Oct 8, 2020
   );
-end entity;
+end entity; 
  
   
 architecture rtl of DC_FPGA_TOP is
