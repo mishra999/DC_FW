@@ -5,14 +5,14 @@ Parameter TMPDIR set to xst/projnav.tmp
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.05 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.05 secs
  
 --> 
 Reading design: DC_FPGA_TOP.prj
@@ -204,7 +204,7 @@ WARNING:HDLCompiler:1127 - "/home/ise/git/DC_backwards/DC_backwards/QBLink/sourc
 WARNING:HDLCompiler:1127 - "/home/ise/git/DC_backwards/DC_backwards/QBLink/source/Decode8b10b.vhd" Line 114: Assignment to p31e ignored, since the identifier is never used
 WARNING:HDLCompiler:1127 - "/home/ise/git/DC_backwards/DC_backwards/QBLink/source/Decode8b10b.vhd" Line 149: Assignment to alt7 ignored, since the identifier is never used
 WARNING:HDLCompiler:1127 - "/home/ise/git/DC_backwards/DC_backwards/QBLink/source/Decode8b10b.vhd" Line 156: Assignment to k28 ignored, since the identifier is never used
-INFO:HDLCompiler:679 - "/home/ise/git/DC_backwards/DC_backwards/QBLink/source/ByteLink.vhd" Line 204. Case statement is complete. others clause is never selected
+INFO:HDLCompiler:679 - "/home/ise/git/DC_backwards/DC_backwards/QBLink/source/ByteLink.vhd" Line 207. Case statement is complete. others clause is never selected
 
 Elaborating entity <QBLtxFIFO> (architecture <QBLtxFIFO_a>) from library <work>.
 
@@ -214,7 +214,6 @@ WARNING:HDLCompiler:92 - "/home/ise/git/DC_backwards/DC_backwards/sources/DC_Com
 WARNING:HDLCompiler:92 - "/home/ise/git/DC_backwards/DC_backwards/sources/DC_Comm_back.vhd" Line 189: cmd_data should be on the sensitivity list of the process
 WARNING:HDLCompiler:92 - "/home/ise/git/DC_backwards/DC_backwards/sources/DC_Comm_back.vhd" Line 198: cmd_data should be on the sensitivity list of the process
 WARNING:HDLCompiler:92 - "/home/ise/git/DC_backwards/DC_backwards/sources/DC_Comm_back.vhd" Line 199: cmd_data should be on the sensitivity list of the process
-WARNING:HDLCompiler:634 - "/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" Line 52: Net <DC_RESPONSE[31]> does not have a driver.
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -223,33 +222,17 @@ WARNING:HDLCompiler:634 - "/home/ise/git/DC_backwards/DC_backwards/sources/DC_FP
 Synthesizing Unit <DC_FPGA_TOP>.
     Related source file is "/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd".
         NUM_DCs = 0
-INFO:Xst:3210 - "/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" line 76: Output port <LOCKED> of the instance <clk_buffer> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" line 110: Output port <SERIAL_CLK_LCK> of the instance <u_dc_receiver> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" line 110: Output port <TRIG_LINK_SYNC> of the instance <u_dc_receiver> is unconnected or connected to loadless signal.
-WARNING:Xst:2935 - Signal 'DC_RESPONSE<31:16>', unconnected in block 'DC_FPGA_TOP', is tied to its initial value (0000000000000000).
+INFO:Xst:3210 - "/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" line 77: Output port <LOCKED> of the instance <clk_buffer> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" line 111: Output port <SERIAL_CLK_LCK> of the instance <u_dc_receiver> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" line 111: Output port <TRIG_LINK_SYNC> of the instance <u_dc_receiver> is unconnected or connected to loadless signal.
 WARNING:Xst:3035 - Index value(s) does not match array range for signal <CtrlRegister>, simulation mismatch.
     Found 20x16-bit single-port RAM <Mram_CtrlRegister> for signal <CtrlRegister>.
-    Found 1-bit register for signal <DC_RESPONSE<15>>.
-    Found 1-bit register for signal <DC_RESPONSE<14>>.
-    Found 1-bit register for signal <DC_RESPONSE<13>>.
-    Found 1-bit register for signal <DC_RESPONSE<12>>.
-    Found 1-bit register for signal <DC_RESPONSE<11>>.
-    Found 1-bit register for signal <DC_RESPONSE<10>>.
-    Found 1-bit register for signal <DC_RESPONSE<9>>.
-    Found 1-bit register for signal <DC_RESPONSE<8>>.
-    Found 1-bit register for signal <DC_RESPONSE<7>>.
-    Found 1-bit register for signal <DC_RESPONSE<6>>.
-    Found 1-bit register for signal <DC_RESPONSE<5>>.
-    Found 1-bit register for signal <DC_RESPONSE<4>>.
-    Found 1-bit register for signal <DC_RESPONSE<3>>.
-    Found 1-bit register for signal <DC_RESPONSE<2>>.
-    Found 1-bit register for signal <DC_RESPONSE<1>>.
-    Found 1-bit register for signal <DC_RESPONSE<0>>.
+    Found 32-bit register for signal <DC_RESPONSE>.
     Found 1-bit register for signal <RES_VALID>.
     Summary:
 	inferred   1 RAM(s).
-	inferred  17 D-type flip-flop(s).
-	inferred  17 Multiplexer(s).
+	inferred  33 D-type flip-flop(s).
+	inferred   2 Multiplexer(s).
 Unit <DC_FPGA_TOP> synthesized.
 
 Synthesizing Unit <clk_gen1>.
@@ -420,6 +403,7 @@ Unit <S6SerialInterfaceIn> synthesized.
 Synthesizing Unit <ByteLink>.
     Related source file is "/home/ise/git/DC_backwards/DC_backwards/QBLink/source/ByteLink.vhd".
         ALIGN_CYCLES_G = 100
+WARNING:Xst:37 - Detected unknown constraint/property "mark_debug1". This constraint/property is not supported by the current software release and will be ignored.
     Set property "MARK_DEBUG = TRUE" for signal <BLStateNum>.
     Found 8-bit register for signal <inputTxData8b>.
     Found 1-bit register for signal <inputTxData8bValid>.
@@ -447,7 +431,7 @@ Synthesizing Unit <ByteLink>.
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 32-bit adder for signal <r_alignCnt[31]_GND_29_o_add_8_OUT> created at line 180.
+    Found 32-bit adder for signal <r_alignCnt[31]_GND_29_o_add_8_OUT> created at line 183.
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred  80 D-type flip-flop(s).
@@ -489,11 +473,11 @@ Macro Statistics
  4-bit adder                                           : 2
  4-bit subtractor                                      : 1
  5-bit subtractor                                      : 1
-# Registers                                            : 57
- 1-bit register                                        : 35
+# Registers                                            : 42
+ 1-bit register                                        : 19
  10-bit register                                       : 7
  16-bit register                                       : 3
- 32-bit register                                       : 4
+ 32-bit register                                       : 5
  4-bit register                                        : 2
  5-bit register                                        : 2
  8-bit register                                        : 4
@@ -502,12 +486,12 @@ Macro Statistics
 # Comparators                                          : 2
  16-bit comparator greater                             : 1
  32-bit comparator lessequal                           : 1
-# Multiplexers                                         : 82
+# Multiplexers                                         : 67
  1-bit 10-to-1 multiplexer                             : 2
- 1-bit 2-to-1 multiplexer                              : 63
+ 1-bit 2-to-1 multiplexer                              : 47
  10-bit 2-to-1 multiplexer                             : 1
  16-bit 2-to-1 multiplexer                             : 1
- 32-bit 2-to-1 multiplexer                             : 8
+ 32-bit 2-to-1 multiplexer                             : 9
  32-bit 3-to-1 multiplexer                             : 1
  4-bit 2-to-1 multiplexer                              : 4
  8-bit 2-to-1 multiplexer                              : 2
@@ -540,7 +524,7 @@ INFO:Xst:2261 - The FF/Latch <dataWord_7> in Unit <U_SerialInterfaceIn> is equiv
 INFO:Xst:2261 - The FF/Latch <dataWord_9> in Unit <U_SerialInterfaceIn> is equivalent to the following FF/Latch, which will be removed : <dataWordFlipped_8> 
 
 Synthesizing (advanced) Unit <DC_FPGA_TOP>.
-INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_CtrlRegister> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+INFO:Xst:3231 - The small RAM <Mram_CtrlRegister> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
     -----------------------------------------------------------------------
     | ram_type           | Distributed                         |          |
     -----------------------------------------------------------------------
@@ -572,16 +556,16 @@ Macro Statistics
  6-bit adder                                           : 1
 # Counters                                             : 1
  16-bit up counter                                     : 1
-# Registers                                            : 319
- Flip-Flops                                            : 319
+# Registers                                            : 335
+ Flip-Flops                                            : 335
 # Comparators                                          : 2
  16-bit comparator greater                             : 1
  32-bit comparator lessequal                           : 1
-# Multiplexers                                         : 95
+# Multiplexers                                         : 96
  1-bit 10-to-1 multiplexer                             : 2
  1-bit 2-to-1 multiplexer                              : 78
  10-bit 2-to-1 multiplexer                             : 1
- 32-bit 2-to-1 multiplexer                             : 7
+ 32-bit 2-to-1 multiplexer                             : 8
  32-bit 3-to-1 multiplexer                             : 1
  4-bit 2-to-1 multiplexer                              : 4
  8-bit 2-to-1 multiplexer                              : 2
@@ -652,6 +636,22 @@ Optimizing FSM <u_dc_receiver/DC_Interface_back/U_ByteLink/FSM_4> on signal <r_s
 WARNING:Xst:1293 - FF/Latch <v_counter_31> has a constant value of 0 in block <QBlink>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <r_bitCount_0> has a constant value of 0 in block <S6SerialInterfaceOut>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <r_bitCount_0> has a constant value of 0 in block <S6SerialInterfaceIn>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <DC_RESPONSE_16> has a constant value of 0 in block <DC_FPGA_TOP>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <DC_RESPONSE_17> has a constant value of 0 in block <DC_FPGA_TOP>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <DC_RESPONSE_18> has a constant value of 0 in block <DC_FPGA_TOP>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <DC_RESPONSE_19> has a constant value of 0 in block <DC_FPGA_TOP>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <DC_RESPONSE_20> has a constant value of 0 in block <DC_FPGA_TOP>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <DC_RESPONSE_21> has a constant value of 0 in block <DC_FPGA_TOP>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <DC_RESPONSE_22> has a constant value of 0 in block <DC_FPGA_TOP>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <DC_RESPONSE_23> has a constant value of 0 in block <DC_FPGA_TOP>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <DC_RESPONSE_24> has a constant value of 0 in block <DC_FPGA_TOP>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <DC_RESPONSE_25> has a constant value of 0 in block <DC_FPGA_TOP>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <DC_RESPONSE_26> has a constant value of 0 in block <DC_FPGA_TOP>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <DC_RESPONSE_27> has a constant value of 0 in block <DC_FPGA_TOP>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <DC_RESPONSE_28> has a constant value of 0 in block <DC_FPGA_TOP>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <DC_RESPONSE_29> has a constant value of 0 in block <DC_FPGA_TOP>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <DC_RESPONSE_30> has a constant value of 0 in block <DC_FPGA_TOP>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <DC_RESPONSE_31> has a constant value of 0 in block <DC_FPGA_TOP>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:3002 - This design contains one or more registers/latches that are directly
    incompatible with the Spartan6 architecture. The two primary causes of this is
    either a register or latch described with both an asynchronous set and
@@ -891,10 +891,10 @@ Primitive and Black Box Usage:
 #      FD                          : 92
 #      FDC                         : 165
 #      FDCE                        : 112
-#      FDE                         : 114
+#      FDE                         : 98
 #      FDP                         : 56
 #      FDPE                        : 9
-#      FDR                         : 67
+#      FDR                         : 83
 #      FDRE                        : 53
 #      IDDR2                       : 1
 #      LD                          : 2
@@ -930,7 +930,7 @@ Slice Logic Distribution:
    Number with an unused Flip Flop:     266  out of    938    28%  
    Number with an unused LUT:           328  out of    938    34%  
    Number of fully used LUT-FF pairs:   344  out of    938    36%  
-   Number of unique control sets:        77
+   Number of unique control sets:        76
 
 IO Utilization: 
  Number of IOs:                           8
@@ -1063,15 +1063,15 @@ DATA_CLK_P<0>  |         |         |    1.700|         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 8.00 secs
-Total CPU time to Xst completion: 4.09 secs
+Total REAL time to Xst completion: 11.00 secs
+Total CPU time to Xst completion: 5.92 secs
  
 --> 
 
 
-Total memory usage is 507716 kilobytes
+Total memory usage is 507608 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   92 (   0 filtered)
+Number of warnings :  107 (   0 filtered)
 Number of infos    :  108 (   0 filtered)
 

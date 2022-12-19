@@ -61,6 +61,7 @@ architecture rtl of DC_FPGA_TOP is
     signal RESET : sl:='0';
     signal sync1 : slv(NUM_DCs downto 0) := (others =>'0');
     signal Clk_to_QBLink : sl;
+    constant ZERO : std_logic_vector(15 downto 0) := x"0000";
  
 
 begin
@@ -139,6 +140,7 @@ begin
     begin
         if (rising_edge(DATA_CLK)) then
             RES_VALID(0) <= '0';
+            DC_RESPONSE  <= (others => '0');
             if QB_RST = "1" then
                 DC_RESPONSE  <= (others => '0');
                 -- regAddr  <= (others => '0');
@@ -146,15 +148,17 @@ begin
             
             elsif regReq = '1' then
                 if regOp = '0' then
-                    DC_RESPONSE(15 downto 0) <=  CtrlRegister(to_integer(unsigned(regAddr)));
+                    DC_RESPONSE <=  ZERO & CtrlRegister(to_integer(unsigned(regAddr)));
                     RES_VALID(0) <= '1';
                 elsif regOp = '1' then
                     CtrlRegister(to_integer(unsigned(regAddr))) <= regWrData; 
-                    DC_RESPONSE(15 downto 0) <=  regAddr;
+                    DC_RESPONSE <=  ZERO & regAddr;
                     RES_VALID(0) <= '1';                
                 end if;
             end if;
         end if;
     end process;
+
+    
 
 end architecture;

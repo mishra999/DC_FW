@@ -79,7 +79,7 @@ end component;
  signal i_s_axis_tvalid :  std_logic := '0';
  signal i_s_axis_tready :std_logic;
 
- signal ii_sync :std_logic :='0';
+--  signal ii_sync :std_logic :='0';
 begin
 
 	-- Input from ports

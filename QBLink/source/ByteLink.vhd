@@ -89,6 +89,9 @@ architecture rtl of ByteLink is
 	
 	attribute mark_debug : string;
     attribute mark_debug of BLStateNum : signal is "true";
+   
+   attribute mark_debug1 : string;
+   attribute mark_debug1 of inputTxData8b : signal is "true";
    -- ISE attributes to keep signals for debugging
    -- attribute keep : string;
    -- attribute keep of r : signal is "true";    

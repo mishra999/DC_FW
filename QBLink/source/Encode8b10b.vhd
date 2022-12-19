@@ -32,16 +32,16 @@ entity Encode8b10b is
       clk     : in sl;
       clkEn   : in sl := '1';
       rst     : in sl := '0';
-      dataIn  : in slv(7 downto 0);
+      dataIn  : in slv(7 downto 0) := (others => '0');
       dataKIn : in sl;
-      dispIn  : in sl;
+      dispIn  : in sl := '0';
       dataOut : out slv(9 downto 0);
-      dispOut : out sl
+      dispOut : out sl := '0'
    );
 end Encode8b10b;
 
 architecture rtl of Encode8b10b is 
-   signal ai, bi, ci, di, ei, fi, gi, hi, ki  : sl;
+   signal ai, bi, ci, di, ei, fi, gi, hi, ki  : sl := '0';
    signal aeqb, ceqd, l22, l40, l04, l13, l31 : sl;
    signal ao, bo, co, do, eo, fo, go, ho, io, jo : sl;
    signal pds16, nds16 : sl;

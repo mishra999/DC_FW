@@ -1,82 +1,29 @@
-Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -relaunch -intstyle "ise" -incremental -lib "secureip" -o "/home/ise/git/DC_backwards/DC_backwards/DC_Comm_QBLinkTB_isim_beh.exe" -prj "/home/ise/git/DC_backwards/DC_backwards/DC_Comm_QBLinkTB_beh.prj" "work.DC_Comm_QBLinkTB" 
+Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -relaunch -intstyle "ise" -incremental -lib "secureip" -o "/home/ise/git/DC_backwards/DC_backwards/mppc_dacs_wrapper_dac088s085_tb_isim_beh.exe" -prj "/home/ise/git/DC_backwards/DC_backwards/mppc_dacs_wrapper_dac088s085_tb_beh.prj" "work.mppc_dacs_wrapper_dac088s085_tb" 
 ISim P.20131013 (signature 0xfbc00daa)
 Number of CPUs detected in this system: 2
 Turning on mult-threading, number of parallel sub-compilation jobs: 4 
 Determining compilation order of HDL files
-Parsing VHDL file "/home/ise/git/DC_backwards/DC_backwards/cores/coregen/clockgen_bytelink.vhd" into library work
-Parsing VHDL file "/home/ise/git/DC_backwards/DC_backwards/cores/coregen/QBLtxFIFO.vhd" into library work
-Parsing VHDL file "/home/ise/git/DC_backwards/DC_backwards/cores/coregen/serializationFifo.vhd" into library work
-Parsing VHDL file "/home/ise/git/DC_backwards/DC_backwards/cores/ipcore_dir/axi_fifo_32w_32d.vhd" into library work
-Parsing VHDL file "/home/ise/git/DC_backwards/DC_backwards/QBLink/source/UtilityPkg.vhd" into library work
-Parsing VHDL file "/home/ise/git/DC_backwards/DC_backwards/QBLink/source/Encode8b10b.vhd" into library work
-Parsing VHDL file "/home/ise/git/DC_backwards/DC_backwards/QBLink/source/Decode8b10b.vhd" into library work
-Parsing VHDL file "/home/ise/git/DC_backwards/DC_backwards/QBLink/source/SyncBit.vhd" into library work
-Parsing VHDL file "/home/ise/git/DC_backwards/DC_backwards/QBLink/source/S6SerialInterfaceOut.vhd" into library work
-WARNING:HDLCompiler:946 - "/home/ise/git/DC_backwards/DC_backwards/QBLink/source/S6SerialInterfaceOut.vhd" Line 67: Actual for formal port rd_en is neither a static name nor a globally static expression
-WARNING:HDLCompiler:946 - "/home/ise/git/DC_backwards/DC_backwards/QBLink/source/S6SerialInterfaceOut.vhd" Line 132: Actual for formal port c1 is neither a static name nor a globally static expression
-Parsing VHDL file "/home/ise/git/DC_backwards/DC_backwards/QBLink/source/S6SerialInterfaceIn.vhd" into library work
-WARNING:HDLCompiler:946 - "/home/ise/git/DC_backwards/DC_backwards/QBLink/source/S6SerialInterfaceIn.vhd" Line 133: Actual for formal port c1 is neither a static name nor a globally static expression
-WARNING:HDLCompiler:946 - "/home/ise/git/DC_backwards/DC_backwards/QBLink/source/S6SerialInterfaceIn.vhd" Line 250: Actual for formal port rd_en is neither a static name nor a globally static expression
-Parsing VHDL file "/home/ise/git/DC_backwards/DC_backwards/QBLink/source/ByteLink.vhd" into library work
-Parsing VHDL file "/home/ise/git/DC_backwards/DC_backwards/QBLink/source/QBlink.vhd" into library work
-WARNING:HDLCompiler:946 - "/home/ise/git/DC_backwards/DC_backwards/QBLink/source/QBlink.vhd" Line 270: Actual for formal port s_aresetn is neither a static name nor a globally static expression
-Parsing VHDL file "/home/ise/git/DC_backwards/DC_backwards/QBLink/source/BMD_definitions.vhd" into library work
-Parsing VHDL file "/home/ise/git/DC_backwards/DC_backwards/../../SiRead_FW1/sources/DC_Comm.vhd" into library work
-Parsing VHDL file "/home/ise/git/DC_backwards/DC_backwards/sources/DC_Comm_back.vhd" into library work
-Parsing VHDL file "/home/ise/git/DC_backwards/DC_backwards/../../SiRead_FW1/sources/DC_Comm_back_test1.vhd" into library work
+Parsing VHDL file "/home/ise/git/DC_backwards/DC_backwards/mppc_bias_dac088s085.vhd" into library work
+Parsing VHDL file "/home/ise/git/DC_backwards/DC_backwards/clkk_divv.vhd" into library work
+Parsing VHDL file "/home/ise/git/DC_backwards/DC_backwards/mppc_dacs_wrapper_dac088s085.vhd" into library work
+Parsing VHDL file "/home/ise/git/DC_backwards/DC_backwards/mppc_dac_tb.vhd" into library work
 Starting static elaboration
 Completed static elaboration
-Fuse Memory Usage: 126560 KB
-Fuse CPU Usage: 1820 ms
+Fuse Memory Usage: 114128 KB
+Fuse CPU Usage: 1280 ms
 Compiling package standard
 Compiling package std_logic_1164
 Compiling package numeric_std
-Compiling package bmd_definitions
 Compiling package std_logic_arith
 Compiling package std_logic_unsigned
-Compiling package utilitypkg
 Compiling package vcomponents
-Compiling package textio
-Compiling package vital_timing
-Compiling package vital_primitives
-Compiling package vpkg
-Compiling architecture dcm_sp_clock_divide_by_2_v of entity dcm_sp_clock_divide_by_2 [dcm_sp_clock_divide_by_2_default]
-Compiling architecture dcm_sp_maximum_period_check_v of entity dcm_sp_maximum_period_check [\dcm_sp_maximum_period_check("*"...]
-Compiling architecture dcm_sp_maximum_period_check_v of entity dcm_sp_maximum_period_check [\dcm_sp_maximum_period_check("*"...]
-Compiling architecture dcm_sp_clock_lost_v of entity dcm_sp_clock_lost [dcm_sp_clock_lost_default]
-Compiling architecture dcm_sp_v of entity DCM_SP [\DCM_SP(true,"*",true,false,2.0,...]
-Compiling architecture bufg_v of entity BUFG [bufg_default]
-Compiling architecture xilinx of entity clockgen_bytelink [clockgen_bytelink_default]
-Compiling architecture fdre_v of entity FDRE [\FDRE('1')\]
-Compiling architecture structural of entity SyncBit_QBL [\SyncBit_QBL(2,'1','1','1',1000)...]
-Compiling architecture behavioral of entity fifo_generator_v9_3_bhv_as [\fifo_generator_v9_3_bhv_as(10,"...]
-Compiling architecture behavioral of entity fifo_generator_v9_3_conv [\fifo_generator_v9_3_conv(0,0,4,...]
-Compiling architecture behavioral of entity fifo_generator_v9_3 [\fifo_generator_v9_3(0,0,4,"Blan...]
-Compiling architecture serializationfifo_a of entity serializationFifo [serializationfifo_default]
-Compiling architecture oddr2_v of entity ODDR2 [\ODDR2("C0",'0',"ASYNC")(1,2,1,5...]
-Compiling architecture behavioral of entity S6SerialInterfaceOut [s6serialinterfaceout_default]
-Compiling architecture iddr2_v of entity IDDR2 [\IDDR2("C0",'0','0',"SYNC")(1,2,...]
-Compiling architecture behavioral of entity S6SerialInterfaceIn [s6serialinterfacein_default]
-Compiling architecture rtl of entity Encode8b10b [\Encode8b10b(1000)\]
-Compiling architecture rtl of entity Decode8b10b [\Decode8b10b(1000)\]
-Compiling architecture rtl of entity ByteLink [\ByteLink(100,1000)\]
-Compiling architecture behavioral of entity fifo_generator_v9_3_bhv_as [\fifo_generator_v9_3_bhv_as(32,"...]
-Compiling architecture behavioral of entity fifo_generator_v9_3_bhv_preload0 [\fifo_generator_v9_3_bhv_preload...]
-Compiling architecture behavioral of entity fifo_generator_v9_3_conv [\fifo_generator_v9_3_conv(0,0,10...]
-Compiling architecture behavioral of entity fifo_generator_v9_3 [\fifo_generator_v9_3(0,0,10,"Bla...]
-Compiling architecture qbltxfifo_a of entity QBLtxFIFO [qbltxfifo_default]
-Compiling architecture behavioral of entity fifo_generator_v9_3_bhv_ss [\fifo_generator_v9_3_bhv_ss(11,3...]
-Compiling architecture behavioral of entity fifo_generator_v9_3_bhv_preload0 [\fifo_generator_v9_3_bhv_preload...]
-Compiling architecture behavioral of entity fifo_generator_v9_3_conv [\fifo_generator_v9_3_conv(1,0,11...]
-Compiling architecture behavioral of entity fifo_generator_v9_3 [\fifo_generator_v9_3(1,0,10,"Bla...]
-Compiling architecture axi_fifo_32w_32d_a of entity axi_fifo_32w_32d [axi_fifo_32w_32d_default]
-Compiling architecture behavioral of entity QBlink [qblink_default]
-Compiling architecture behaviorial of entity DC_Comm [dc_comm_default]
-Compiling architecture behaviorial of entity DC_Comm_back [dc_comm_back_default]
-Compiling architecture behavior of entity dc_comm_qblinktb
+Compiling architecture beh of entity clkk_divv [\clkk_divv(32)\]
+Compiling architecture behavioral of entity mppc_bias_dac088s085 [mppc_bias_dac088s085_default]
+Compiling architecture behavioral of entity mppc_dacs_wrapper_dac088s085 [mppc_dacs_wrapper_dac088s085_def...]
+Compiling architecture behavioral of entity mppc_dacs_wrapper_dac088s085_tb
 Time Resolution for simulation is 1ps.
-Compiled 79 VHDL Units
-Built simulation executable /home/ise/git/DC_backwards/DC_backwards/DC_Comm_QBLinkTB_isim_beh.exe
-Fuse Memory Usage: 456588 KB
-Fuse CPU Usage: 2700 ms
-GCC CPU Usage: 1000 ms
+Compiled 13 VHDL Units
+Built simulation executable /home/ise/git/DC_backwards/DC_backwards/mppc_dacs_wrapper_dac088s085_tb_isim_beh.exe
+Fuse Memory Usage: 427052 KB
+Fuse CPU Usage: 1490 ms
+GCC CPU Usage: 270 ms

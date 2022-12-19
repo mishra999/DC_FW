@@ -1,0 +1,4 @@
+vhdl isim_temp "mppc_bias_dac088s085.vhd"
+vhdl isim_temp "clkk_divv.vhd"
+vhdl isim_temp "mppc_dacs_wrapper_dac088s085.vhd"
+vhdl isim_temp "mppc_dac_tb.vhd"

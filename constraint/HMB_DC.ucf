@@ -66,7 +66,10 @@ NET "RX_DC_P<0>"	 			 LOC = "P127"; #gj
 # NET "TX_DC_P<0>" 	          LOC = "P142" | IOSTANDARD = LVDS_25 | DIFF_TERM = "FALSE"; #
 
 NET "TX_DC_N<0>"		       LOC = "P141"; #RX on SCROD side,
-NET "TX_DC_P<0>" 	          LOC = "P142"; #
+NET "TX_DC_P<0>" 	          LOC = "P142"; # used now!!
+
+# NET "TX_DC_N<0>"		       LOC = "P137"; #RX on SCROD side,
+# NET "TX_DC_P<0>" 	          LOC = "P138"; #
 
 # SYNC -- used to align timestamps between DCs   (SYNC on SCROD side)
 #NET "MAS_ACK_N"	 	 LOC = "P1"; 

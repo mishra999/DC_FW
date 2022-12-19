@@ -1,7 +1,7 @@
-vhdl isim_temp "cores/coregen/clockgen_bytelink.vhd"
 vhdl isim_temp "cores/coregen/QBLtxFIFO.vhd"
 vhdl isim_temp "cores/coregen/serializationFifo.vhd"
 vhdl isim_temp "cores/ipcore_dir/axi_fifo_32w_32d.vhd"
+vhdl isim_temp "ipcore_dir/clk_gen1.vhd"
 vhdl isim_temp "QBLink/source/UtilityPkg.vhd"
 vhdl isim_temp "QBLink/source/Encode8b10b.vhd"
 vhdl isim_temp "QBLink/source/Decode8b10b.vhd"

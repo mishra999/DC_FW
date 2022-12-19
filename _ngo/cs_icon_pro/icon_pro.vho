@@ -8,7 +8,7 @@
 -- \   \   \/     Version    : 14.7
 --  \   \         Application: Xilinx CORE Generator
 --  /   /         Filename   : icon_pro.vho
--- /___/   /\     Timestamp  : Tue Oct 04 07:52:45 UTC 2022
+-- /___/   /\     Timestamp  : Tue Nov 29 10:46:21 UTC 2022
 -- \   \  /  \
 --  \___\/\___\
 --
@@ -20,8 +20,7 @@
 ------------- Begin Cut here for COMPONENT Declaration ------ COMP_TAG
 component icon_pro
   PORT (
-    CONTROL0 : INOUT STD_LOGIC_VECTOR(35 DOWNTO 0);
-    CONTROL1 : INOUT STD_LOGIC_VECTOR(35 DOWNTO 0));
+    CONTROL0 : INOUT STD_LOGIC_VECTOR(35 DOWNTO 0));
 
 end component;
 
@@ -32,7 +31,6 @@ end component;
 
 your_instance_name : icon_pro
   port map (
-    CONTROL0 => CONTROL0,
-    CONTROL1 => CONTROL1);
+    CONTROL0 => CONTROL0);
 
 -- INST_TAG_END ------ End INSTANTIATION Template ------------
