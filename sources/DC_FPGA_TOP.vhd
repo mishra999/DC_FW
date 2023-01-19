@@ -4,10 +4,13 @@ use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.NUMERIC_STD.ALL;
 use ieee.std_logic_unsigned.all;
 --use ieee.std_logic_arith.all;
+  use work.roling_register_p.all;
+  use work.xgen_axistream_32.all;
+  use work.TX_DAC_control_pack.all;
 
 use work.all;
 use work.BMD_definitions.all; --need to include BMD_definitions in addition to work.all
-use work.UtilityPkg.all;
+use work.UtilityPkg.all;  
 
 library UNISIM;
 use UNISIM.VComponents.all;
@@ -27,12 +30,17 @@ entity DC_FPGA_TOP is
         TX_DC_N         : OUT slv(NUM_DCs downto 0);  --Serial output to DC
         TX_DC_P			 : OUT slv(NUM_DCs downto 0);--Serial output to DC 
         SYNC_P			 : IN slv(NUM_DCs downto 0); -- when '0' DC listens only, '1' DC reads back command
-        SYNC_N			 : IN slv(NUM_DCs downto 0)
+        SYNC_N			 : IN slv(NUM_DCs downto 0);
+        --outputs to TargetX
+        SCLK             : OUT std_logic;
+        -- REG_CLR: std_logic;
+        SIN              : OUT std_logic;
+        PCLK             : OUT std_logic
          
  
         -- DC_RESET        : in slv(NUM_DCs DOWNTO 0)		-- Commented by Shivang on Oct 8, 2020
   );
-end entity; 
+end entity;   
  
   
 architecture rtl of DC_FPGA_TOP is
@@ -48,7 +56,7 @@ architecture rtl of DC_FPGA_TOP is
     signal regAddr : std_logic_vector(15 downto 0) := (others => '0');
     signal regWrData : std_logic_vector(15 downto 0) := (others => '0');
     signal regReq    : sl:= '0';
-    signal regOp     : sl:= '0';
+    signal regOp     : slv(1 downto 0):= "00";
     signal DC_RESPONSE : slv (31 downto 0) := (others => '0'); 
     signal RES_VALID : slv( NUM_DCs downto 0):= (others => '0'); 
 	-- signal  GLOB_EVNT_P :  STD_LOGIC_VECTOR(3 downto 0);
@@ -62,14 +70,22 @@ architecture rtl of DC_FPGA_TOP is
     signal sync1 : slv(NUM_DCs downto 0) := (others =>'0');
     signal Clk_to_QBLink : sl;
     constant ZERO : std_logic_vector(15 downto 0) := x"0000";
- 
+-- mppc dac
+   signal regg      : registerT := registerT_null;
+   signal TX_DAC_control1 : TX_DAC_control := TX_DAC_control_null; 
+
 
 begin
     sync1 <= SYNC;
-    -- reset_sync : process(DATA_CLK)
+    SCLK <= TX_DAC_control1.SCLK;
+    PCLK <= TX_DAC_control1.PCLK;
+    SIN <= TX_DAC_control1.SIN; 
+    -- clk_sync_output : process(DATA_CLK)
     -- begin
     --     if rising_edge(DATA_CLK) then
-    --         QB_RST <= SYNC; 
+    --         SCLK <= TX_DAC_control1.SCLK;
+    --         PCLK <= TX_DAC_control1.PCLK;
+    --         SIN <= TX_DAC_control1.SIN; 
     --     end if; 
     -- end process;
 
@@ -134,12 +150,24 @@ begin
     --     --    DC_RESET <= CtrlRegister(2)(NUM_DCs downto 0); --by me
     --     END IF;
     -- end process;
- 
+   mppc_wrapper_i : entity work.TX_DAC_control_w_regInterface
+   port map (
+    clk    => DATA_CLK,
+    rst    => reset,
+
+
+    reg      => regg,
+
+
+    TX_DAC_control_out =>  TX_DAC_control1
+    
+  );
 
     seqnn : process (DATA_CLK) is
     begin
         if (rising_edge(DATA_CLK)) then
             RES_VALID(0) <= '0';
+            regg <= registerT_null;
             DC_RESPONSE  <= (others => '0');
             if QB_RST = "1" then
                 DC_RESPONSE  <= (others => '0');
@@ -147,13 +175,18 @@ begin
                 -- regWrData  <= (others => '0');
             
             elsif regReq = '1' then
-                if regOp = '0' then
+                if regOp = "00" then
                     DC_RESPONSE <=  ZERO & CtrlRegister(to_integer(unsigned(regAddr)));
                     RES_VALID(0) <= '1';
-                elsif regOp = '1' then
+                elsif regOp = "01" then
                     CtrlRegister(to_integer(unsigned(regAddr))) <= regWrData; 
                     DC_RESPONSE <=  ZERO & regAddr;
-                    RES_VALID(0) <= '1';                
+                    RES_VALID(0) <= '1';  
+                elsif regOp = "10" then
+                    regg.address <= regAddr; 
+                    regg.value <= regWrData; 
+                    DC_RESPONSE <=  ZERO & regAddr;
+                    RES_VALID(0) <= '1';               
                 end if;
             end if;
         end if;

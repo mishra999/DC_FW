@@ -45,6 +45,8 @@ INFO:ConstraintSystem:178 - TNM 'DATA_CLK_P<0>', used in period specification
 Done...
 
 Checking expanded design ...
+WARNING:NgdBuild:452 - logical net 'mppc_wrapper_i/DUT/reg_fifo/TX_m2s_last' has
+   no driver
 
 Partition Implementation Status
 -------------------------------
@@ -55,12 +57,12 @@ Partition Implementation Status
 
 NGDBUILD Design Results Summary:
   Number of errors:     0
-  Number of warnings:   0
+  Number of warnings:   1
 
-Total memory usage is 529656 kilobytes
+Total memory usage is 533968 kilobytes
 
 Writing NGD file "DC_FPGA_TOP.ngd" ...
 Total REAL time to NGDBUILD completion:  4 sec
-Total CPU time to NGDBUILD completion:   3 sec
+Total CPU time to NGDBUILD completion:   4 sec
 
 Writing NGDBUILD log file "DC_FPGA_TOP.bld"...

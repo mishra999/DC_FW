@@ -1,5 +1,5 @@
 -------------------------------------------------------------------------------
--- Copyright (c) 2022 Xilinx, Inc.
+-- Copyright (c) 2023 Xilinx, Inc.
 -- All Rights Reserved
 -------------------------------------------------------------------------------
 --   ____  ____
@@ -8,7 +8,7 @@
 -- \   \   \/     Version    : 14.7
 --  \   \         Application: XILINX CORE Generator
 --  /   /         Filename   : ila_pro_0.vhd
--- /___/   /\     Timestamp  : Sat Dec 10 10:35:21 UTC 2022
+-- /___/   /\     Timestamp  : Thu Jan 12 12:57:38 UTC 2023
 -- \   \  /  \
 --  \___\/\___\
 --
@@ -30,7 +30,11 @@ ENTITY ila_pro_0 IS
     TRIG5: in std_logic_vector(0 to 0);
     TRIG6: in std_logic_vector(9 downto 0);
     TRIG7: in std_logic_vector(0 to 0);
-    TRIG8: in std_logic_vector(7 downto 0));
+    TRIG8: in std_logic_vector(7 downto 0);
+    TRIG9: in std_logic_vector(0 to 0);
+    TRIG10: in std_logic_vector(0 to 0);
+    TRIG11: in std_logic_vector(0 to 0);
+    TRIG12: in std_logic_vector(15 downto 0));
 END ila_pro_0;
 
 ARCHITECTURE ila_pro_0_a OF ila_pro_0 IS

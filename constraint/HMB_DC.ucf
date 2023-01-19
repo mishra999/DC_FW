@@ -101,16 +101,16 @@ NET "SYNC_P<0>"	 	    LOC = "P2"; #hg
 ###
 
 ######### TARGETX programmable register interface ###################################   (by me next 4)
-#NET	"SIN"          LOC = "p143";	# data in
-#NET	"SCLK"         LOC = "p5";		# serial shift clock
-#NET	"PCLK"         LOC = "p6";		# parallel load clock
+NET	"SIN"          LOC = "p143";	# data in
+NET	"SCLK"         LOC = "p5";		# serial shift clock
+NET	"PCLK"         LOC = "p6";		# parallel load clock
 #NET	"SHOUT"        LOC = "p7";    # shifted data out          
 																																	 
 ######### TARGETX trigger signals (to fpga) ######################################### (by me next 5)
 #NET   "TX_TRIG<0>"   LOC = "p34"; #
 #NET   "TX_TRIG<1>"   LOC = "p33"; 
 #NET   "TX_TRIG<2>"   LOC = "p8"; 
-#NET   "TX_TRIG<3>"   LOC = "p9";  
+#NET   "TX_TRIG<3>"   LOC = "p9";   
 #NET   "TX_TRIG<4>"   LOC = "p10"; # multi-hit flag
                       
 ### TARGETX Control signals needed for waveform sampling -- static for mRICH Hodo (by me next 1)

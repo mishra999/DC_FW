@@ -16,5 +16,8 @@
 <arg fmt="%s" index="7">CLKDV</arg>: <arg fmt="%s" index="8">&lt;TIMESPEC TS_clk_buffer_clkdv = PERIOD &quot;clk_buffer_clkdv&quot; TS_DATA_CLK_P * 2 HIGH 50%&gt;</arg>
 </msg>
 
+<msg type="warning" file="NgdBuild" num="452" delta="old" ><arg fmt="%s" index="1">logical</arg> net &apos;<arg fmt="%s" index="2">mppc_wrapper_i/DUT/reg_fifo/TX_m2s_last</arg>&apos; has no driver
+</msg>
+
 </messages>
 

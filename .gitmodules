@@ -1,0 +1,3 @@
+[submodule "target_x_dac_control"]
+	path = target_x_dac_control
+	url = https://github.com/RPeschke/target_x_dac_control.git

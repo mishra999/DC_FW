@@ -1,9 +1,9 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2022-12-12T05:51:08</DateModified>
+  <DateModified>2023-01-12T12:22:10</DateModified>
   <ModuleName>DC_FPGA_TOP</ModuleName>
-  <SummaryTimeStamp>2022-12-10T12:53:34</SummaryTimeStamp>
+  <SummaryTimeStamp>2022-12-13T02:53:48</SummaryTimeStamp>
   <SavedFilePath>/home/ise/git/DC_backwards/DC_backwards/iseconfig/DC_FPGA_TOP.xreport</SavedFilePath>
   <ImplementationReportsDirectory>/home/ise/git/DC_backwards/DC_backwards/</ImplementationReportsDirectory>
   <DateInitialized>2022-09-16T09:36:55</DateInitialized>

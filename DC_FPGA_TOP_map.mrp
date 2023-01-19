@@ -11,49 +11,49 @@ Target Device  : xc6slx4
 Target Package : tqg144
 Target Speed   : -3
 Mapper Version : spartan6 -- $Revision: 1.55 $
-Mapped Date    : Sat Dec 10 12:52:36 2022
+Mapped Date    : Thu Jan 12 12:58:03 2023
 
 Design Summary
 --------------
 Number of errors:      0
 Number of warnings:    2
 Slice Logic Utilization:
-  Number of Slice Registers:                 1,122 out of   4,800   23%
-    Number used as Flip Flops:               1,121
+  Number of Slice Registers:                 1,550 out of   4,800   32%
+    Number used as Flip Flops:               1,549
     Number used as Latches:                      1
     Number used as Latch-thrus:                  0
     Number used as AND/OR logics:                0
-  Number of Slice LUTs:                        977 out of   2,400   40%
-    Number used as logic:                      754 out of   2,400   31%
-      Number using O6 output only:             490
-      Number using O5 output only:              94
-      Number using O5 and O6:                  170
+  Number of Slice LUTs:                      1,328 out of   2,400   55%
+    Number used as logic:                    1,010 out of   2,400   42%
+      Number using O6 output only:             605
+      Number using O5 output only:             136
+      Number using O5 and O6:                  269
       Number used as ROM:                        0
-    Number used as Memory:                     131 out of   1,200   10%
+    Number used as Memory:                     178 out of   1,200   14%
       Number used as Dual Port RAM:              0
       Number used as Single Port RAM:            8
         Number using O6 output only:             0
         Number using O5 output only:             0
         Number using O5 and O6:                  8
-      Number used as Shift Register:           123
-        Number using O6 output only:           103
+      Number used as Shift Register:           170
+        Number using O6 output only:           129
         Number using O5 output only:             2
-        Number using O5 and O6:                 18
-    Number used exclusively as route-thrus:     92
-      Number with same-slice register load:     83
-      Number with same-slice carry load:         9
+        Number using O5 and O6:                 39
+    Number used exclusively as route-thrus:    140
+      Number with same-slice register load:    127
+      Number with same-slice carry load:        13
       Number with other load:                    0
 
 Slice Logic Distribution:
-  Number of occupied Slices:                   468 out of     600   78%
-  Number of MUXCYs used:                       324 out of   1,200   27%
-  Number of LUT Flip Flop pairs used:        1,342
-    Number with an unused Flip Flop:           415 out of   1,342   30%
-    Number with an unused LUT:                 365 out of   1,342   27%
-    Number of fully used LUT-FF pairs:         562 out of   1,342   41%
-    Number of unique control sets:             124
+  Number of occupied Slices:                   543 out of     600   90%
+  Number of MUXCYs used:                       480 out of   1,200   40%
+  Number of LUT Flip Flop pairs used:        1,675
+    Number with an unused Flip Flop:           420 out of   1,675   25%
+    Number with an unused LUT:                 347 out of   1,675   20%
+    Number of fully used LUT-FF pairs:         908 out of   1,675   54%
+    Number of unique control sets:             145
     Number of slice register sites lost
-      to control set restrictions:             537 out of   4,800   11%
+      to control set restrictions:             577 out of   4,800   12%
 
   A LUT Flip Flop pair for this architecture represents one LUT paired with
   one Flip Flop within a slice.  A control set is a unique combination of
@@ -62,15 +62,15 @@ Slice Logic Distribution:
   over-mapped for a non-slice resource or if Placement fails.
 
 IO Utilization:
-  Number of bonded IOBs:                         8 out of     102    7%
-    Number of LOCed IOBs:                        8 out of       8  100%
+  Number of bonded IOBs:                        11 out of     102   10%
+    Number of LOCed IOBs:                       11 out of      11  100%
     IOB Flip Flops:                              2
     IOB Master Pads:                             1
     IOB Slave Pads:                              1
 
 Specific Feature Utilization:
-  Number of RAMB16BWERs:                         6 out of      12   50%
-  Number of RAMB8BWERs:                          3 out of      24   12%
+  Number of RAMB16BWERs:                         7 out of      12   58%
+  Number of RAMB8BWERs:                          4 out of      24   16%
   Number of BUFIO2/BUFIO2_2CLKs:                 1 out of      32    3%
     Number used as BUFIO2s:                      1
     Number used as BUFIO2_2CLKs:                 0
@@ -102,12 +102,12 @@ Specific Feature Utilization:
   Number of STARTUPs:                            0 out of       1    0%
   Number of SUSPEND_SYNCs:                       0 out of       1    0%
 
-  Number of RPM macros:           17
-Average Fanout of Non-Clock Nets:                3.14
+  Number of RPM macros:           21
+Average Fanout of Non-Clock Nets:                3.06
 
-Peak Memory Usage:  779 MB
-Total REAL time to MAP completion:  16 secs 
-Total CPU time to MAP completion:   15 secs 
+Peak Memory Usage:  793 MB
+Total REAL time to MAP completion:  24 secs 
+Total CPU time to MAP completion:   23 secs 
 
 Table of Contents
 -----------------
@@ -145,13 +145,13 @@ Section 3 - Informational
 -------------------------
 INFO:Security:54 - 'xc6slx4' is a WebPack part.
 INFO:LIT:243 - Logical network icon_control0<35> has no load.
-INFO:LIT:395 - The above info message is repeated 32 more times for the
+INFO:LIT:395 - The above info message is repeated 34 more times for the
    following (max. 5 shown):
    icon_control0<34>,
    icon_control0<33>,
-   icon_control0<32>,
-   icon_control0<31>,
-   icon_control0<30>
+   icon_control0<18>,
+   icon_control0<17>,
+   icon_control0<16>
    To see the details of these info messages, please use the -detail switch.
 INFO:MapLib:562 - No environment variables are currently set.
 INFO:LIT:244 - All of the single ended outputs in this design are using slew
@@ -170,8 +170,8 @@ INFO:PhysDesignRules:1861 - To achieve optimal frequency synthesis performance
 
 Section 4 - Removed Logic Summary
 ---------------------------------
-  54 block(s) removed
- 105 block(s) optimized away
+  49 block(s) removed
+ 146 block(s) optimized away
   47 signal(s) removed
 
 Section 5 - Removed Logic
@@ -221,10 +221,6 @@ Loadless block "U_ila_pro_0/U0/I_NO_D.U_ILA/U_TRIG/U_TC/I_STORAGE_QUAL.U_CAP_B"
 The signal "icon_control0<35>" is sourceless and has been removed.
 The signal "icon_control0<34>" is sourceless and has been removed.
 The signal "icon_control0<33>" is sourceless and has been removed.
-The signal "icon_control0<32>" is sourceless and has been removed.
-The signal "icon_control0<31>" is sourceless and has been removed.
-The signal "icon_control0<30>" is sourceless and has been removed.
-The signal "icon_control0<29>" is sourceless and has been removed.
 The signal "icon_control0<18>" is sourceless and has been removed.
 The signal "icon_control0<17>" is sourceless and has been removed.
 The signal "icon_control0<16>" is sourceless and has been removed.
@@ -237,6 +233,7 @@ The signal "u_dc_receiver/stateNum<1>" is sourceless and has been removed.
 The signal "u_dc_receiver/stateNum_0_G" is sourceless and has been removed.
  Sourceless block "u_dc_receiver/stateNum_0" (LATCH) removed.
  Sourceless block "u_dc_receiver/stateNum_1" (LATCH) removed.
+The signal "u_dc_receiver/stateNum_0_D" is sourceless and has been removed.
 The signal
 "u_dc_receiver/DC_Interface_back/U_SerialInterfaceOut/U_SerializationFifo/U0/xst
 _fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_
@@ -336,6 +333,8 @@ sourceless and has been removed.
  Sourceless block
 "u_dc_receiver/DC_Interface_back/QBlink_RX_FIFO_W8R32_1/U0/xst_fifo_generator/ga
 xis_fifo.axis_s_axis_tready1_INV_0" (BUF) removed.
+The signal "mppc_wrapper_i/DUT/reg_fifo/fifo_cc/e_fifo_cc/dout<0>" is sourceless
+and has been removed.
 The signal "U_icon_pro/U0/U_ICON/iCOMMAND_SEL<14>" is sourceless and has been
 removed.
  Sourceless block "U_icon_pro/U0/U_ICON/U_CTRL_OUT/F_NCP[0].F_CMD[14].U_HCE"
@@ -347,18 +346,6 @@ removed.
  Sourceless block "U_icon_pro/U0/U_ICON/U_CTRL_OUT/F_NCP[0].F_CMD[13].U_HCE"
 (ROM) removed.
  Sourceless block "U_icon_pro/U0/U_ICON/U_CTRL_OUT/F_NCP[0].F_CMD[13].U_LCE"
-(ROM) removed.
-The signal "U_icon_pro/U0/U_ICON/iCOMMAND_SEL<12>" is sourceless and has been
-removed.
- Sourceless block "U_icon_pro/U0/U_ICON/U_CTRL_OUT/F_NCP[0].F_CMD[12].U_HCE"
-(ROM) removed.
- Sourceless block "U_icon_pro/U0/U_ICON/U_CTRL_OUT/F_NCP[0].F_CMD[12].U_LCE"
-(ROM) removed.
-The signal "U_icon_pro/U0/U_ICON/iCOMMAND_SEL<11>" is sourceless and has been
-removed.
- Sourceless block "U_icon_pro/U0/U_ICON/U_CTRL_OUT/F_NCP[0].F_CMD[11].U_HCE"
-(ROM) removed.
- Sourceless block "U_icon_pro/U0/U_ICON/U_CTRL_OUT/F_NCP[0].F_CMD[11].U_LCE"
 (ROM) removed.
 The signal
 "U_ila_pro_0/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I
@@ -389,6 +376,18 @@ The signal
 _CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_NE0.U
 _GAND_SRL_SET/SRL_Q_O" is sourceless and has been removed.
 The signal
+"U_ila_pro_0/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[9].U_M/U_MU/I_MUT_GANDX.U_match/I
+_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_NE0.U
+_GAND_SRL_SET/SRL_Q_O" is sourceless and has been removed.
+The signal
+"U_ila_pro_0/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[10].U_M/U_MU/I_MUT_GANDX.U_match/
+I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_NE0.
+U_GAND_SRL_SET/SRL_Q_O" is sourceless and has been removed.
+The signal
+"U_ila_pro_0/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[11].U_M/U_MU/I_MUT_GANDX.U_match/
+I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_NE0.
+U_GAND_SRL_SET/SRL_Q_O" is sourceless and has been removed.
+The signal
 "U_ila_pro_0/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[1].U_M/U_MU/I_MUT_GANDX.U_match/I
 _CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_NE0.U
 _GAND_SRL_SET/SRL_Q_O" is sourceless and has been removed.
@@ -396,15 +395,17 @@ The signal
 "U_ila_pro_0/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[6].U_M/U_MU/I_MUT_GANDX.U_match/I
 _CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_NE0.U
 _GAND_SRL_SET/SRL_Q_O" is sourceless and has been removed.
-Unused block "U_icon_pro/U0/U_ICON/U_CMD/U_COMMAND_SEL/I4.FI[11].U_LUT" (ROM)
-removed.
-Unused block "U_icon_pro/U0/U_ICON/U_CMD/U_COMMAND_SEL/I4.FI[12].U_LUT" (ROM)
-removed.
+The signal
+"U_ila_pro_0/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[12].U_M/U_MU/I_MUT_GANDX.U_match/
+I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_NE0.
+U_GAND_SRL_SET/SRL_Q_O" is sourceless and has been removed.
 Unused block "U_icon_pro/U0/U_ICON/U_CMD/U_COMMAND_SEL/I4.FI[13].U_LUT" (ROM)
 removed.
 Unused block "U_icon_pro/U0/U_ICON/U_CMD/U_COMMAND_SEL/I4.FI[14].U_LUT" (ROM)
 removed.
-Unused block "U_icon_pro/U0/U_ICON/U_CTRL_OUT/F_NCP[0].F_CMD[10].U_HCE" (ROM)
+Unused block "U_icon_pro/U0/U_ICON/U_CTRL_OUT/F_NCP[0].F_CMD[11].U_LCE" (ROM)
+removed.
+Unused block "U_icon_pro/U0/U_ICON/U_CTRL_OUT/F_NCP[0].F_CMD[12].U_LCE" (ROM)
 removed.
 Unused block "U_icon_pro/U0/U_ICON/U_CTRL_OUT/F_NCP[0].F_CMD[15].U_HCE" (ROM)
 removed.
@@ -413,8 +414,6 @@ removed.
 Unused block "U_icon_pro/U0/U_ICON/U_CTRL_OUT/F_NCP[0].F_CMD[6].U_LCE" (ROM)
 removed.
 Unused block "U_icon_pro/U0/U_ICON/U_CTRL_OUT/F_NCP[0].F_CMD[7].U_LCE" (ROM)
-removed.
-Unused block "U_icon_pro/U0/U_ICON/U_CTRL_OUT/F_NCP[0].F_CMD[9].U_HCE" (ROM)
 removed.
 Unused block
 "u_dc_receiver/DC_Interface_back/QBlink_RX_FIFO_W8R32_1/U0/xst_fifo_generator/ga
@@ -447,6 +446,7 @@ Unused block
 "u_dc_receiver/DC_Interface_back/U_SerialInterfaceOut/U_SerializationFifo/U0/xst
 _fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_
 i" (FF) removed.
+Unused block "u_dc_receiver/stateNum_0_D" (ROM) removed.
 Unused block "u_dc_receiver/stateNum_0_G" (ROM) removed.
 
 Optimized Block(s):
@@ -496,7 +496,11 @@ LUT4 		U_ila_pro_0/U0/I_NO_D.U_ILA/U_STAT/F_SSTAT[20].I_STAT.U_STAT
    optimized to 0
 LUT4 		U_ila_pro_0/U0/I_NO_D.U_ILA/U_STAT/F_SSTAT[24].I_STAT.U_STAT
    optimized to 0
-LUT5 		U_ila_pro_0/U0/I_NO_D.U_ILA/U_STAT/U_MUX/U_CS_MUX/I1.U_MUX2/Mmux_O19
+LUT4 		U_ila_pro_0/U0/I_NO_D.U_ILA/U_STAT/F_SSTAT[28].I_STAT.U_STAT
+   optimized to 0
+LUT4 		U_ila_pro_0/U0/I_NO_D.U_ILA/U_STAT/F_SSTAT[30].I_STAT.U_STAT
+   optimized to 0
+LUT4 		U_ila_pro_0/U0/I_NO_D.U_ILA/U_STAT/F_SSTAT[32].I_STAT.U_STAT
    optimized to 0
 GND
 		U_ila_pro_0/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/
@@ -507,6 +511,38 @@ VCC
 I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_NE0.
 U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[0].U_GAND_SRL_SLICE/XST_VCC
 GND
+		U_ila_pro_0/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[10].U_M/U_MU/I_MUT_GANDX.U_match
+/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_NE0
+.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[0].U_GAND_SRL_SLICE/XST_GND
+VCC
+		U_ila_pro_0/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[10].U_M/U_MU/I_MUT_GANDX.U_match
+/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_NE0
+.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[0].U_GAND_SRL_SLICE/XST_VCC
+GND
+		U_ila_pro_0/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[11].U_M/U_MU/I_MUT_GANDX.U_match
+/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_NE0
+.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[0].U_GAND_SRL_SLICE/XST_GND
+VCC
+		U_ila_pro_0/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[11].U_M/U_MU/I_MUT_GANDX.U_match
+/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_NE0
+.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[0].U_GAND_SRL_SLICE/XST_VCC
+GND
+		U_ila_pro_0/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[12].U_M/U_MU/I_MUT_GANDX.U_match
+/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_NE0
+.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[0].U_GAND_SRL_SLICE/XST_GND
+VCC
+		U_ila_pro_0/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[12].U_M/U_MU/I_MUT_GANDX.U_match
+/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_NE0
+.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[0].U_GAND_SRL_SLICE/XST_VCC
+GND
+		U_ila_pro_0/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[12].U_M/U_MU/I_MUT_GANDX.U_match
+/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_NE0
+.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[1].U_GAND_SRL_SLICE/XST_GND
+VCC
+		U_ila_pro_0/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[12].U_M/U_MU/I_MUT_GANDX.U_match
+/I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_NE0
+.U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[1].U_GAND_SRL_SLICE/XST_VCC
+GND
 		U_ila_pro_0/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[1].U_M/U_MU/I_MUT_GANDX.U_match/
 I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_NE0.
 U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[0].U_GAND_SRL_SLICE/XST_GND
@@ -584,13 +620,31 @@ I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_NE0.
 U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[0].U_GAND_SRL_SLICE/XST_GND
 VCC
 		U_ila_pro_0/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[8].U_M/U_MU/I_MUT_GANDX.U_match/
+I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_NE0.
+U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[0].U_GAND_SRL_SLICE/XST_VCC
+GND
+		U_ila_pro_0/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[9].U_M/U_MU/I_MUT_GANDX.U_match/
+I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_NE0.
+U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[0].U_GAND_SRL_SLICE/XST_GND
+VCC
+		U_ila_pro_0/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[9].U_M/U_MU/I_MUT_GANDX.U_match/
 I_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_NE0.
 U_GAND_SRL_SET/I_WHOLE_SLICE.G_SLICE_IDX[0].U_GAND_SRL_SLICE/XST_VCC
 GND 		U_ila_pro_0/XST_GND
 VCC 		U_ila_pro_0/XST_VCC
 GND 		XST_GND
-VCC 		XST_VCC
 GND 		clk_buffer/XST_GND
+GND 		mppc_wrapper_i/DUT/TX_dac_control/XST_GND
+VCC 		mppc_wrapper_i/DUT/TX_dac_control/XST_VCC
+GND 		mppc_wrapper_i/DUT/XST_GND
+VCC 		mppc_wrapper_i/DUT/XST_VCC
+GND 		mppc_wrapper_i/DUT/reg_fifo/fifo_cc/e_fifo_cc/XST_GND
+VCC 		mppc_wrapper_i/DUT/reg_fifo/fifo_cc/e_fifo_cc/XST_VCC
+GND 		mppc_wrapper_i/DUT/reg_fifo/fifo_cc/e_fifo_cc/bram_i/XST_GND
+VCC 		mppc_wrapper_i/DUT/reg_fifo/fifo_cc/e_fifo_cc/bram_i/XST_VCC
+GND 		mppc_wrapper_i/XST_GND
+GND 		mppc_wrapper_i/reg_buffer/XST_GND
+VCC 		mppc_wrapper_i/reg_buffer/XST_VCC
 GND
 		u_dc_receiver/DC_Interface_back/QBlink_RX_FIFO_W8R32_1/U0/xst_fifo_generator/g
 axis_fifo.gaxisf.axisf/grf.rf/gntv_or_sync_fifo.mem/gbm.gbmg.gbmga.ngecc.bmg/gna
@@ -640,8 +694,11 @@ Section 6 - IOB Properties
 +---------------------------------------------------------------------------------------------------------------------------------------------------------+
 | DATA_CLK_N<0>                      | IOB              | INPUT     | LVDS_25              | FALSE |          |      |              |          |          |
 | DATA_CLK_P<0>                      | IOB              | INPUT     | LVDS_25              | FALSE |          |      |              |          |          |
+| PCLK                               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
 | RX_DC_N<0>                         | IOB              | INPUT     | LVDS_25              | FALSE |          |      |              |          |          |
 | RX_DC_P<0>                         | IOB              | INPUT     | LVDS_25              | FALSE |          |      | IDDR         |          |          |
+| SCLK                               | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
+| SIN                                | IOB              | OUTPUT    | LVCMOS25             |       | 12       | SLOW |              |          |          |
 | SYNC_N<0>                          | IOB              | INPUT     | LVDS_25              | FALSE |          |      |              |          |          |
 | SYNC_P<0>                          | IOB              | INPUT     | LVDS_25              | FALSE |          |      |              |          |          |
 | TX_DC_N<0>                         | IOBS             | OUTPUT    | LVDS_25              |       |          |      |              |          |          |
@@ -664,6 +721,15 @@ U_ila_pro_0/U0/I_NO_D.U_ILA/U_G2_SQ.U_CAPCTRL_I_SRLT_NE_1.U_SCRST_MSET
 U_ila_pro_0/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[0].U_M/U_MU/I_MUT_GANDX.U_match/I_
 CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_NE0.U_
 GAND_SRL_SET/MSET
+U_ila_pro_0/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[10].U_M/U_MU/I_MUT_GANDX.U_match/I
+_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_NE0.U
+_GAND_SRL_SET/MSET
+U_ila_pro_0/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[11].U_M/U_MU/I_MUT_GANDX.U_match/I
+_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_NE0.U
+_GAND_SRL_SET/MSET
+U_ila_pro_0/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[12].U_M/U_MU/I_MUT_GANDX.U_match/I
+_CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_NE0.U
+_GAND_SRL_SET/MSET
 U_ila_pro_0/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[1].U_M/U_MU/I_MUT_GANDX.U_match/I_
 CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_NE0.U_
 GAND_SRL_SET/MSET
@@ -686,6 +752,9 @@ U_ila_pro_0/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[7].U_M/U_MU/I_MUT_GANDX.U_match/I_
 CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_NE0.U_
 GAND_SRL_SET/MSET
 U_ila_pro_0/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[8].U_M/U_MU/I_MUT_GANDX.U_match/I_
+CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_NE0.U_
+GAND_SRL_SET/MSET
+U_ila_pro_0/U0/I_NO_D.U_ILA/U_TRIG/U_TM/G_NMU[9].U_M/U_MU/I_MUT_GANDX.U_match/I_
 CS_GANDX.U_CS_GANDX_SRL/I_S6.U_CS_GANDX_SRL_S6/U_CS_GAND_SRL_S6/I_USE_RPM_NE0.U_
 GAND_SRL_SET/MSET
 

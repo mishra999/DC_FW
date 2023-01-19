@@ -39,7 +39,7 @@ entity DC_Comm_back is
               regAddr : out std_logic_vector(15 downto 0);
               regWrData : out std_logic_vector(15 downto 0);
               regReq    : out sl;
-              regOp     : out sl
+              regOp     : out std_logic_vector(1 downto 0)
 			  );
 end DC_Comm_back;
 
@@ -71,7 +71,7 @@ type RegType is record
     regAddr  : slv(15 downto 0);
     regWrData  : slv(15 downto 0);
     regReq    : sl;
-    regOp     : sl;
+    regOp     : slv(1 downto 0);
 
 end record RegType;  
 
@@ -84,7 +84,7 @@ constant REG_INIT_C : RegType := (
     regAddr   => (others => '0'),
     regReq     => '0',
     regWrData  => (others => '0'),
-    regOp => '0'
+    regOp => "00"
 );
 
 -- constant N_GPR : integer := 20;--127;
@@ -98,6 +98,7 @@ attribute mark_debug of stateNum : signal is "true";
 
 constant WORD_READ_C      : slv(31 downto 0) := x"72656164";
 constant WORD_WRITE_C     : slv(31 downto 0) := x"72697465";
+constant WORD_WRITE_DAC     : slv(31 downto 0) := x"72697445";
 
 begin
 TX <= tx_dc_back;
@@ -153,16 +154,14 @@ PORT MAP(
    begin
       v := r;
     --   RES_VALID(0) <= '0';
-      
+    v.regReq := '0';
+    v.regOp := "00";      
       -- State machine 
     case(r.state) is
         when IDLE =>
             v.rd_req := (others => '1');
             v.read := "00";
             v.write := "00";
-            v.regReq := '0';
-            v.regOp := '0';
-            v.regReq := '0';
             v.timeoutCnt  := (others => '0');
             if dc_cmdValid(0) = '1' then
                 v.rd_req(0) := '1';
@@ -179,31 +178,43 @@ PORT MAP(
                 v.write := "01";
                 v.state := READ_ADDR_VALUE;
                 v.timeoutCnt  := (others => '0');
+            elsif (cmd_data(0)=WORD_WRITE_DAC) then
+                v.write := "10";
+                v.state := READ_ADDR_VALUE;
+                v.timeoutCnt  := (others => '0');
             elsif r.timeoutCnt = TIMEOUT_G then 
 				v.state    := IDLE;
             end if;
         when READ_ADDR_VALUE => 
             v.timeoutCnt := r.timeoutCnt + 1;
             if dc_cmdValid(0) = '1' then
-                if (v.read = "01") then
+                if (r.read = "01") then
                     v.regAddr := cmd_data(0)(15 downto 0);
                     v.rd_req(0) := '0';
-                    v.read := "11";
+                    -- v.read := "11";
                     v.regReq := '1';
-                    v.regOp := '0';
+                    v.regOp := "00";
                     v.timeoutCnt  := (others => '0');
                     v.state    := IDLE;
                     
-                elsif (v.write = "01") then
+                elsif (r.write = "01") then
                     v.regAddr := cmd_data(0)(15 downto 0); 
                     v.regWrData := cmd_data(0)(31 downto 16);
                     v.rd_req(0) := '0';
-                    v.write := "11";
-                    v.regOp := '1';
+                    -- v.write := "01";
+                    v.regOp := "01";
                     v.regReq := '1';
                     v.timeoutCnt  := (others => '0');
                     v.state    := IDLE;
-                    
+                elsif (r.write = "10") then
+                    v.regAddr := cmd_data(0)(15 downto 0); 
+                    v.regWrData := cmd_data(0)(31 downto 16);
+                    v.rd_req(0) := '0';
+                    -- v.write := "11";
+                    v.regOp := "10";
+                    v.regReq := '1';
+                    v.timeoutCnt  := (others => '0');
+                    v.state    := IDLE;
                 else 
                     v.state    := IDLE;
                     v.timeoutCnt  := (others => '0');
