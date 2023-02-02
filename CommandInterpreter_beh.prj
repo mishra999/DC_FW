@@ -1,0 +1,3 @@
+vhdl work "QBLink/source/UtilityPkg.vhd"
+vhdl work "QBLink/source/BMD_definitions.vhd"
+vhdl work "SCROD_modules/CommandInterpreter_n.vhd"

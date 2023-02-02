@@ -1,0 +1,28 @@
+Command line:
+   TargetX_data_tb_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  58738
+
+Tue Jan 31 22:35:11 2023
+
+
+ Elaboration Time: 0.46 sec
+
+ Current Memory Usage: 270.602 Meg
+
+ Total Signals          : 6033
+ Total Nets             : 82875
+ Total Signal Drivers   : 2697
+ Total Blocks           : 381
+ Total Primitive Blocks : 225
+ Total Processes        : 1365
+ Total Traceable Variables  : 3496
+ Total Scalar Nets and Variables : 96255
+
+ Total Simulation Time: 1.8 sec
+
+ Current Memory Usage: 348.201 Meg
+
+Wed Feb  1 03:14:48 2023
+

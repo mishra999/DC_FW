@@ -39,7 +39,11 @@ entity DC_Comm_back is
               regAddr : out std_logic_vector(15 downto 0);
               regWrData : out std_logic_vector(15 downto 0);
               regReq    : out sl;
-              regOp     : out std_logic_vector(1 downto 0)
+              regOp     : out std_logic_vector(1 downto 0);
+              dataReq    : out sl
+            --   start_win  : out slv(8 downto 0);
+            --   stop_win  : out slv(8 downto 0)
+
 			  );
 end DC_Comm_back;
 
@@ -72,6 +76,9 @@ type RegType is record
     regWrData  : slv(15 downto 0);
     regReq    : sl;
     regOp     : slv(1 downto 0);
+    -- start_win  : slv(15 downto 0);
+    -- stop_win  : slv(15 downto 0);
+    dataReq    : sl;
 
 end record RegType;  
 
@@ -84,7 +91,10 @@ constant REG_INIT_C : RegType := (
     regAddr   => (others => '0'),
     regReq     => '0',
     regWrData  => (others => '0'),
-    regOp => "00"
+    regOp => "00",
+    -- start_win  => (others => '0'),
+    -- stop_win  => (others => '0'),
+    dataReq     => '0'
 );
 
 -- constant N_GPR : integer := 20;--127;
@@ -99,6 +109,7 @@ attribute mark_debug of stateNum : signal is "true";
 constant WORD_READ_C      : slv(31 downto 0) := x"72656164";
 constant WORD_WRITE_C     : slv(31 downto 0) := x"72697465";
 constant WORD_WRITE_DAC     : slv(31 downto 0) := x"72697445";
+constant WORD_READ_DATA      : slv(31 downto 0) := x"72652124";
 
 begin
 TX <= tx_dc_back;
@@ -155,6 +166,7 @@ PORT MAP(
       v := r;
     --   RES_VALID(0) <= '0';
     v.regReq := '0';
+    v.dataReq := '0';
     v.regOp := "00";      
       -- State machine 
     case(r.state) is
@@ -182,6 +194,10 @@ PORT MAP(
                 v.write := "10";
                 v.state := READ_ADDR_VALUE;
                 v.timeoutCnt  := (others => '0');
+            elsif (cmd_data(0)=WORD_READ_DATA) then
+                v.read := "11";
+                v.state := READ_ADDR_VALUE;
+                v.timeoutCnt  := (others => '0');
             elsif r.timeoutCnt = TIMEOUT_G then 
 				v.state    := IDLE;
             end if;
@@ -196,7 +212,15 @@ PORT MAP(
                     v.regOp := "00";
                     v.timeoutCnt  := (others => '0');
                     v.state    := IDLE;
-                    
+                elsif (r.read = "11") then --read data
+                    v.regAddr := cmd_data(0)(15 downto 0); 
+                    v.regWrData := cmd_data(0)(31 downto 16);
+                    v.rd_req(0) := '0';
+                    -- v.read := "11";
+                    v.dataReq := '1';
+                    v.regOp := "11";
+                    v.timeoutCnt  := (others => '0');
+                    v.state    := IDLE;                    
                 elsif (r.write = "01") then
                     v.regAddr := cmd_data(0)(15 downto 0); 
                     v.regWrData := cmd_data(0)(31 downto 16);
@@ -238,7 +262,10 @@ PORT MAP(
       regAddr     <= r.regAddr;
       regWrData   <= r.regWrData;
       regReq      <= r.regReq;
+      dataReq      <= r.dataReq;
       regOp       <= r.regOp;
+    --   start_win    <= r.start_win(8 downto 0);
+    --   stop_win    <= r.stop_win(8 downto 0);
     --   rxData8b      <= r.rxData8b;
     --   rxData8bValid <= r.rxData8bValid;
     --   aligned       <= r.aligned;

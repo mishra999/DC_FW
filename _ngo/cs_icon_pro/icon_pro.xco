@@ -1,7 +1,7 @@
 ##############################################################
 #
 # Xilinx Core Generator version 14.7
-# Date: Tue Nov 29 10:45:30 2022
+# Date: Sat Jan 21 03:57:02 2023
 #
 ##############################################################
 #
@@ -43,7 +43,7 @@ CSET component_name=icon_pro
 CSET constraint_type=embedded
 CSET enable_jtag_bufg=true
 CSET example_design=false
-CSET number_control_ports=1
+CSET number_control_ports=2
 CSET use_ext_bscan=false
 CSET use_softbscan=false
 CSET use_unused_bscan=false
@@ -53,4 +53,4 @@ CSET user_scan_chain=USER1
 MISC pkg_timestamp=2013-10-13T14:12:40Z
 # END Extra information
 GENERATE
-# CRC: b34fa12d
+# CRC: 82b6596f

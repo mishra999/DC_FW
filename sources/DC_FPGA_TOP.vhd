@@ -1,23 +1,24 @@
 -- https://www.phys.hawaii.edu/~idlab/taskAndSchedule/PCBs/IDL_18_014_mRICH_hodo/BMD_RevB.pdf (check ucf)
 Library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_1164.ALL;  
 use IEEE.NUMERIC_STD.ALL;
 use ieee.std_logic_unsigned.all;
 --use ieee.std_logic_arith.all;
-  use work.roling_register_p.all;
+  use work.roling_register_p.all; 
   use work.xgen_axistream_32.all;
   use work.TX_DAC_control_pack.all;
 
-use work.all;
+use work.all;    
 use work.BMD_definitions.all; --need to include BMD_definitions in addition to work.all
 use work.UtilityPkg.all;  
-
+use work.klm_scint_pkg.all;
 library UNISIM;
-use UNISIM.VComponents.all;
+use UNISIM.VComponents.all; 
  
 entity DC_FPGA_TOP is	
     generic (
-        NUM_DCs : integer := 0 
+        NUM_DCs : integer := 0 ;
+        chls : integer :=1
     );  
   port (
  
@@ -31,16 +32,38 @@ entity DC_FPGA_TOP is
         TX_DC_P			 : OUT slv(NUM_DCs downto 0);--Serial output to DC 
         SYNC_P			 : IN slv(NUM_DCs downto 0); -- when '0' DC listens only, '1' DC reads back command
         SYNC_N			 : IN slv(NUM_DCs downto 0);
-        --outputs to TargetX
+        --! ASIC DAC Update Signals
         SCLK             : OUT std_logic;
         -- REG_CLR: std_logic;
         SIN              : OUT std_logic;
-        PCLK             : OUT std_logic
-         
- 
+        PCLK             : OUT std_logic;
+--Bus Specific Signals
+        BUS_WR_ADDRCLR          : out std_logic;
+        BUS_RD_ENA              : out std_logic;
+        BUS_RD_ROWSEL           : out std_logic_vector(2 downto 0);
+        BUS_RD_COLSEL           : out std_logic_vector(5 downto 0);
+        BUS_CLR                 : out std_logic;
+        BUS_RAMP                : out std_logic;
+        SAMPLESEL           : out std_logic_vector(4 downto 0);
+        SR_CLR            : out std_logic;
+        SR_SEL              : out std_logic;
+        TX_DATA                  : in  std_logic_vector(chls-1 downto 0); --14 used to be
         -- DC_RESET        : in slv(NUM_DCs DOWNTO 0)		-- Commented by Shivang on Oct 8, 2020
+
+        --! Digitization and sampling signals
+        WL_CLK_N                 : out std_logic_vector(NUM_DCs downto 0);
+        WL_CLK_P                 : out std_logic_vector(NUM_DCs downto 0);
+        WR1_ENA                  : out std_logic_vector(NUM_DCs downto 0);
+        WR2_ENA                  : out std_logic_vector(NUM_DCs downto 0);
+
+        SSTIN_N                  : out std_logic_vector(NUM_DCs downto 0);
+        SSTIN_P                  : out std_logic_vector(NUM_DCs downto 0);
+
+        --! Serial Readout Signals
+        SR_CLK                 : out std_logic := '0';
+        SAMPLESEL_ANY            : out std_logic := '0'
   );
-end entity;   
+end entity;    
  
   
 architecture rtl of DC_FPGA_TOP is
@@ -57,12 +80,15 @@ architecture rtl of DC_FPGA_TOP is
     signal regWrData : std_logic_vector(15 downto 0) := (others => '0');
     signal regReq    : sl:= '0';
     signal regOp     : slv(1 downto 0):= "00";
+    signal dataReq    : sl:= '0';
     signal DC_RESPONSE : slv (31 downto 0) := (others => '0'); 
     signal RES_VALID : slv( NUM_DCs downto 0):= (others => '0'); 
+    signal DC_RESPONSE_reg : slv (31 downto 0) := (others => '0'); 
+    signal RES_VALID_reg : slv( NUM_DCs downto 0):= (others => '0'); 
 	-- signal  GLOB_EVNT_P :  STD_LOGIC_VECTOR(3 downto 0);
     -- signal GLOB_EVNT_N :  STD_LOGIC_VECTOR(3 downto 0);
     -- signal  GLOB_EVNT :  STD_LOGIC_VECTOR(3 downto 0);
-    constant N_GPR : integer := 20;--127;
+    constant N_GPR : integer := 5;--127;
     type GPR is array(N_GPR-1 downto 0) of std_logic_vector(15 downto 0);   
     signal CtrlRegister : GPR:= (others => x"0000");
     signal LOCKED : sl:='0';
@@ -70,16 +96,141 @@ architecture rtl of DC_FPGA_TOP is
     signal sync1 : slv(NUM_DCs downto 0) := (others =>'0');
     signal Clk_to_QBLink : sl;
     constant ZERO : std_logic_vector(15 downto 0) := x"0000";
+    constant ZERO1 : std_logic_vector(19 downto 0) := x"00000";
 -- mppc dac
    signal regg      : registerT := registerT_null;
    signal TX_DAC_control1 : TX_DAC_control := TX_DAC_control_null; 
+-- dsp_FSM:
+    type FIFO_ch_window_readout_machine is (IDLE, SEND_HEADER, SEND_WINDOWS_FOR_EACH_CHANNEL);
+    signal DATA_TRANSFER_STATE : FIFO_ch_window_readout_machine := IDLE;
+-- sm_data_out
+    signal ch_number : std_logic_vector(3 downto 0):= "0000";
+    -- signal  total_wins : std_logic_vector(3 downto 0):= "0000";
+    signal sample_counter : std_logic_vector(5 downto 0):= "000000";
+    signal window_counter : slv (3 downto 0) := (others => '0');
+    constant total_ch : std_logic_vector(3 downto 0):= "0000";
+    constant window_samples : std_logic_vector(5 downto 0):= "100000";
+    constant HEADER_WORD :std_logic_vector(23 downto 0) := x"DA6AC9";
+    signal DC_RESPONSE_data : slv (31 downto 0) := (others => '0'); 
+    signal RES_VALID_data : slv( NUM_DCs downto 0):= (others => '0'); 
+    -- signal DC_RESPONSE_data_i
+
+    --QBlink connections to data fifos, used to be 14 lines, now 2
+    signal  qblink_tvalid_i : slv (chls-1 downto 0) := (others => '0');
+    signal qblink_tready_i  : slv (chls-1 downto 0) := (others => '0');
+    signal qblink_tdata_i :slv32(chls-1 downto 0) := (others=>(others => '0')); 
+    --fifo slave side, always receiving data from targetX
+    signal fifo_s_tready : slv (chls-1 downto 0) := (others => '1');
+
+    --single bus processing
+    -- constant clk_period       :  time := 7.87 ns;         
+    signal sys_clk                : std_logic := '0';
+    -- signal rst                : std_logic := '0';
+    -- signal mode               : std_logic_vector(2 downto 0) := (others => '0');
+    signal ena                : std_logic := '0';
+    signal asic_mask          : std_logic := '1';
+    signal first_dig_win      : std_logic_vector(8 downto 0);
+    signal last_dig_win       : std_logic_vector(8 downto 0);
+    -- SCROD config registers
+    signal ramp_length        : std_logic_vector(11 downto 6) := "011110";
+    signal  force_test_pattern    :std_logic := '0';
+    signal  t_samp_addr_settle    :std_logic_vector(3 downto 0) := "0110";-- 6
+    signal  t_setup_ss_any        : std_logic_vector(3 downto 0) := "0110";-- 6
+    signal  t_strobe_settle       :std_logic_vector(3 downto 0) := "0100";-- 4
+    signal   t_sr_clk_high         : std_logic_vector(3 downto 0) := "0010";-- 2
+    signal  t_sr_clk_low          : std_logic_vector(3 downto 0) := "0010";-- 2
+    signal   t_sr_clk_strobe       : std_logic_vector(3 downto 0) := "0110";-- 6
+            -- status registers
+    -- signal  debug_we              : std_logic := '0';
+    -- signal  debug_wave            : std_logic_vector(11 downto 0) := (others => '0');
+    -- signal  debug_pfull           :  std_logic := '0';
+    --         -- DigStoreProcBusy      : out std_logic := '0';
+    signal  DigNShiftBusy         : std_logic := '0';
+    --         -- DigBusy               : out std_logic := '0';
+    signal  ShiftOutWinBusy       : std_logic := '0';
+    signal  ShiftOutSampBusy      : std_logic := '0';
+    --         -- FeatExtBusy           : out std_logic := '0';
+    --         -- PedFetchQueueBusy     : out std_logic := '0';
+
+    --         -- qblink
+    -- signal  right2left            : std_logic := '0';
+    -- signal  left2right            : std_logic := '0';
+
+    -- signal win_start          : std_logic_vector(8 downto 0) := (others => '0');
+    -- signal samp_start         : std_logic_vector(4 downto 0) := (others => '0');
+    -- signal trig_bits          : slv5(4 downto 0) := (others=> "00000");
+    -- signal ped_fetch_asic_no  : std_logic_vector(2 downto 0) := (others => '0');
+    -- signal ped_fetch_chan     : std_logic_vector(3 downto 0) := (others => '0');
+    -- signal ped_fetch_ena      : std_logic := '0';
+    -- signal ped_fetch_ack      : std_logic := '0';
+    -- signal ped_fifo_wr_asic   : std_logic_vector(4 downto 0) := (others => '0');
+    -- signal ped_fifo_wr_chan   : std_logic_vector(3 downto 0) := (others => '0');
+    -- signal ped_fifo_wr_ena    : std_logic := '0';
+    -- signal ped_fifo_din       : std_logic_vector(11 downto 0) := (others => '0');
+    -- signal BUS_RD_ENA         : std_logic := '0';
+    -- signal BUS_RAMP           : std_logic := '0';
+    -- signal BUS_CLR            : std_logic := '0';
+    -- signal BUS_DO             : std_logic_vector(14 downto 0) := (others => '0');
+    -- signal SR_CLR             : std_logic := '0';
+    -- signal SR_CLK             : std_logic := '0'; --std_logic_vector(4 downto 0) := (others => '0');
+    -- signal SR_SEL             : std_logic := '0';
+    signal BUS_RD_WINSEL      : std_logic_vector(8 downto 0) := (others => '0');
+    -- signal SAMPLESEL          : std_logic_vector(4 downto 0) := (others => '0');
+    -- signal SAMPLESEL_ANY      : std_logic := '0'; --std_logic_vector(4 downto 0) := (others => '0');
+    signal sample_data           : slv12(chls-1 downto 0) := (others=>"000000000000"); --used to be 14 lines
+    signal samples_valid         : std_logic := '0';
+    -- signal busy_status        : std_logic_vector(4 downto 0) := (others => '0');
+    -- signal rx_features_ack    : std_logic := '0';
+    -- signal rx_features_ena    : std_logic := '0';
+    -- signal last_hit           : std_logic := '0';
+    -- signal charge             : std_logic_vector(11 downto 0) := (others => '0');
+    -- signal le_time            : std_logic_vector(13 downto 0) := (others => '0');
+    -- signal daq_chan           : std_logic_vector(6 downto 0) := (others => '0');
+    -- signal ramp_length        : std_logic_vector(11 downto 6) := (others => '0');
+    -- -- signal force_test_pattern : std_logic := '0';
+    -- signal N_readout_samples  : std_logic_vector(8 downto 0) := "010000000";
+    -- signal LE_time_thresh     : std_logic_vector(11 downto 0) := "110100010110";
+    -- signal BUS_WINSEL         : std_logic_vector(8 downto 0) := (others => '0');
+    -- signal N_bits_avg         : std_logic_vector(3 downto 0) := (others=>'0');
+    -- signal prime_fifos        : std_logic := '0';
+    -- signal summing_ena        : std_logic := '0';
+    -- signal avg_peds_ena       : std_logic := '0';
+    -- signal avg_peds_busy      : std_logic := '0';
+    -- signal wr_peds2sram_ena   : std_logic := '0';
+    -- signal wr_peds2sram_ack   : std_logic := '0';
+    -- signal even_ped           : std_logic_vector(11 downto 0) := (others => '0');
+    -- signal odd_ped            : std_logic_vector(11 downto 0) := (others => '0');
+    -- signal sram_asic_addr     : std_logic_vector(2 downto 0);
+    -- signal sram_chan_addr     : std_logic_vector(3 downto 0);
+
+    -- signal  baseline_g             : std_logic_vector(11 downto 0) := "110000000000";  -- 3072
+    -- signal  SLOW_CTRL_BUFF         : integer := 5;
+    -- signal  USE_PULSE_HEIGHT_HIST  : std_logic := '0';
+    -- signal  USE_DBG_WAVE_FIFO      : std_logic := '0';
+    -- signal  N_BITS_AVG_g           : integer;
+    signal BUSB_WR_ADDRCLR : std_logic := '0';
+    signal cur_win_ii : std_logic_vector(8 downto 0) := "000000000";
+    signal cur_win : std_logic_vector(8 downto 0) := "000000000";
+    -- constant null_TX_ana_wr_ena_mask : TARGETX_analong_wr_ena_mask_t := ('0','0',"000000000","000000000");
+    -- signal ana_wr_ena_mask : TARGETX_analong_wr_ena_mask_t := null_TX_ana_wr_ena_mask;
+    signal ctime : std_logic_vector(26 downto 0) := "000000000000000000000000000"; --2023
+    -- wilkinson clock
+    signal wilk_clk : std_logic_vector(0 downto 0);
 
 
 begin
+    --mux to select data line or read/write registers
+    DC_RESPONSE <= DC_RESPONSE_data when RES_VALID_reg ="0" else 
+                   DC_RESPONSE_reg when RES_VALID_reg ="1";
+    RES_VALID <= RES_VALID_data when RES_VALID_reg ="0"  else RES_VALID_reg;
     sync1 <= SYNC;
+
     SCLK <= TX_DAC_control1.SCLK;
     PCLK <= TX_DAC_control1.PCLK;
     SIN <= TX_DAC_control1.SIN; 
+
+    BUS_RD_ROWSEL <= BUS_RD_WINSEL(2 downto 0);
+    BUS_RD_COLSEL <= BUS_RD_WINSEL(8 downto 3);
     -- clk_sync_output : process(DATA_CLK)
     -- begin
     --     if rising_edge(DATA_CLK) then
@@ -90,7 +241,7 @@ begin
     -- end process;
 
 
-    clk_buffer : entity work.clk_gen1 
+    clk_buffer : entity work.clk_gen1  
     port map
     (-- Clock in ports
         CLK_IN1_P => DATA_CLK_P(0), 
@@ -98,6 +249,7 @@ begin
         -- Clock out ports
         CLK_OUT1 => DATA_CLK,
         CLK_OUT2 => Clk_to_QBLink,  
+        CLK_OUT3 => sys_clk,
         -- Status and control signals
         RESET  => RESET, 
         LOCKED => LOCKED);
@@ -138,7 +290,8 @@ begin
         regWrData => regWrData,
         regReq  => regReq,
         regOp => regOp,       
-        sync => sync1 --QB_RST --sync1
+        sync => sync1, --QB_RST --sync1
+        dataReq => dataReq
     );
 
     -- DC_reset_process : process(DATA_CLK) --unused for now 10/01
@@ -153,7 +306,7 @@ begin
    mppc_wrapper_i : entity work.TX_DAC_control_w_regInterface
    port map (
     clk    => DATA_CLK,
-    rst    => reset,
+    rst    => sync1(0),
 
 
     reg      => regg,
@@ -166,32 +319,228 @@ begin
     seqnn : process (DATA_CLK) is
     begin
         if (rising_edge(DATA_CLK)) then
-            RES_VALID(0) <= '0';
+            RES_VALID_reg(0) <= '0';
             regg <= registerT_null;
-            DC_RESPONSE  <= (others => '0');
+            DC_RESPONSE_reg  <= (others => '0');
             if QB_RST = "1" then
-                DC_RESPONSE  <= (others => '0');
+                DC_RESPONSE_reg  <= (others => '0');
                 -- regAddr  <= (others => '0');
                 -- regWrData  <= (others => '0');
             
             elsif regReq = '1' then
                 if regOp = "00" then
-                    DC_RESPONSE <=  ZERO & CtrlRegister(to_integer(unsigned(regAddr)));
-                    RES_VALID(0) <= '1';
+                    DC_RESPONSE_reg <=  ZERO & CtrlRegister(to_integer(unsigned(regAddr)));
+                    RES_VALID_reg(0) <= '1';
                 elsif regOp = "01" then
                     CtrlRegister(to_integer(unsigned(regAddr))) <= regWrData; 
-                    DC_RESPONSE <=  ZERO & regAddr;
-                    RES_VALID(0) <= '1';  
+                    DC_RESPONSE_reg <=  ZERO & regAddr;
+                    RES_VALID_reg(0) <= '1';  
                 elsif regOp = "10" then
                     regg.address <= regAddr; 
                     regg.value <= regWrData; 
-                    DC_RESPONSE <=  ZERO & regAddr;
-                    RES_VALID(0) <= '1';               
+                    DC_RESPONSE_reg <=  ZERO & regAddr;
+                    RES_VALID_reg(0) <= '1';               
                 end if;
             end if;
         end if;
     end process;
 
-    
+Udc_data : entity work.SingleBusProcessing
+    port map (
+        clk        => sys_clk,
+        rst         => sync1(0),
+
+        ena        => ena,
+
+        asic_mask          => asic_mask,
+        first_dig_win         => first_dig_win,
+        last_dig_win           => last_dig_win,
+
+        -- wires for/to/from TargetX
+        BUS_RD_ENA          => BUS_RD_ENA,
+        BUS_RAMP            => BUS_RAMP,
+        BUS_CLR             => BUS_CLR ,
+        BUS_DO              => TX_DATA,
+        SR_CLR              => SR_CLR,
+        SR_CLK              => SR_CLK,
+        SR_SEL              => SR_SEL, -- set high & pulse sr_clk once to load test pattern
+        BUS_RD_WINSEL       => BUS_RD_WINSEL,
+        SAMPLESEL           => SAMPLESEL,
+        SAMPLESEL_ANY       => SAMPLESEL_ANY,
+
+
+        -- SCROD config registers
+        ramp_length         => ramp_length,
+        force_test_pattern  => force_test_pattern,
+        t_samp_addr_settle  => t_samp_addr_settle,
+        t_setup_ss_any      => t_setup_ss_any ,
+        t_strobe_settle     => t_strobe_settle,
+        t_sr_clk_high       => t_sr_clk_high,
+        t_sr_clk_low        => t_sr_clk_low ,
+        t_sr_clk_strobe     => t_sr_clk_strobe,
+       -- N_readout_samples  => N_readout_samples,
+        --LE_time_thresh      => LE_time_thresh,
+
+        -- status registers
+        --debug_we            => debug_we,
+        --debug_wave          => debug_wave,
+        --debug_pfull          => debug_pfull,
+        -- DigStoreProcBusy      : out std_logic := '0';
+        DigNShiftBusy       => DigNShiftBusy,
+        -- DigBusy               : out std_logic := '0';
+        ShiftOutWinBusy      => ShiftOutWinBusy,
+        ShiftOutSampBusy     => ShiftOutSampBusy,
+        -- FeatExtBusy           : out std_logic := '0';
+        -- PedFetchQueueBusy     : out std_logic := '0';
+        --data out
+        sample_data           => sample_data,
+        samples_valid         => samples_valid
+        -- -- qblink
+        -- right2left       => right2left,
+        -- left2right       => left2right
+    );
+
+   data_fifos_generation : for i in 0 to chls-1 generate
+      data_fifos: entity work.serial_data_window_fifo_w32d1024
+  PORT MAP (
+    m_aclk => DATA_CLK,
+    s_aclk => sys_clk,
+    s_aresetn => not sync1(0),
+    s_axis_tvalid => samples_valid,
+    s_axis_tready => fifo_s_tready(i),
+    s_axis_tdata => ZERO1 & sample_data(i),
+    m_axis_tvalid => qblink_tvalid_i(i),
+    m_axis_tready => qblink_tready_i(i),
+    m_axis_tdata => qblink_tdata_i(i)
+  );
+   end generate;
+
+
+    transfer_data: process(DATA_CLK, sync1) --, asic_mask, asic_checklist, sr_asic_sel
+    variable send_header1  :sl := '0';
+    begin
+        if rising_edge(DATA_CLK) then
+            RES_VALID_data(0) <= '0';
+            if sync1(0) = '1' then
+                DATA_TRANSFER_STATE <= IDLE;
+            else
+                Case DATA_TRANSFER_STATE is
+                    When IDLE =>
+                        ch_number <= "0000";
+                        --total_wins <= "0000";
+                        send_header1 := '0';
+                        for i in 0 to chls-1 loop  --earlier 14
+                            qblink_tready_i(i) <= '0';
+                        end loop;
+                        if ( dataReq ='1' ) then   -- start (readout initiated)
+                            ch_number <= "0000";
+                            sample_counter <= "000000";
+                            window_counter <="0000";
+                            first_dig_win <= regAddr(8 downto 0);
+                            last_dig_win <= regWrData(8 downto 0);
+                            ena <= '1';
+                            force_test_pattern <= regWrData(15);
+                            -- total_wins <= std_logic_vector(unsigned(last_dig_win) - unsigned(first_dig_win)) + '1';
+                            DATA_TRANSFER_STATE <= SEND_HEADER; --SEND_HEADER
+                            send_header1 := '1';
+                        else
+                            DATA_TRANSFER_STATE <= IDLE;
+                        end if;
+
+
+                    When SEND_HEADER =>
+                        -- qblink_tready_i(to_integer(unsigned(ch_number)))<= '0';
+                        if send_header1 = '1' then
+                            DC_RESPONSE_data <= HEADER_WORD & ch_number & window_counter;
+                            RES_VALID_data(0) <= '1';
+                            send_header1 := '0';
+                        else
+                            DATA_TRANSFER_STATE <= SEND_WINDOWS_FOR_EACH_CHANNEL;
+                            RES_VALID_data(0) <= '0';
+                        end if;
+
+
+                    When SEND_WINDOWS_FOR_EACH_CHANNEL =>
+                        RES_VALID_data(0) <= '0';
+                        if window_counter < (std_logic_vector(unsigned(last_dig_win) - unsigned(first_dig_win)) + '1') then
+                            if sample_counter < window_samples then
+                                qblink_tready_i(to_integer(unsigned(ch_number))) <= '1';
+                                if qblink_tvalid_i(to_integer(unsigned(ch_number))) = '1' then
+                                    DC_RESPONSE_data <=  qblink_tdata_i(to_integer(unsigned(ch_number)));
+                                    RES_VALID_data(0) <= '1';
+                                    sample_counter <= sample_counter + '1';
+                                end if;
+                            elsif sample_counter = window_samples then
+                                sample_counter <= "000000";
+                                DATA_TRANSFER_STATE <= SEND_HEADER;
+                                send_header1 := '1';
+                                for i in 0 to chls-1 loop  --earlier 14
+                                    qblink_tready_i(i) <= '0';
+                                end loop;
+                                if ch_number < total_ch then
+                                    ch_number <= ch_number + '1';
+                                elsif ch_number = total_ch then   
+                                    window_counter <= window_counter + '1'; 
+                                    ch_number <= "0000";
+                                end if;
+                            end if;     
+                        else
+                            DATA_TRANSFER_STATE <= IDLE;
+                            ena <= '0';
+                        end if;
+                end case;
+            end if;    
+        end if;
+    end process;
+
+
+UUT_sampling : entity work.SamplingLgc
+port map (
+        clk             => sys_clk,
+        reset           => sync1(0),
+        sync_bit        => ctime(11), --it goes 1 at ctime=2048
+        ctime64ns_bit   => ctime(2),  
+        -- ana_wr_ena_mask => ana_wr_ena_mask,
+        cur_win         => cur_win, 
+        BUSA_WR_ADDRCLR => BUS_WR_ADDRCLR,
+        BUSB_WR_ADDRCLR => BUSB_WR_ADDRCLR,
+        WR1_ENA         => WR1_ENA,
+        WR2_ENA         => WR2_ENA,
+        SSTIN_N         => SSTIN_N,
+        SSTIN_p         => SSTIN_p,
+        -- i_ctime         => i_ctime, -- this is one clk period behind, just for checking, no worries!
+        cur_win_ii    => cur_win_ii,
+        digitize_busy   => DigNShiftBusy
+        -- analog_store_state1  => analog_store_state1,
+        -- masking_state1 => masking_state1, 
+        -- mask_win_ctr1 => mask_win_ctr1
+);
+
+    ctime_gen : process(sys_clk)
+    begin
+        if rising_edge(sys_clk) then
+            ctime <= ctime + "1";
+        end if;
+    end process ctime_gen;
+
+
+    -- #CK had warning HDLCompiler:946 b/c "c1 => not clk" in previous ODDR2 inst." 
+    -- Decided to bring out inverted clock directly from pll_base located in b2tt_clk_s6.
+    wilkinson_clock_generation : for i in 0 to 0 generate
+       -- make 2x clk using OLOGIC2 resources
+       clock_frequency_doubling : ODDR2 port map (
+          Q => wilk_clk(i),
+          C0 => sys_clk,
+          C1 => not(sys_clk),
+          CE => '1',
+          D0 => '0',
+          D1 => '1',
+          R => '0',
+          S => '0'
+       );
+       -- make differential output
+       differential_output_buffer : OBUFDS port map (i => wilk_clk(i), o => WL_CLK_P(i), ob => WL_CLK_N(i));
+    end generate; 
+
 
 end architecture;

@@ -124,61 +124,61 @@ NET	"PCLK"         LOC = "p6";		# parallel load clock
 ### ALL below NOT Needed holoscope!!  (static)
 ########## TARGETX clocks ########################################################### (by me next 4)
 
-#NET "SSTIN_P"  		LOC = "P44" | IOSTANDARD = LVDS_25; # SSTin (sampling) clock
-#NET "SSTIN_N"  		LOC = "P43" | IOSTANDARD = LVDS_25; 
-#NET "WL_CLK_P" 		LOC = "P121" | IOSTANDARD = LVDS_25;# Wilkinson clock
-#NET "WL_CLK_N" 		LOC = "P120" | IOSTANDARD = LVDS_25;
+NET "SSTIN_P<0>"  		LOC = "P44" | IOSTANDARD = LVDS_25; # SSTin (sampling) clock
+NET "SSTIN_N<0>"  		LOC = "P43" | IOSTANDARD = LVDS_25; 
+NET "WL_CLK_P<0>" 		LOC = "P121" | IOSTANDARD = LVDS_25;# Wilkinson clock
+NET "WL_CLK_N<0>" 		LOC = "P120" | IOSTANDARD = LVDS_25;
 
 ### Timebase Control/Write Addressing   (by me next 4)
 #NET   "MON_Timing" 	  LOC = "P32"; #for monitoring timing                           
-#NET	"WR_ADDRCLR"     LOC = "p55";	# Reset Write Address
-#NET	"WR1_ENA"        LOC = "p56";	# Enable Writing bank 1
-#NET	"WR2_ENA"        LOC = "p119";# Enable Writing bank 2
+NET	"BUS_WR_ADDRCLR"     LOC = "p55";	# Reset Write Address
+NET	"WR1_ENA<0>"        LOC = "p56";	# Enable Writing bank 1
+NET	"WR2_ENA<0>"        LOC = "p119";# Enable Writing bank 2
 
 ### Read Address Selection (by me next 7)
-#NET	"RD_ENA"         LOC = "p66";	
-#NET	"RD_ROWSEL_S<0>" LOC = "p59";
-#NET	"RD_ROWSEL_S<1>" LOC = "p61";
-#NET	"RD_ROWSEL_S<2>" LOC = "p62";
-#NET	"RD_COLSEL_S<0>" LOC = "p14";	
-#NET	"RD_COLSEL_S<1>" LOC = "p15";
-#NET	"RD_COLSEL_S<2>" LOC = "p16";
-#NET	"RD_COLSEL_S<3>" LOC = "p17";
-#NET	"RD_COLSEL_S<4>" LOC = "p21";
-#NET	"RD_COLSEL_S<5>" LOC = "p22";
+NET	"BUS_RD_ENA"         LOC = "p66";	
+NET	"BUS_RD_ROWSEL<0>" LOC = "p59";
+NET	"BUS_RD_ROWSEL<1>" LOC = "p61";
+NET	"BUS_RD_ROWSEL<2>" LOC = "p62";
+NET	"BUS_RD_COLSEL<0>" LOC = "p14";	
+NET	"BUS_RD_COLSEL<1>" LOC = "p15";
+NET	"BUS_RD_COLSEL<2>" LOC = "p16";
+NET	"BUS_RD_COLSEL<3>" LOC = "p17";
+NET	"BUS_RD_COLSEL<4>" LOC = "p21";
+NET	"BUS_RD_COLSEL<5>" LOC = "p22";
 
-### ADC control (by me next 3)
-#NET   "RAMP"         LOC = "p58";	
-#NET   "DONE"         LOC = "p79";	
-#NET   "CLR"				LOC = "p78"; 	 
+## ADC control (by me next 3)
+NET   "BUS_RAMP"         LOC = "p58";	
+# NET   "BUS_DONE"         LOC = "p79";	
+NET   "BUS_CLR"				LOC = "p78"; 	 
 
 ### Data readout from TARGETX (to FPGA) ################################### (by me next 6)
-#NET	"SAMPLESEL_ANY"  LOC = "p105"; # Overloaded -- Output Enable	
-#NET	"SAMPLESEL_S<0>" LOC = "p111"; 
-#NET	"SAMPLESEL_S<1>" LOC = "p112"; 
-#NET	"SAMPLESEL_S<2>" LOC = "p114";
-#NET	"SAMPLESEL_S<3>" LOC = "p115";
-#NET	"SAMPLESEL_S<4>" LOC = "p116";
+NET	"SAMPLESEL_ANY"  LOC = "p105"; # Overloaded -- Output Enable	
+NET	"SAMPLESEL<0>" LOC = "p111"; 
+NET	"SAMPLESEL<1>" LOC = "p112"; 
+NET	"SAMPLESEL<2>" LOC = "p114";
+NET	"SAMPLESEL<3>" LOC = "p115";
+NET	"SAMPLESEL<4>" LOC = "p116";
 # Serializer control (by me next 3)
-#NET	"SR_CLEAR"     LOC = "p94";	
-#NET	"SR_CLK"       LOC = "p93";	
-#NET	"SR_SEL"       LOC = "p92";	(by me
+NET	"SR_CLR"     LOC = "p94";	
+NET	"SR_CLK"       LOC = "p93";	
+NET	"SR_SEL"       LOC = "p92";	#(by me
 # 16 parallel serial streams, 1 per channel (by me next 16)
-#NET	"TX_DATA<0>"   LOC  = "p80";  
-#NET	"TX_DATA<1>"   LOC  = "p81"; 
-#NET	"TX_DATA<2>"   LOC  = "p82";
-#NET	"TX_DATA<3>"   LOC  = "p83";
-#NET	"TX_DATA<4>"   LOC  = "p84";
-#NET	"TX_DATA<5>"   LOC  = "p85";
-#NET	"TX_DATA<6>"   LOC  = "p87";
-#NET	"TX_DATA<7>"   LOC  = "p88";
-#NET	"TX_DATA<8>"   LOC  = "p95";
-#NET	"TX_DATA<9>"   LOC  = "p97";
-#NET	"TX_DATA<10>"  LOC  = "p98";
-#NET	"TX_DATA<11>"  LOC  = "p99";
-#NET	"TX_DATA<12>"  LOC  = "p100";
-#NET	"TX_DATA<13>"  LOC  = "p101";
-#NET	"TX_DATA<14>"  LOC  = "p102";
+NET	"TX_DATA<0>"   LOC  = "p80";  
+# NET	"TX_DATA<1>"   LOC  = "p81"; 
+# NET	"TX_DATA<2>"   LOC  = "p82";
+# NET	"TX_DATA<3>"   LOC  = "p83";
+# NET	"TX_DATA<4>"   LOC  = "p84";
+# NET	"TX_DATA<5>"   LOC  = "p85";
+# NET	"TX_DATA<6>"   LOC  = "p87";
+# NET	"TX_DATA<7>"   LOC  = "p88";
+# NET	"TX_DATA<8>"   LOC  = "p95";
+# NET	"TX_DATA<9>"   LOC  = "p97";
+# NET	"TX_DATA<10>"  LOC  = "p98";
+# NET	"TX_DATA<11>"  LOC  = "p99";
+# NET	"TX_DATA<12>"  LOC  = "p100";
+# NET	"TX_DATA<13>"  LOC  = "p101";
+# NET	"TX_DATA<14>"  LOC  = "p102";
 #NET	"TX_DATA<15>"  LOC  = "p104";
 
 ################################################################################# 

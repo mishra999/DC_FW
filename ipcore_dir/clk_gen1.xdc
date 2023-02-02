@@ -51,7 +51,7 @@
 #  input clocks. You can use these to time your system
 #----------------------------------------------------------------
 # Differential clock only needs one constraint
-create_clock -name CLK_IN1_P -period 40.0 [get_ports CLK_IN1_P]
+create_clock -name CLK_IN1_P -period 40.000 [get_ports CLK_IN1_P]
 set_propagated_clock CLK_IN1_P
 set_input_jitter CLK_IN1_P 0.4
 

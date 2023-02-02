@@ -8,12 +8,16 @@
 <msg type="info" file="NgdBuild" num="1317" delta="old" >Using core <arg fmt="%s" index="1">chipscope_ila_v1</arg> requires a ChipScopePro license.  The following blocks are instances of core <arg fmt="%s" index="2">chipscope_ila_v1</arg>:
 </msg>
 
-<msg type="info" file="ConstraintSystem" num="178" delta="old" ><arg fmt="%s" index="1">TNM</arg> &apos;<arg fmt="%s" index="2">DATA_CLK_P&lt;0&gt;</arg>&apos;, used in period specification &apos;<arg fmt="%s" index="3">TS_DATA_CLK_P</arg>&apos;, was traced into <arg fmt="%s" index="4">DCM_SP</arg> instance <arg fmt="%s" index="5">dcm_sp_inst</arg>. The following new TNM groups and period specifications were generated at the <arg fmt="%s" index="6">DCM_SP</arg> output(s): 
-<arg fmt="%s" index="7">CLKFX</arg>: <arg fmt="%s" index="8">&lt;TIMESPEC TS_clk_buffer_clkfx = PERIOD &quot;clk_buffer_clkfx&quot; TS_DATA_CLK_P / 2.5 HIGH 50%&gt;</arg>
+<msg type="info" file="ConstraintSystem" num="178" delta="old" ><arg fmt="%s" index="1">TNM</arg> &apos;<arg fmt="%s" index="2">DATA_CLK_P&lt;0&gt;</arg>&apos;, used in period specification &apos;<arg fmt="%s" index="3">TS_DATA_CLK_P</arg>&apos;, was traced into <arg fmt="%s" index="4">PLL_ADV</arg> instance <arg fmt="%s" index="5">PLL_ADV</arg>. The following new TNM groups and period specifications were generated at the <arg fmt="%s" index="6">PLL_ADV</arg> output(s): 
+<arg fmt="%s" index="7">CLKOUT1</arg>: <arg fmt="%s" index="8">&lt;TIMESPEC TS_clk_buffer_clkout1 = PERIOD &quot;clk_buffer_clkout1&quot; TS_DATA_CLK_P / 2.5 HIGH 50%&gt;</arg>
 </msg>
 
-<msg type="info" file="ConstraintSystem" num="178" delta="old" ><arg fmt="%s" index="1">TNM</arg> &apos;<arg fmt="%s" index="2">DATA_CLK_P&lt;0&gt;</arg>&apos;, used in period specification &apos;<arg fmt="%s" index="3">TS_DATA_CLK_P</arg>&apos;, was traced into <arg fmt="%s" index="4">DCM_SP</arg> instance <arg fmt="%s" index="5">dcm_sp_inst</arg>. The following new TNM groups and period specifications were generated at the <arg fmt="%s" index="6">DCM_SP</arg> output(s): 
-<arg fmt="%s" index="7">CLKDV</arg>: <arg fmt="%s" index="8">&lt;TIMESPEC TS_clk_buffer_clkdv = PERIOD &quot;clk_buffer_clkdv&quot; TS_DATA_CLK_P * 2 HIGH 50%&gt;</arg>
+<msg type="info" file="ConstraintSystem" num="178" delta="old" ><arg fmt="%s" index="1">TNM</arg> &apos;<arg fmt="%s" index="2">DATA_CLK_P&lt;0&gt;</arg>&apos;, used in period specification &apos;<arg fmt="%s" index="3">TS_DATA_CLK_P</arg>&apos;, was traced into <arg fmt="%s" index="4">PLL_ADV</arg> instance <arg fmt="%s" index="5">PLL_ADV</arg>. The following new TNM groups and period specifications were generated at the <arg fmt="%s" index="6">PLL_ADV</arg> output(s): 
+<arg fmt="%s" index="7">CLKOUT0</arg>: <arg fmt="%s" index="8">&lt;TIMESPEC TS_clk_buffer_clkout0 = PERIOD &quot;clk_buffer_clkout0&quot; TS_DATA_CLK_P / 0.5 HIGH 50%&gt;</arg>
+</msg>
+
+<msg type="info" file="ConstraintSystem" num="178" delta="old" ><arg fmt="%s" index="1">TNM</arg> &apos;<arg fmt="%s" index="2">DATA_CLK_P&lt;0&gt;</arg>&apos;, used in period specification &apos;<arg fmt="%s" index="3">TS_DATA_CLK_P</arg>&apos;, was traced into <arg fmt="%s" index="4">PLL_ADV</arg> instance <arg fmt="%s" index="5">PLL_ADV</arg>. The following new TNM groups and period specifications were generated at the <arg fmt="%s" index="6">PLL_ADV</arg> output(s): 
+<arg fmt="%s" index="7">CLKOUT2</arg>: <arg fmt="%s" index="8">&lt;TIMESPEC TS_clk_buffer_clkout2 = PERIOD &quot;clk_buffer_clkout2&quot; TS_DATA_CLK_P / 5 HIGH 50%&gt;</arg>
 </msg>
 
 <msg type="warning" file="NgdBuild" num="452" delta="old" ><arg fmt="%s" index="1">logical</arg> net &apos;<arg fmt="%s" index="2">mppc_wrapper_i/DUT/reg_fifo/TX_m2s_last</arg>&apos; has no driver

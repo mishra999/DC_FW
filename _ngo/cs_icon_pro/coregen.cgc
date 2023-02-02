@@ -12,7 +12,7 @@
             <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.COMPONENT_NAME">icon_pro</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.USER_SCAN_CHAIN">USER1</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.USE_EXT_BSCAN">false</spirit:configurableElementValue>
-            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.NUMBER_CONTROL_PORTS">1</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.NUMBER_CONTROL_PORTS">2</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.CONSTRAINT_TYPE">embedded</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.USE_UNUSED_BSCAN">false</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.EXAMPLE_DESIGN">false</spirit:configurableElementValue>
@@ -20,7 +20,7 @@
             <spirit:configurableElementValue spirit:referenceId="PARAM_VALUE.ENABLE_JTAG_BUFG">true</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_USER_SCAN_CHAIN">1</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_USE_CONTROL0">1</spirit:configurableElementValue>
-            <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_USE_CONTROL1">0</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_USE_CONTROL1">1</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_USE_CONTROL2">0</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_USE_CONTROL3">0</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_USE_CONTROL4">0</spirit:configurableElementValue>
@@ -29,7 +29,7 @@
             <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_USE_CONTROL7">0</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_USE_CONTROL8">0</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_USE_CONTROL9">0</spirit:configurableElementValue>
-            <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_NUM_CONTROL_PORTS">1</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_NUM_CONTROL_PORTS">2</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_USE_JTAG_BUFG">1</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_USE_UNUSED_BSCAN">0</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_CONSTRAINT_TYPE">embedded</spirit:configurableElementValue>
@@ -43,7 +43,7 @@
             <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_USE_CONTROL14">0</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_USE_NEW_PARSER">0</spirit:configurableElementValue>
             <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.COMPONENT_NAME">icon_pro</spirit:configurableElementValue>
-            <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_XCO_LIST">Number_Control_Ports=1;Use_Ext_Bscan=false;User_Scan_Chain=USER1;Enable_Jtag_Bufg=true;Use_Unused_Bscan=false;Use_Softbscan=false</spirit:configurableElementValue>
+            <spirit:configurableElementValue spirit:referenceId="MODELPARAM_VALUE.C_XCO_LIST">Number_Control_Ports=2;Use_Ext_Bscan=false;User_Scan_Chain=USER1;Enable_Jtag_Bufg=true;Use_Unused_Bscan=false;Use_Softbscan=false</spirit:configurableElementValue>
          </spirit:configurableElementValues>
          <spirit:vendorExtensions>
             <xilinx:instanceProperties>
@@ -88,8 +88,8 @@
                   <xilinx:file>
                      <xilinx:name>./icon_pro.xco</xilinx:name>
                      <xilinx:userFileType>xco</xilinx:userFileType>
-                     <xilinx:timeStamp>Tue Nov 29 18:12:12 GMT 2022</xilinx:timeStamp>
-                     <xilinx:checkSum>0xA915D42B</xilinx:checkSum>
+                     <xilinx:timeStamp>Fri Jan 27 21:13:56 GMT 2023</xilinx:timeStamp>
+                     <xilinx:checkSum>0x45DFEFC9</xilinx:checkSum>
                      <xilinx:generationId>generationID_1879581046</xilinx:generationId>
                   </xilinx:file>
                </xilinx:fileSet>
@@ -98,14 +98,14 @@
                   <xilinx:file>
                      <xilinx:name>./icon_pro.ngc</xilinx:name>
                      <xilinx:userFileType>ngc</xilinx:userFileType>
-                     <xilinx:timeStamp>Tue Nov 29 18:13:05 GMT 2022</xilinx:timeStamp>
-                     <xilinx:checkSum>0xAA9BAB72</xilinx:checkSum>
+                     <xilinx:timeStamp>Fri Jan 27 21:15:01 GMT 2023</xilinx:timeStamp>
+                     <xilinx:checkSum>0x821D63FC</xilinx:checkSum>
                      <xilinx:generationId>generationID_1879581046</xilinx:generationId>
                   </xilinx:file>
                   <xilinx:file>
                      <xilinx:name>./icon_pro.ucf</xilinx:name>
                      <xilinx:userFileType>ucf</xilinx:userFileType>
-                     <xilinx:timeStamp>Tue Nov 29 18:13:03 GMT 2022</xilinx:timeStamp>
+                     <xilinx:timeStamp>Fri Jan 27 21:14:57 GMT 2023</xilinx:timeStamp>
                      <xilinx:checkSum>0x4E907B10</xilinx:checkSum>
                      <xilinx:generationId>generationID_1879581046</xilinx:generationId>
                   </xilinx:file>
@@ -113,15 +113,15 @@
                      <xilinx:name>./icon_pro.vhd</xilinx:name>
                      <xilinx:userFileType>vhdl</xilinx:userFileType>
                      <xilinx:userFileType>vhdlSynthesis</xilinx:userFileType>
-                     <xilinx:timeStamp>Tue Nov 29 18:13:03 GMT 2022</xilinx:timeStamp>
-                     <xilinx:checkSum>0x13F48925</xilinx:checkSum>
+                     <xilinx:timeStamp>Fri Jan 27 21:14:57 GMT 2023</xilinx:timeStamp>
+                     <xilinx:checkSum>0xC02CE76C</xilinx:checkSum>
                      <xilinx:generationId>generationID_1879581046</xilinx:generationId>
                   </xilinx:file>
                   <xilinx:file>
                      <xilinx:name>./icon_pro.vho</xilinx:name>
                      <xilinx:userFileType>vho</xilinx:userFileType>
-                     <xilinx:timeStamp>Tue Nov 29 18:13:03 GMT 2022</xilinx:timeStamp>
-                     <xilinx:checkSum>0xE8F566BE</xilinx:checkSum>
+                     <xilinx:timeStamp>Fri Jan 27 21:14:57 GMT 2023</xilinx:timeStamp>
+                     <xilinx:checkSum>0x788D074D</xilinx:checkSum>
                      <xilinx:generationId>generationID_1879581046</xilinx:generationId>
                   </xilinx:file>
                </xilinx:fileSet>
@@ -130,8 +130,8 @@
                   <xilinx:file>
                      <xilinx:name>./icon_pro.vho</xilinx:name>
                      <xilinx:userFileType>vho</xilinx:userFileType>
-                     <xilinx:timeStamp>Tue Nov 29 10:46:24 GMT 2022</xilinx:timeStamp>
-                     <xilinx:checkSum>0xE8F566BE</xilinx:checkSum>
+                     <xilinx:timeStamp>Sat Jan 21 03:58:07 GMT 2023</xilinx:timeStamp>
+                     <xilinx:checkSum>0x788D074D</xilinx:checkSum>
                      <xilinx:generationId>generationID_1879581046</xilinx:generationId>
                   </xilinx:file>
                </xilinx:fileSet>
@@ -144,7 +144,7 @@
                      <xilinx:name>./icon_pro_xmdf.tcl</xilinx:name>
                      <xilinx:userFileType>tclXmdf</xilinx:userFileType>
                      <xilinx:userFileType>tcl</xilinx:userFileType>
-                     <xilinx:timeStamp>Tue Nov 29 18:13:06 GMT 2022</xilinx:timeStamp>
+                     <xilinx:timeStamp>Fri Jan 27 21:15:02 GMT 2023</xilinx:timeStamp>
                      <xilinx:checkSum>0x7AB748A4</xilinx:checkSum>
                      <xilinx:generationId>generationID_1879581046</xilinx:generationId>
                   </xilinx:file>
@@ -155,7 +155,7 @@
                      <xilinx:name>./icon_pro.gise</xilinx:name>
                      <xilinx:userFileType>ignore</xilinx:userFileType>
                      <xilinx:userFileType>gise</xilinx:userFileType>
-                     <xilinx:timeStamp>Tue Nov 29 18:13:11 GMT 2022</xilinx:timeStamp>
+                     <xilinx:timeStamp>Fri Jan 27 21:15:06 GMT 2023</xilinx:timeStamp>
                      <xilinx:checkSum>0xCBBED9A9</xilinx:checkSum>
                      <xilinx:generationId>generationID_1879581046</xilinx:generationId>
                   </xilinx:file>
@@ -163,8 +163,8 @@
                      <xilinx:name>./icon_pro.xise</xilinx:name>
                      <xilinx:userFileType>ignore</xilinx:userFileType>
                      <xilinx:userFileType>xise</xilinx:userFileType>
-                     <xilinx:timeStamp>Tue Nov 29 18:13:11 GMT 2022</xilinx:timeStamp>
-                     <xilinx:checkSum>0xD26272EA</xilinx:checkSum>
+                     <xilinx:timeStamp>Fri Jan 27 21:15:06 GMT 2023</xilinx:timeStamp>
+                     <xilinx:checkSum>0xBB85A7BA</xilinx:checkSum>
                      <xilinx:generationId>generationID_1879581046</xilinx:generationId>
                   </xilinx:file>
                </xilinx:fileSet>
@@ -175,7 +175,7 @@
                      <xilinx:userFileType>ignore</xilinx:userFileType>
                      <xilinx:userFileType>txtReadme</xilinx:userFileType>
                      <xilinx:userFileType>txt</xilinx:userFileType>
-                     <xilinx:timeStamp>Tue Nov 29 18:13:11 GMT 2022</xilinx:timeStamp>
+                     <xilinx:timeStamp>Fri Jan 27 21:15:06 GMT 2023</xilinx:timeStamp>
                      <xilinx:checkSum>0x8A6B14C1</xilinx:checkSum>
                      <xilinx:generationId>generationID_1879581046</xilinx:generationId>
                   </xilinx:file>
@@ -187,7 +187,7 @@
                      <xilinx:userFileType>ignore</xilinx:userFileType>
                      <xilinx:userFileType>txtFlist</xilinx:userFileType>
                      <xilinx:userFileType>txt</xilinx:userFileType>
-                     <xilinx:timeStamp>Tue Nov 29 18:13:11 GMT 2022</xilinx:timeStamp>
+                     <xilinx:timeStamp>Fri Jan 27 21:15:06 GMT 2023</xilinx:timeStamp>
                      <xilinx:checkSum>0x40C01B05</xilinx:checkSum>
                      <xilinx:generationId>generationID_1879581046</xilinx:generationId>
                   </xilinx:file>

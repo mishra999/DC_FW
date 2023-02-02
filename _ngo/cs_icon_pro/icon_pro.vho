@@ -1,5 +1,5 @@
 -------------------------------------------------------------------------------
--- Copyright (c) 2022 Xilinx, Inc.
+-- Copyright (c) 2023 Xilinx, Inc.
 -- All Rights Reserved
 -------------------------------------------------------------------------------
 --   ____  ____
@@ -8,7 +8,7 @@
 -- \   \   \/     Version    : 14.7
 --  \   \         Application: Xilinx CORE Generator
 --  /   /         Filename   : icon_pro.vho
--- /___/   /\     Timestamp  : Tue Nov 29 10:46:21 UTC 2022
+-- /___/   /\     Timestamp  : Sat Jan 21 03:58:03 UTC 2023
 -- \   \  /  \
 --  \___\/\___\
 --
@@ -20,7 +20,8 @@
 ------------- Begin Cut here for COMPONENT Declaration ------ COMP_TAG
 component icon_pro
   PORT (
-    CONTROL0 : INOUT STD_LOGIC_VECTOR(35 DOWNTO 0));
+    CONTROL0 : INOUT STD_LOGIC_VECTOR(35 DOWNTO 0);
+    CONTROL1 : INOUT STD_LOGIC_VECTOR(35 DOWNTO 0));
 
 end component;
 
@@ -31,6 +32,7 @@ end component;
 
 your_instance_name : icon_pro
   port map (
-    CONTROL0 => CONTROL0);
+    CONTROL0 => CONTROL0,
+    CONTROL1 => CONTROL1);
 
 -- INST_TAG_END ------ End INSTANTIATION Template ------------
