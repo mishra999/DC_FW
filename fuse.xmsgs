@@ -20,10 +20,13 @@
 <msg type="warning" file="HDLCompiler" num="946" delta="unknown" >"/home/ise/git/DC_backwards/DC_backwards/QBLink/source/QBlink.vhd" Line 270: Actual for formal port <arg fmt="%s" index="1">s_aresetn</arg> is neither a static name nor a globally static expression
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="946" delta="unknown" >"/home/ise/git/DC_backwards/DC_backwards/sources/TargetX_data_tb.vhd" Line 408: Actual for formal port <arg fmt="%s" index="1">s_aresetn</arg> is neither a static name nor a globally static expression
+<msg type="warning" file="HDLCompiler" num="946" delta="unknown" >"/home/ise/git/DC_backwards/DC_backwards/SCROD_modules/CommandInterpreter_n.vhd" Line 974: Actual for formal port <arg fmt="%s" index="1">s_aresetn</arg> is neither a static name nor a globally static expression
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="946" delta="unknown" >"/home/ise/git/DC_backwards/DC_backwards/sources/TargetX_data_tb.vhd" Line 411: Actual for formal port <arg fmt="%s" index="1">s_axis_tdata</arg> is neither a static name nor a globally static expression
+<msg type="warning" file="HDLCompiler" num="946" delta="unknown" >"/home/ise/git/DC_backwards/DC_backwards/sources/TargetX_data_tb.vhd" Line 411: Actual for formal port <arg fmt="%s" index="1">s_aresetn</arg> is neither a static name nor a globally static expression
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="946" delta="unknown" >"/home/ise/git/DC_backwards/DC_backwards/sources/TargetX_data_tb.vhd" Line 414: Actual for formal port <arg fmt="%s" index="1">s_axis_tdata</arg> is neither a static name nor a globally static expression
 </msg>
 
 </messages>

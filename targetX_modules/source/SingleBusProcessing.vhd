@@ -150,6 +150,7 @@ architecture Behavioral of SingleBusProcessing is
 
     -- rst_buff:
     signal proc_reset  : std_logic := '0';
+    signal asic_mask_i             :  std_logic := '1'; 
 
     -- -- ped_fifo_ch_mux:
     -- signal ped_fifo_wr_ena_q1  : std_logic_vector(14 downto 0) := (others=>'0');
@@ -244,6 +245,7 @@ begin
     DigNShiftBusy <= digNshift_busy;
     sample_data <= main_samp_in_0;
     samples_valid <= samples_valid1;
+    asic_mask_i <= asic_mask;
     -- tb5arr <= trig_bits(4)(4) & trig_bits(3)(4) & trig_bits(2)(4) & trig_bits(1)(4) & trig_bits(0)(4);
 
 --------------------- SYNCHRONOUS LOGIC ---------------------------------------------
@@ -492,7 +494,7 @@ begin
 
         -- event information (state machine input parameters)
         -- win_samp_start_asic => win_samp_start,
-        asic_mask          => asic_mask,
+        asic_mask          => asic_mask_i,
         first_dig_win      => first_dig_win,
         last_dig_win       => last_dig_win,
 

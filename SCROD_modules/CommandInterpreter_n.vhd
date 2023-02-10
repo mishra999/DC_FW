@@ -12,9 +12,13 @@
  
 library ieee;
     use ieee.std_logic_1164.all;
-    use ieee.std_logic_arith.all;
+    -- use ieee.std_logic_arith.all;
+    -- use IEEE.NUMERIC_STD.ALL;
     use ieee.std_logic_unsigned.all;
+    use ieee.numeric_std.all;
+    -- use ieee.numeric_std_unsigned.all;
     use work.all;
+    -- use work.all;
     use work.UtilityPkg.all;
     -- use work.Eth1000BaseXPkg.all;
     -- use work.GigabitEthPkg.all;
@@ -25,11 +29,12 @@ entity CommandInterpreter is
         REG_ADDR_BITS_G : integer := 16;
         REG_DATA_BITS_G : integer := 16;
         TIMEOUT_G       : integer := 125000;
-        TIMEOUT_G1       : integer := 536870912;
+        TIMEOUT_G1       : integer := 1250000;
         GATE_DELAY_G    : time := 1 ns;
 		num_DC          : integer := 0; -- 3
-        packets         : integer := 20;
+        packets         : integer := 4;
         data_in_packet        : integer := 8;
+        packets_in_window        : integer := 4;
         chls       : integer := 1
     );
     port (
@@ -102,8 +107,11 @@ architecture rtl of CommandInterpreter is
         noResponse  : sl;
         -- errFlags    : slv(31 downto 0); --Mudit
         timeoutCnt  : slv(31 downto 0);
-        dataCount  : integer  range 0 to 21; --Mudit
+        timeoutCnt1  : slv(31 downto 0); --to count wait between two data samples
+        dataCount  : integer  range -2 to 21; --Mudit
         packetCount : integer  range 0 to 9; --Mudit
+        windowCount :  slv(11 downto 0);
+        tready_fifo : sl;
     end record RegType;
 
 
@@ -129,8 +137,11 @@ architecture rtl of CommandInterpreter is
         noResponse  => '0',
         -- errFlags    => (others => '0'), --Mudit
         timeoutCnt  => (others => '0'),
+        timeoutCnt1  => (others => '0'),
         dataCount  => 0,
-        packetCount  => 0
+        packetCount  => 0,
+        windowCount  => (others => '0'),
+        tready_fifo => '0'
     );
 
     signal r   : RegType := REG_INIT_C;
@@ -143,7 +154,10 @@ architecture rtl of CommandInterpreter is
 	signal DC_cmdRespReq : slv(num_DC downto 0);
 	signal start_load : sl := '0';
     signal start_load1 : sl := '0';
-    signal DC_RESP_VALID_i : slv(1 downto 0) := "00";
+    signal DC_RESP_VALID_data : slv(num_DC downto 0);
+    signal DC_RESP_VALID_reg : slv(num_DC downto 0);
+    signal DC_RESP_data		: slv(31 downto 0);
+    signal DC_RESP_reg		: slv(31 downto 0);
     -- ISE attributes to keep signals for debugging
     -- attribute keep : string;
     -- attribute keep of r : signal is "true";
@@ -162,6 +176,7 @@ architecture rtl of CommandInterpreter is
     constant WORD_WRITE_DAC     : slv(31 downto 0) := x"72697445";
     constant WORD_ACK_C       : slv(31 downto 0) := x"6F6B6179";
     constant WORD_READ_DATA      : slv(31 downto 0) := x"72652124";
+    constant HEADER_WORD :std_logic_vector(23 downto 0) := x"DA6AC9";
     -- constant WORD_ERR_C       : slv(31 downto 0) := x"7768613f";
 
     -- constant ERR_BIT_SIZE_C    : slv(31 downto 0) := x"00000001";
@@ -176,6 +191,7 @@ architecture rtl of CommandInterpreter is
 	constant wordDC				: slv(23 downto 0) := x"0000DC"; --command target is one or more DC
 	constant broadcastDC       : slv(7 downto 0)  := x"0A"; --command target is all DCs
     signal wordScrodRevC      : slv(31 downto 0)  := (others=> '0');
+    -- constant st_index : integer := -1;
 
 	signal stateNum : slv(4 downto 0);
 	signal dc_id : integer := 0;
@@ -187,6 +203,7 @@ architecture rtl of CommandInterpreter is
     -- attribute keep of stateNum : signal is "true";
     signal s_axis_tready : sl := '1';
     signal tready_fifo : sl :=  '0';
+    signal fifoRst : sl :=  '0';
     signal tdata_fifo : slv(31 downto 0) := (others => '0');
     signal tvalid_fifo : sl :=  '0';
     -- signal txData_i : slv(31 downto 0) := (others => '0');
@@ -201,6 +218,10 @@ architecture rtl of CommandInterpreter is
 begin
 	cmd_int_state <= stateNum;
 	ldQBLink <= loadQB;
+    DC_RESP_data <= DC_RESP when data_flag = '1' else (others =>'0');
+    DC_RESP_reg <= DC_RESP when data_flag = '0' else (others =>'0');
+    DC_RESP_VALID_data <= DC_RESP_VALID when data_flag = '1' else  "0";
+    DC_RESP_VALID_reg <= DC_RESP_VALID when data_flag = '0' else  "0";
     -- txData <= txData_i;
     -- txDataValid <= txDataValid_i;
     -- txDataReady_i <= txDataReady;
@@ -246,13 +267,13 @@ begin
 --   );
 --    end generate;
     --detect start rising edge, checked if a signal was on for one cycle previously
-    process(usrClk, DC_RESP_VALID, DC_RESP_VALID_i)
-    begin
-        if rising_edge(usrClk) then
-            DC_RESP_VALID_i <= DC_RESP_VALID_i(0) & DC_RESP_VALID(0);
+    -- process(usrClk, DC_RESP_VALID, DC_RESP_VALID_i)
+    -- begin
+    --     if rising_edge(usrClk) then
+    --         DC_RESP_VALID_i <= DC_RESP_VALID_i(0) & DC_RESP_VALID(0);
             
-        end if;
-    end process;
+    --     end if;
+    -- end process;
 
     SCRODRegComb : process(r,usrRst,rxData,rxDataValid,rxDataLast,
                            txDataReady,regRdData,regAck,wordScrodRevC,EVNT_FLAG) is
@@ -264,7 +285,10 @@ begin
         v.regReq      := '0';
         v.txDataValid := '0';
         v.txDataLast  := '0';
+        v.txData := (others => '0');
         rxDataReady   <= '0';
+        v.tready_fifo := '0';
+        -- fifoRst  <= '0';
 
 
         -- State machine
@@ -274,6 +298,11 @@ begin
                 v.checksum := (others => '0');
 				DC_cmdRespReq <= (others => '1'); --default enable listening to DCs
                 data_flag <= '0';
+                loadQB <= '0';
+                v.packetCount := 0;
+                v.dataCount := 0;
+                v.windowCount := (others => '0'); 
+                v.timeoutCnt1 := (others => '0');
                 if rxDataValid = '1' then
                     rxDataReady <= '1';
                     -- Possible errors:
@@ -286,6 +315,7 @@ begin
                         -- Otherwise, move on
                     else
                         v.state := PACKET_SIZE_S;
+                        -- fifoRst  <= '1'; --to reset the fifo before any data retrieval from DC or even SCROD reg
                     end if;
                 end if;
             when PACKET_SIZE_S =>
@@ -341,10 +371,10 @@ begin
 						if rxData = wordScrodRevC  then
 							loadQB <= '0';
 						elsif (rxData(31 downto 8) = wordDC) and (rxData(7 downto 0) /= broadcastDC) then
-							dc_id <= conv_integer(unsigned(rxData(7 downto 0)));
+							dc_id <= to_integer(unsigned(rxData(7 downto 0)));
 							loadQB <= '1';
 						else --unused case, disallow broadcast
-							dc_id <= conv_integer(unsigned(broadcastDC)); --if broadcasting, set dc_id to "broadcast"
+							dc_id <= to_integer(unsigned(broadcastDC)); --if broadcasting, set dc_id to "broadcast"
 							loadQB <= '1';
 						end if;
                         v.state := COMMAND_ID_S;
@@ -444,35 +474,54 @@ begin
                 end if;
             
             when READ_DATA =>
-                v.timeoutCnt := r.timeoutCnt + 1;
-                v.txDataLast := '0';
-                tready_fifo <= '0';
+                -- v.timeoutCnt := r.timeoutCnt + 1;
+                -- v.txDataLast := '0';
+                -- tready_fifo <= '0';
+                v.tready_fifo := '1';
                 if loadQB = '1' then -- if reading DC, listen to QBLink
                     DC_cmdRespReq(dc_id-1) <= '1';
-                    v.checksum := (others => '0');
+                    -- v.checksum := (others => '0');
                     if txDataReady = '1' and tvalid_fifo = '1' then
+                        v.timeoutCnt1 := (others => '0');
                         v.txDataValid := '1';
                         v.txData := tdata_fifo;
-                        tready_fifo <= '1';
-                        v.dataCount := v.dataCount + 1;
-                        if v.dataCount = data_in_packet then
+                        v.tready_fifo := '0';
+                        -- v.txDataLast := '1';
+                        if v.dataCount = (data_in_packet - 1) then
                             v.txDataLast := '1';
                             v.dataCount := 0;
-                            if v.packetCount = packets then
-                                v.state := IDLE_S;
+                           if v.packetCount = (packets - 1) then
                                 v.packetCount := 0;
-                            else v.packetCount := v.packetCount + 1;
+                                if v.windowCount = std_logic_vector((unsigned(r.command(27 downto 16)) - unsigned(r.command(11 downto 0))))  then
+                                    v.state := IDLE_S;
+                                    v.windowCount := (others => '0'); 
+                                    v.timeoutCnt1 := (others => '0');
+                                    data_flag <= '0';
+                                else v.windowCount := r.windowCount + '1';   
+                                end if;
+                            else v.packetCount := r.packetCount + 1;
                             end if;
+                        else
+                            if  v.txData(31 downto 8) = HEADER_WORD then
+                                v.dataCount := 0;
+                            else 
+                                v.dataCount := r.dataCount + 1;
+                            end if;
+                        
+                        -- else v.state := READ_DATA;
                         end if;
+                    else v.timeoutCnt1 := r.timeoutCnt1 + '1';
                     end if;
 
-                    if r.timeoutCnt = TIMEOUT_G1 then -- if QBLink does output a word before timeout, send error to PC
+                    if r.timeoutCnt1 = TIMEOUT_G1 then -- if QBLink does output a word before timeout, send error to PC
                         -- v.errFlags := r.errFlags + ERR_BIT_TIMEOUT_C; --Mudit
                         v.state    := IDLE_S; --ERR_RESPONSE_S, Mudit
                         v.packetCount := 0;
                         v.dataCount := 0;
+                        v.windowCount := (others => '0'); 
+                        data_flag <= '0';
                     end if;
-                    
+                else v.state := IDLE_S;    
                 end if;
 
             --commented by Mudit
@@ -515,7 +564,7 @@ begin
                 if loadQB = '1' then -- if reading DC, listen to QBLink
                     if dc_id /= broadcastDC then --IF not broadcasting to all DCs
                         DC_cmdRespReq(dc_id-1) <= '1';
-                        if DC_RESP_VALID(dc_id-1) = '1' then --wait for DC to send register data
+                        if DC_RESP_VALID_reg(dc_id-1) = '1' then --wait for DC to send register data
                             --do not use v.regRdData to collect readback data
                             if r.noResponse = '1' then --if noResponse setting on, skip response to PC
                                 v.state := IDLE_S; --CHECK_MORE_S, Mudit
@@ -528,7 +577,7 @@ begin
                             v.state    := IDLE_S; --ERR_RESPONSE_S, Mudit
                         end if;
                     elsif dc_id = broadcastdc then
-                        if DC_RESP_VALID = (DC_RESP_VALID'range => '1') then --wait for DC to send register data
+                        if DC_RESP_VALID_reg = (DC_RESP_VALID_reg'range => '1') then --wait for DC to send register data
                             --do not use v.regRdData to collect readback data
                             if r.noResponse = '1' then --if noResponse setting on, skip response to PC
                                 v.state := IDLE_S; --CHECK_MORE_S, Mudit
@@ -564,7 +613,7 @@ begin
                 v.timeoutCnt := r.timeoutCnt + 1;
 				if (loadQB = '1') and (dc_id /= broadcastDC) then --if writing to DC: wait for them to repeat correct address
 					DC_cmdRespReq(dc_id-1) <= '1';
-					if DC_RESP(15 downto 0) = r.regAddr then --write operation is successful if DC repeats address, even if simultaneous SCROD register operation fails.
+					if DC_RESP_reg(15 downto 0) = r.regAddr then --write operation is successful if DC repeats address, even if simultaneous SCROD register operation fails.
 						if r.noResponse = '1' then --skip response to PC if noResponse setting is on
 							v.state := IDLE_S; --CHECK_MORE_S, Mudit
 						else
@@ -578,7 +627,7 @@ begin
 
 				elsif (loadQB = '1') and (dc_id = broadcastDC) then
 					DC_cmdRespReq(num_DC downto 0) <= (others => '1');
-					if (DC_RESP(15 downto 0) = r.regAddr) then
+					if (DC_RESP_reg(15 downto 0) = r.regAddr) then
 						if r.noResponse = '1' then --skip response to PC if noResponse setting is on
 							v.state := IDLE_S; --CHECK_MORE_S, Mudit
 						else
@@ -635,7 +684,7 @@ begin
                             when 3 => v.txData := r.deviceID;
                             when 4 => v.txData := x"00" & r.commandId;
                             when 5 => v.txData := WORD_READ_C;
-                            when 6 => v.txData := DC_RESP;
+                            when 6 => v.txData := DC_RESP_reg;
                             when 7 => v.txData     := r.checksum;
                             v.txDataLast := '1'; 
                             v.state      := IDLE_S; --CHECK_MORE_S, Mudit
@@ -818,6 +867,7 @@ begin
         txData      <= r.txData;
         txDataValid <= r.txDataValid;
         txDataLast  <= r.txDataLast;
+        tready_fifo <= r.tready_fifo;
 
 		-- else
 		-- 	txData      <= t.txData;
@@ -923,15 +973,16 @@ begin
         end if;
     end process;
 
--- data_fifo_out: entity work.fifo_data_w32_d32
---     PORT MAP (
---            S_ARESETN                 => not usrRst,
---            M_AXIS_TVALID             => tvalid_fifo,
---            M_AXIS_TREADY             => tready_fifo,
---            M_AXIS_TDATA              => tdata_fifo,
---            S_AXIS_TVALID             => DC_RESP_VALID(dc_id-1),
---            S_AXIS_TREADY             => s_axis_tready,
---            S_AXIS_TDATA              => DC_RESP,
---            M_ACLK                    => usrClk,
---            S_ACLK                    => dataClk);
+data_fifo_out: entity work.fifo_data_w32_d32
+    PORT MAP (
+           S_ARESETN                 => not fifoRst,
+           M_AXIS_TVALID             => tvalid_fifo,
+           M_AXIS_TREADY             => tready_fifo,
+           M_AXIS_TDATA              => tdata_fifo,
+           S_AXIS_TVALID             => DC_RESP_VALID_data(0),
+           S_AXIS_TREADY             => s_axis_tready,
+           S_AXIS_TDATA              => DC_RESP_data,
+           M_ACLK                    => usrClk,
+           S_ACLK                    => dataClk);
 end rtl;
+

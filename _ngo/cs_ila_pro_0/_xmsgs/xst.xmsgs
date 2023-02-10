@@ -23,6 +23,9 @@
 <msg type="warning" file="HDLCompiler" num="871" delta="new" >"/home/ise/git/DC_backwards/DC_backwards/_ngo/cs_ila_pro_0/tmp/_cg/_bbx/chipscope_lib_v1_03_a/cs_gandx_srl_s6.vhd" Line 102: Using initial value <arg fmt="%s" index="1">&apos;1&apos;</arg> for <arg fmt="%s" index="2">logic_1</arg> since it is never assigned
 </msg>
 
+<msg type="warning" file="HDLCompiler" num="746" delta="new" >"/home/ise/git/DC_backwards/DC_backwards/_ngo/cs_ila_pro_0/tmp/_cg/_bbx/chipscope_lib_v1_03_a/cs_gandx_srl_s6.vhd" Line 172: Range is empty (null range)
+</msg>
+
 <msg type="warning" file="HDLCompiler" num="871" delta="new" >"/home/ise/git/DC_backwards/DC_backwards/_ngo/cs_ila_pro_0/tmp/_cg/_bbx/chipscope_lib_v1_03_a/cs_gand_srl_s6.vhd" Line 64: Using initial value <arg fmt="%s" index="1">&apos;1&apos;</arg> for <arg fmt="%s" index="2">logic_1</arg> since it is never assigned
 </msg>
 
@@ -74,13 +77,10 @@
 <msg type="warning" file="HDLCompiler" num="634" delta="new" >"/home/ise/git/DC_backwards/DC_backwards/_ngo/cs_ila_pro_0/tmp/_cg/_bbx/chipscope_ila_v1_05_a/chipscope_ila.vhd" Line 283: Net &lt;<arg fmt="%s" index="1">iATC_CLKIN</arg>&gt; does not have a driver.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/ise/git/DC_backwards/DC_backwards/_ngo/cs_ila_pro_0/tmp/_cg/_bbx/ila_pro_0.vhd</arg>&quot; line <arg fmt="%s" index="2">43</arg>: Output port &lt;<arg fmt="%s" index="3">TRIG_OUT</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">U0</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/ise/git/DC_backwards/DC_backwards/_ngo/cs_ila_pro_0/tmp/_cg/_bbx/ila_pro_0.vhd</arg>&quot; line <arg fmt="%s" index="2">44</arg>: Output port &lt;<arg fmt="%s" index="3">TRIG_OUT</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">U0</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
 <msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">DATA</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-</msg>
-
-<msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">TRIG1</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 </msg>
 
 <msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">TRIG2</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
@@ -149,7 +149,7 @@
 <msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">CONTROL_IN&lt;17:14&gt;</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 </msg>
 
-<msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">CONTROL_IN&lt;34:20&gt;</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+<msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">CONTROL_IN&lt;34:21&gt;</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 </msg>
 
 <msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">ATC_CLKIN</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
@@ -177,6 +177,21 @@
 </msg>
 
 <msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/ise/git/DC_backwards/DC_backwards/_ngo/cs_ila_pro_0/tmp/_cg/_bbx/chipscope_ila_v1_05_a/ila_trigger.vhd</arg>&quot; line <arg fmt="%s" index="2">254</arg>: Output port &lt;<arg fmt="%s" index="3">CFG_DOUT</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">U_TC</arg>&gt; is unconnected or connected to loadless signal.
+</msg>
+
+<msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">CFG_EN_VEC</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+</msg>
+
+<msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">TRIG_RESET</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+</msg>
+
+<msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">CFG_EN_16_0</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+</msg>
+
+<msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">CFG_EN_16_1</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+</msg>
+
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/ise/git/DC_backwards/DC_backwards/_ngo/cs_ila_pro_0/tmp/_cg/_bbx/chipscope_ila_v1_05_a/ila_match_combo.vhd</arg>&quot; line <arg fmt="%s" index="2">160</arg>: Output port &lt;<arg fmt="%s" index="3">CFG_DOUT</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">U_MU</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
 <msg type="warning" file="Xst" num="647" delta="new" >Input &lt;<arg fmt="%s" index="1">CFG_EN_VEC</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.

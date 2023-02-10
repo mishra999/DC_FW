@@ -91,6 +91,10 @@ int main(int argc, char **argv)
     work_a_0934933731_3212880686_init();
     work_a_0445720317_3797831714_init();
     work_a_2775425109_3797831714_init();
+    xilinxcorelib_a_3528006616_3212880686_init();
+    xilinxcorelib_a_1120212549_3212880686_init();
+    xilinxcorelib_a_2017763730_3212880686_init();
+    work_a_3799944196_2869669832_init();
     work_a_0611294277_1516540902_init();
     work_a_2092781599_3212880686_init();
     work_a_0310176134_3212880686_init();

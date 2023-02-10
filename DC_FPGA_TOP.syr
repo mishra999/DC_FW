@@ -5,14 +5,14 @@ Parameter TMPDIR set to xst/projnav.tmp
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.05 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.05 secs
  
 --> 
 Reading design: DC_FPGA_TOP.prj
@@ -229,25 +229,25 @@ Parsing architecture <Behaviorial> of entity <dc_comm_back>.
 Parsing VHDL file "/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" into library work
 Parsing entity <DC_FPGA_TOP>.
 Parsing architecture <rtl> of entity <dc_fpga_top>.
-WARNING:HDLCompiler:946 - "/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" Line 408: Actual for formal port s_aresetn is neither a static name nor a globally static expression
-WARNING:HDLCompiler:946 - "/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" Line 411: Actual for formal port s_axis_tdata is neither a static name nor a globally static expression
-WARNING:HDLCompiler:946 - "/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" Line 534: Actual for formal port c1 is neither a static name nor a globally static expression
+WARNING:HDLCompiler:946 - "/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" Line 422: Actual for formal port s_aresetn is neither a static name nor a globally static expression
+WARNING:HDLCompiler:946 - "/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" Line 425: Actual for formal port s_axis_tdata is neither a static name nor a globally static expression
+WARNING:HDLCompiler:946 - "/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" Line 571: Actual for formal port c1 is neither a static name nor a globally static expression
 
 =========================================================================
 *                            HDL Elaboration                            *
 =========================================================================
 
 Elaborating entity <DC_FPGA_TOP> (architecture <rtl>) with generics from library <work>.
-WARNING:HDLCompiler:871 - "/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" Line 73: Using initial value "0" for qb_rst since it is never assigned
-WARNING:HDLCompiler:871 - "/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" Line 95: Using initial value '0' for reset since it is never assigned
-WARNING:HDLCompiler:871 - "/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" Line 131: Using initial value '1' for asic_mask since it is never assigned
-WARNING:HDLCompiler:871 - "/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" Line 135: Using initial value "011110" for ramp_length since it is never assigned
-WARNING:HDLCompiler:871 - "/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" Line 137: Using initial value "0110" for t_samp_addr_settle since it is never assigned
-WARNING:HDLCompiler:871 - "/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" Line 138: Using initial value "0110" for t_setup_ss_any since it is never assigned
-WARNING:HDLCompiler:871 - "/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" Line 139: Using initial value "0100" for t_strobe_settle since it is never assigned
-WARNING:HDLCompiler:871 - "/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" Line 140: Using initial value "0010" for t_sr_clk_high since it is never assigned
-WARNING:HDLCompiler:871 - "/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" Line 141: Using initial value "0010" for t_sr_clk_low since it is never assigned
-WARNING:HDLCompiler:871 - "/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" Line 142: Using initial value "0110" for t_sr_clk_strobe since it is never assigned
+WARNING:HDLCompiler:871 - "/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" Line 74: Using initial value "0" for qb_rst since it is never assigned
+WARNING:HDLCompiler:871 - "/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" Line 97: Using initial value '0' for reset since it is never assigned
+WARNING:HDLCompiler:871 - "/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" Line 134: Using initial value '1' for asic_mask since it is never assigned
+WARNING:HDLCompiler:871 - "/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" Line 138: Using initial value "011110" for ramp_length since it is never assigned
+WARNING:HDLCompiler:871 - "/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" Line 140: Using initial value "0110" for t_samp_addr_settle since it is never assigned
+WARNING:HDLCompiler:871 - "/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" Line 141: Using initial value "0110" for t_setup_ss_any since it is never assigned
+WARNING:HDLCompiler:871 - "/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" Line 142: Using initial value "0100" for t_strobe_settle since it is never assigned
+WARNING:HDLCompiler:871 - "/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" Line 143: Using initial value "0010" for t_sr_clk_high since it is never assigned
+WARNING:HDLCompiler:871 - "/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" Line 144: Using initial value "0010" for t_sr_clk_low since it is never assigned
+WARNING:HDLCompiler:871 - "/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" Line 145: Using initial value "0110" for t_sr_clk_strobe since it is never assigned
 
 Elaborating entity <clk_gen1> (architecture <xilinx>) from library <work>.
 
@@ -315,7 +315,7 @@ INFO:HDLCompiler:679 - "/home/ise/git/DC_backwards/DC_backwards/target_x_dac_con
 Elaborating entity <registerBuffer> (architecture <rtl>) with generics from library <work>.
 
 Elaborating entity <SingleBusProcessing> (architecture <Behavioral>) with generics from library <work>.
-WARNING:HDLCompiler:1127 - "/home/ise/git/DC_backwards/DC_backwards/targetX_modules/source/SingleBusProcessing.vhd" Line 407: Assignment to dignshift_done ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "/home/ise/git/DC_backwards/DC_backwards/targetX_modules/source/SingleBusProcessing.vhd" Line 409: Assignment to dignshift_done ignored, since the identifier is never used
 
 Elaborating entity <DigitizeAndShiftOutData> (architecture <Behavioral>) with generics from library <work>.
 
@@ -338,46 +338,49 @@ Synthesizing Unit <DC_FPGA_TOP>.
     Related source file is "/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd".
         NUM_DCs = 0
         chls = 1
-INFO:Xst:3210 - "/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" line 244: Output port <LOCKED> of the instance <clk_buffer> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" line 279: Output port <SERIAL_CLK_LCK> of the instance <u_dc_receiver> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" line 279: Output port <TRIG_LINK_SYNC> of the instance <u_dc_receiver> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" line 306: Output port <TX_DAC_control_out_REG_CLR> of the instance <mppc_wrapper_i> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" line 348: Output port <ShiftOutWinBusy> of the instance <Udc_data> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" line 348: Output port <ShiftOutSampBusy> of the instance <Udc_data> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" line 404: Output port <s_axis_tready> of the instance <data_fifos_generation[0].data_fifos> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" line 497: Output port <cur_win> of the instance <UUT_sampling> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" line 497: Output port <samp_mod8> of the instance <UUT_sampling> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" line 497: Output port <cur_win_ii> of the instance <UUT_sampling> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" line 497: Output port <BUSB_WR_ADDRCLR> of the instance <UUT_sampling> is unconnected or connected to loadless signal.
+        counter_win_max = 120000
+    Set property "MARK_DEBUG = TRUE" for signal <window_counter>.
+    Set property "MARK_DEBUG = TRUE" for signal <stateNum_dtransfer<1>>.
+    Set property "MARK_DEBUG = TRUE" for signal <stateNum_dtransfer<0>>.
+INFO:Xst:3210 - "/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" line 258: Output port <LOCKED> of the instance <clk_buffer> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" line 293: Output port <SERIAL_CLK_LCK> of the instance <u_dc_receiver> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" line 293: Output port <TRIG_LINK_SYNC> of the instance <u_dc_receiver> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" line 320: Output port <TX_DAC_control_out_REG_CLR> of the instance <mppc_wrapper_i> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" line 362: Output port <ShiftOutWinBusy> of the instance <Udc_data> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" line 362: Output port <ShiftOutSampBusy> of the instance <Udc_data> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" line 418: Output port <s_axis_tready> of the instance <data_fifos_generation[0].data_fifos> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" line 534: Output port <cur_win> of the instance <UUT_sampling> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" line 534: Output port <samp_mod8> of the instance <UUT_sampling> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" line 534: Output port <cur_win_ii> of the instance <UUT_sampling> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" line 534: Output port <BUSB_WR_ADDRCLR> of the instance <UUT_sampling> is unconnected or connected to loadless signal.
 WARNING:Xst:3035 - Index value(s) does not match array range for signal <CtrlRegister>, simulation mismatch.
     Found 5x16-bit single-port RAM <Mram_CtrlRegister> for signal <CtrlRegister>.
     Found 1-bit register for signal <RES_VALID_reg>.
     Found 16-bit register for signal <regg_address>.
     Found 16-bit register for signal <regg_value>.
     Found 32-bit register for signal <DC_RESPONSE_reg>.
+    Found 1-bit register for signal <ena>.
     Found 1-bit register for signal <RES_VALID_data>.
-    Found 2-bit register for signal <DATA_TRANSFER_STATE>.
-    Found 4-bit register for signal <ch_number>.
-    Found 1-bit register for signal <transfer_data.send_header1>.
     Found 1-bit register for signal <qblink_tready_i>.
+    Found 4-bit register for signal <ch_number>.
+    Found 1-bit register for signal <RESET1>.
+    Found 1-bit register for signal <data_flag>.
     Found 6-bit register for signal <sample_counter>.
-    Found 4-bit register for signal <window_counter>.
+    Found 9-bit register for signal <window_counter>.
+    Found 32-bit register for signal <counter_send_win>.
     Found 9-bit register for signal <first_dig_win>.
     Found 9-bit register for signal <last_dig_win>.
-    Found 1-bit register for signal <ena>.
     Found 1-bit register for signal <force_test_pattern>.
+    Found 2-bit register for signal <DATA_TRANSFER_STATE>.
     Found 32-bit register for signal <DC_RESPONSE_data>.
     Found 27-bit register for signal <ctime>.
     Found finite state machine <FSM_1> for signal <DATA_TRANSFER_STATE>.
     -----------------------------------------------------------------------
     | States             | 3                                              |
-    | Transitions        | 8                                              |
-    | Inputs             | 5                                              |
-    | Outputs            | 3                                              |
+    | Transitions        | 9                                              |
+    | Inputs             | 6                                              |
+    | Outputs            | 6                                              |
     | Clock              | DATA_CLK (rising_edge)                         |
-    | Reset              | SYNC (positive)                                |
-    | Reset type         | synchronous                                    |
-    | Reset State        | idle                                           |
     | Power Up State     | idle                                           |
     | Recovery State     | idle                                           |
     | Encoding           | auto                                           |
@@ -386,8 +389,8 @@ WARNING:Xst:3035 - Index value(s) does not match array range for signal <CtrlReg
     Found finite state machine <FSM_0> for signal <ch_number>.
     -----------------------------------------------------------------------
     | States             | 1                                              |
-    | Transitions        | 3                                              |
-    | Inputs             | 6                                              |
+    | Transitions        | 2                                              |
+    | Inputs             | 5                                              |
     | Outputs            | 1                                              |
     | Clock              | DATA_CLK (rising_edge)                         |
     | Power Up State     | 0000                                           |
@@ -395,22 +398,27 @@ WARNING:Xst:3035 - Index value(s) does not match array range for signal <CtrlReg
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 9-bit adder for signal <GND_17_o_GND_17_o_add_35_OUT> created at line 465.
-    Found 6-bit adder for signal <sample_counter[5]_GND_17_o_add_39_OUT> created at line 471.
-    Found 4-bit adder for signal <window_counter[3]_GND_17_o_add_44_OUT> created at line 483.
-    Found 27-bit adder for signal <ctime[26]_GND_17_o_add_87_OUT> created at line 522.
-    Found 9-bit subtractor for signal <n0296> created at line 0.
-    Found 1-bit 3-to-1 multiplexer for signal <DATA_TRANSFER_STATE[1]_X_17_o_Mux_62_o> created at line 427.
-    Found 1-bit 3-to-1 multiplexer for signal <DATA_TRANSFER_STATE[1]_X_17_o_wide_mux_72_OUT<0>> created at line 427.
-    Found 32-bit 4-to-1 multiplexer for signal <GND_17_o_GND_17_o_mux_14_OUT> created at line 331.
-    Found 9-bit comparator greater for signal <GND_17_o_GND_17_o_LessThan_37_o> created at line 465
-    Found 6-bit comparator greater for signal <sample_counter[5]_PWR_17_o_LessThan_38_o> created at line 466
+    Found 32-bit adder for signal <counter_send_win[31]_GND_17_o_add_39_OUT> created at line 497.
+    Found 9-bit adder for signal <GND_17_o_GND_17_o_add_42_OUT> created at line 499.
+    Found 6-bit adder for signal <sample_counter[5]_GND_17_o_add_45_OUT> created at line 505.
+    Found 9-bit adder for signal <window_counter[8]_GND_17_o_add_52_OUT> created at line 519.
+    Found 27-bit adder for signal <ctime[26]_GND_17_o_add_95_OUT> created at line 559.
+    Found 9-bit subtractor for signal <n0308> created at line 0.
+    Found 1-bit 3-to-1 multiplexer for signal <DATA_TRANSFER_STATE[1]_X_17_o_wide_mux_85_OUT<0>> created at line 446.
+    Found 1-bit 3-to-1 multiplexer for signal <DATA_TRANSFER_STATE[1]_X_17_o_wide_mux_86_OUT<0>> created at line 446.
+    Found 32-bit 4-to-1 multiplexer for signal <GND_17_o_GND_17_o_mux_17_OUT> created at line 345.
+WARNING:Xst:737 - Found 1-bit latch for signal <stateNum_dtransfer<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <stateNum_dtransfer<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 9-bit comparator greater for signal <window_counter[8]_GND_17_o_LessThan_44_o> created at line 499
+    Found 6-bit comparator greater for signal <sample_counter[5]_PWR_17_o_LessThan_45_o> created at line 500
+INFO:Xst:2774 - HDL ADVISOR - MARK_DEBUG, INIT properties attached to signal window_counter may hinder XST clustering optimizations.
     Summary:
 	inferred   1 RAM(s).
-	inferred   5 Adder/Subtractor(s).
-	inferred 157 D-type flip-flop(s).
+	inferred   6 Adder/Subtractor(s).
+	inferred 195 D-type flip-flop(s).
+	inferred   2 Latch(s).
 	inferred   2 Comparator(s).
-	inferred  19 Multiplexer(s).
+	inferred  54 Multiplexer(s).
 	inferred   2 Finite State Machine(s).
 Unit <DC_FPGA_TOP> synthesized.
 
@@ -455,8 +463,8 @@ Synthesizing Unit <DC_Comm_back>.
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 32-bit adder for signal <r_timeoutCnt[31]_GND_53_o_add_30_OUT> created at line 205.
-    Found 4x2-bit Read Only RAM for signal <GND_53_o_GND_53_o_mux_40_OUT>
+    Found 32-bit adder for signal <r_timeoutCnt[31]_GND_55_o_add_30_OUT> created at line 205.
+    Found 4x2-bit Read Only RAM for signal <GND_55_o_GND_55_o_mux_40_OUT>
     Found 32-bit 3-to-1 multiplexer for signal <comb.v_timeoutCnt> created at line 172.
 WARNING:Xst:737 - Found 1-bit latch for signal <stateNum<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 WARNING:Xst:737 - Found 1-bit latch for signal <stateNum<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
@@ -465,7 +473,7 @@ WARNING:Xst:737 - Found 1-bit latch for signal <stateNum<0>>. Latches may be gen
 	inferred   1 Adder/Subtractor(s).
 	inferred  73 D-type flip-flop(s).
 	inferred   2 Latch(s).
-	inferred  29 Multiplexer(s).
+	inferred  27 Multiplexer(s).
 	inferred   1 Finite State Machine(s).
 Unit <DC_Comm_back> synthesized.
 
@@ -479,13 +487,13 @@ WARNING:Xst:2935 - Signal 'serialClkLocked', unconnected in block 'QBlink', is t
     Found 32-bit register for signal <v_counter>.
     Found 1-bit register for signal <i_s_axis_tvalid>.
     Found 32-bit adder for signal <n0060> created at line 253.
-    Found 32-bit subtractor for signal <v_counter[31]_GND_56_o_sub_38_OUT<31:0>> created at line 254.
-    Found 32-bit comparator lessequal for signal <n0045> created at line 256
+    Found 32-bit subtractor for signal <v_counter[31]_GND_58_o_sub_38_OUT<31:0>> created at line 254.
+    Found 32-bit comparator greater for signal <n0045> created at line 256
     Summary:
 	inferred   2 Adder/Subtractor(s).
 	inferred  65 D-type flip-flop(s).
 	inferred   1 Comparator(s).
-	inferred  34 Multiplexer(s).
+	inferred  33 Multiplexer(s).
 Unit <QBlink> synthesized.
 
 Synthesizing Unit <SyncBit_QBL>.
@@ -507,10 +515,10 @@ INFO:Xst:3210 - "/home/ise/git/DC_backwards/DC_backwards/QBLink/source/S6SerialI
     Found 1-bit register for signal <r_serialDataOutFalling>.
     Found 1-bit register for signal <r_state>.
     Found 5-bit subtractor for signal <n0042[4:0]> created at line 92.
-    Found 4-bit adder for signal <r_bitCount[3]_GND_58_o_add_7_OUT> created at line 98.
-    Found 4-bit subtractor for signal <GND_58_o_GND_58_o_sub_5_OUT<3:0>> created at line 93.
-    Found 1-bit 10-to-1 multiplexer for signal <GND_58_o_X_57_o_Mux_2_o> created at line 92.
-    Found 1-bit 10-to-1 multiplexer for signal <GND_58_o_X_57_o_Mux_5_o> created at line 93.
+    Found 4-bit adder for signal <r_bitCount[3]_GND_60_o_add_7_OUT> created at line 98.
+    Found 4-bit subtractor for signal <GND_60_o_GND_60_o_sub_5_OUT<3:0>> created at line 93.
+    Found 1-bit 10-to-1 multiplexer for signal <GND_60_o_X_59_o_Mux_2_o> created at line 92.
+    Found 1-bit 10-to-1 multiplexer for signal <GND_60_o_X_59_o_Mux_5_o> created at line 93.
     Summary:
 	inferred   3 Adder/Subtractor(s).
 	inferred  17 D-type flip-flop(s).
@@ -547,9 +555,9 @@ INFO:Xst:3210 - "/home/ise/git/DC_backwards/DC_backwards/QBLink/source/S6SerialI
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 4-bit adder for signal <r_bitCount[3]_GND_62_o_add_6_OUT> created at line 186.
-    Found 16-bit adder for signal <r_slipCount[15]_GND_62_o_add_10_OUT> created at line 204.
-    Found 16-bit comparator greater for signal <r_slipCount[15]_GND_62_o_LessThan_10_o> created at line 203
+    Found 4-bit adder for signal <r_bitCount[3]_GND_64_o_add_6_OUT> created at line 186.
+    Found 16-bit adder for signal <r_slipCount[15]_GND_64_o_add_10_OUT> created at line 204.
+    Found 16-bit comparator greater for signal <r_slipCount[15]_GND_64_o_LessThan_10_o> created at line 203
     Summary:
 	inferred   2 Adder/Subtractor(s).
 	inferred  62 D-type flip-flop(s).
@@ -589,7 +597,7 @@ WARNING:Xst:37 - Detected unknown constraint/property "mark_debug1". This constr
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 32-bit adder for signal <r_alignCnt[31]_GND_65_o_add_8_OUT> created at line 183.
+    Found 32-bit adder for signal <r_alignCnt[31]_GND_67_o_add_8_OUT> created at line 183.
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred  80 D-type flip-flop(s).
@@ -629,7 +637,7 @@ WARNING:Xst:2935 - Signal 'TX_DAC_control_out_REG_CLR', unconnected in block 'TX
     Found 1-bit register for signal <regTX_tx_valid>.
     Found 32-bit register for signal <regTX_tx_data>.
     Found 1-bit register for signal <reg_data_m2s_last>.
-    Found 7-bit subtractor for signal <GND_72_o_GND_72_o_sub_5_OUT<6:0>> created at line 1308.
+    Found 7-bit subtractor for signal <GND_74_o_GND_74_o_sub_5_OUT<6:0>> created at line 1308.
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred  34 D-type flip-flop(s).
@@ -662,7 +670,7 @@ INFO:Xst:3210 - "/home/ise/git/DC_backwards/DC_backwards/target_x_dac_control/sr
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 16-bit adder for signal <counter[15]_GND_73_o_add_19_OUT> created at line 1241.
+    Found 16-bit adder for signal <counter[15]_GND_75_o_add_19_OUT> created at line 1241.
     Found 16-bit comparator greater for signal <n0030> created at line 123
     Summary:
 	inferred   1 Adder/Subtractor(s).
@@ -710,10 +718,10 @@ Synthesizing Unit <fifo_cc>.
     Found 8-bit register for signal <i_waddr>.
     Found 8-bit register for signal <i_raddr>.
     Found 1-bit register for signal <i_empty_r>.
-    Found 8-bit adder for signal <i_cnt[7]_GND_76_o_add_3_OUT> created at line 181.
-    Found 8-bit adder for signal <i_waddr[7]_GND_76_o_add_10_OUT> created at line 202.
-    Found 8-bit adder for signal <i_raddr[7]_GND_76_o_add_14_OUT> created at line 210.
-    Found 8-bit subtractor for signal <GND_76_o_GND_76_o_sub_5_OUT<7:0>> created at line 183.
+    Found 8-bit adder for signal <i_cnt[7]_GND_78_o_add_3_OUT> created at line 181.
+    Found 8-bit adder for signal <i_waddr[7]_GND_78_o_add_10_OUT> created at line 202.
+    Found 8-bit adder for signal <i_raddr[7]_GND_78_o_add_14_OUT> created at line 210.
+    Found 8-bit subtractor for signal <GND_78_o_GND_78_o_sub_5_OUT<7:0>> created at line 183.
     Summary:
 	inferred   3 Adder/Subtractor(s).
 	inferred  25 D-type flip-flop(s).
@@ -757,11 +765,11 @@ Synthesizing Unit <TARGETX_DAC_CONTROL>.
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 16-bit adder for signal <INTERNAL_COUNTER[15]_GND_79_o_add_0_OUT> created at line 1241.
-    Found 32-bit adder for signal <cnt[31]_GND_79_o_add_17_OUT> created at line 211.
-    Found 5-bit subtractor for signal <GND_79_o_cnt[31]_sub_10_OUT<4:0>> created at line 173.
-    Found 1-bit 19-to-1 multiplexer for signal <GND_79_o_X_72_o_Mux_10_o> created at line 173.
-    Found 32-bit comparator greater for signal <GND_79_o_cnt[31]_LessThan_9_o> created at line 171
+    Found 16-bit adder for signal <INTERNAL_COUNTER[15]_GND_81_o_add_0_OUT> created at line 1241.
+    Found 32-bit adder for signal <cnt[31]_GND_81_o_add_17_OUT> created at line 211.
+    Found 5-bit subtractor for signal <GND_81_o_cnt[31]_sub_10_OUT<4:0>> created at line 173.
+    Found 1-bit 19-to-1 multiplexer for signal <GND_81_o_X_74_o_Mux_10_o> created at line 173.
+    Found 32-bit comparator greater for signal <GND_81_o_cnt[31]_LessThan_9_o> created at line 171
     Found 16-bit comparator greater for signal <LOAD_PERIOD[15]_INTERNAL_COUNTER[15]_LessThan_19_o> created at line 222
     Found 16-bit comparator greater for signal <LATCH_PERIOD[15]_INTERNAL_COUNTER[15]_LessThan_33_o> created at line 348
     Summary:
@@ -827,6 +835,7 @@ Synthesizing Unit <DigitizeAndShiftOutData>.
     Found 1-bit register for signal <busy>.
     Found 9-bit register for signal <BUS_RD_WINSEL_i>.
     Found 1-bit register for signal <dig_ena>.
+    Found 1-bit register for signal <i_asic_mask>.
     Found 1-bit register for signal <shift_ena>.
     Found 5-bit register for signal <shift_samp_start>.
     Found 1-bit register for signal <ena_i>.
@@ -835,7 +844,7 @@ Synthesizing Unit <DigitizeAndShiftOutData>.
     | States             | 5                                              |
     | Transitions        | 12                                             |
     | Inputs             | 5                                              |
-    | Outputs            | 5                                              |
+    | Outputs            | 4                                              |
     | Clock              | clk (rising_edge)                              |
     | Reset              | rst (positive)                                 |
     | Reset type         | synchronous                                    |
@@ -845,13 +854,13 @@ Synthesizing Unit <DigitizeAndShiftOutData>.
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 9-bit adder for signal <BUS_RD_WINSEL_i[8]_GND_82_o_add_12_OUT> created at line 283.
+    Found 9-bit adder for signal <BUS_RD_WINSEL_i[8]_GND_84_o_add_12_OUT> created at line 283.
     Found 9-bit comparator equal for signal <n0019> created at line 282
     Summary:
 	inferred   1 Adder/Subtractor(s).
-	inferred  23 D-type flip-flop(s).
+	inferred  24 D-type flip-flop(s).
 	inferred   1 Comparator(s).
-	inferred   6 Multiplexer(s).
+	inferred   7 Multiplexer(s).
 	inferred   1 Finite State Machine(s).
 Unit <DigitizeAndShiftOutData> synthesized.
 
@@ -881,10 +890,10 @@ Synthesizing Unit <DigitizingLgcTX>.
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 12-bit adder for signal <dig_st_fms_ctr[11]_GND_83_o_add_13_OUT> created at line 116.
-    Found 12-bit 4-to-1 multiplexer for signal <digitization_state[1]_GND_83_o_wide_mux_21_OUT> created at line 77.
-    Found 12-bit comparator greater for signal <dig_st_fms_ctr[11]_GND_83_o_LessThan_5_o> created at line 94
-    Found 12-bit comparator greater for signal <dig_st_fms_ctr[11]_GND_83_o_LessThan_9_o> created at line 105
+    Found 12-bit adder for signal <dig_st_fms_ctr[11]_GND_85_o_add_13_OUT> created at line 116.
+    Found 12-bit 4-to-1 multiplexer for signal <digitization_state[1]_GND_85_o_wide_mux_21_OUT> created at line 77.
+    Found 12-bit comparator greater for signal <dig_st_fms_ctr[11]_GND_85_o_LessThan_5_o> created at line 94
+    Found 12-bit comparator greater for signal <dig_st_fms_ctr[11]_GND_85_o_LessThan_9_o> created at line 105
     Found 6-bit comparator greater for signal <dig_st_fms_ctr[11]_ramp_length[11]_LessThan_13_o> created at line 115
     Summary:
 	inferred   1 Adder/Subtractor(s).
@@ -919,7 +928,7 @@ Synthesizing Unit <ShiftOutWindow>.
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 5-bit adder for signal <samplesel_i[4]_GND_84_o_add_10_OUT> created at line 213.
+    Found 5-bit adder for signal <samplesel_i[4]_GND_86_o_add_10_OUT> created at line 213.
     Found 5-bit comparator equal for signal <samplesel_i[4]_samp_stop_asic_i[4]_equal_10_o> created at line 209
     Summary:
 	inferred   1 Adder/Subtractor(s).
@@ -974,18 +983,18 @@ Synthesizing Unit <ShiftOutSample>.
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found 4-bit adder for signal <sr_ctrl_fsm_ctr[3]_GND_85_o_add_36_OUT> created at line 261.
-    Found 4-bit adder for signal <sr_ctrl_bit_count[3]_GND_85_o_add_38_OUT> created at line 266.
-    Found 4-bit adder for signal <rx_fsm_ctr[3]_GND_85_o_add_61_OUT> created at line 302.
-    Found 4-bit adder for signal <rx_bit_count[3]_GND_85_o_add_65_OUT> created at line 314.
-    Found 4-bit 3-to-1 multiplexer for signal <rx_bits_state[1]_X_78_o_wide_mux_73_OUT> created at line 284.
+    Found 4-bit adder for signal <sr_ctrl_fsm_ctr[3]_GND_87_o_add_36_OUT> created at line 261.
+    Found 4-bit adder for signal <sr_ctrl_bit_count[3]_GND_87_o_add_38_OUT> created at line 266.
+    Found 4-bit adder for signal <rx_fsm_ctr[3]_GND_87_o_add_61_OUT> created at line 302.
+    Found 4-bit adder for signal <rx_bit_count[3]_GND_87_o_add_65_OUT> created at line 314.
+    Found 4-bit 3-to-1 multiplexer for signal <rx_bits_state[1]_X_80_o_wide_mux_73_OUT> created at line 284.
     Found 4-bit comparator greater for signal <sr_ctrl_fsm_ctr[3]_t_samp_addr_settle[3]_LessThan_4_o> created at line 157
     Found 4-bit comparator greater for signal <sr_ctrl_fsm_ctr[3]_t_strobe_settle[3]_LessThan_16_o> created at line 208
-    Found 4-bit comparator greater for signal <sr_ctrl_fsm_ctr[3]_GND_85_o_LessThan_27_o> created at line 238
+    Found 4-bit comparator greater for signal <sr_ctrl_fsm_ctr[3]_GND_87_o_LessThan_27_o> created at line 238
     Found 4-bit comparator greater for signal <sr_ctrl_fsm_ctr[3]_t_sr_clk_high[3]_LessThan_31_o> created at line 249
-    Found 4-bit comparator greater for signal <sr_ctrl_fsm_ctr[3]_GND_85_o_LessThan_36_o> created at line 260
+    Found 4-bit comparator greater for signal <sr_ctrl_fsm_ctr[3]_GND_87_o_LessThan_36_o> created at line 260
     Found 4-bit comparator greater for signal <sr_ctrl_bit_count[3]_PWR_56_o_LessThan_38_o> created at line 265
-    Found 4-bit comparator greater for signal <rx_fsm_ctr[3]_GND_85_o_LessThan_61_o> created at line 301
+    Found 4-bit comparator greater for signal <rx_fsm_ctr[3]_GND_87_o_LessThan_61_o> created at line 301
     Found 4-bit comparator greater for signal <rx_bit_count[3]_PWR_56_o_LessThan_65_o> created at line 313
     Summary:
 	inferred   4 Adder/Subtractor(s).
@@ -1008,8 +1017,8 @@ Synthesizing Unit <SamplingLgc>.
     Found 2-bit register for signal <samp_mod8_i>.
     Found 1-bit register for signal <analog_store_state>.
     Found 9-bit register for signal <cur_win>.
-    Found 9-bit adder for signal <cur_win_i[8]_GND_124_o_add_8_OUT> created at line 1241.
-    Found 2-bit adder for signal <samp_mod8_i[1]_GND_124_o_add_9_OUT> created at line 192.
+    Found 9-bit adder for signal <cur_win_i[8]_GND_126_o_add_8_OUT> created at line 1241.
+    Found 2-bit adder for signal <samp_mod8_i[1]_GND_126_o_add_9_OUT> created at line 192.
     Summary:
 	inferred   2 Adder/Subtractor(s).
 	inferred  34 D-type flip-flop(s).
@@ -1024,14 +1033,14 @@ Macro Statistics
  256x20-bit dual-port RAM                              : 1
  4x2-bit single-port Read Only RAM                     : 1
  5x16-bit single-port RAM                              : 1
-# Adders/Subtractors                                   : 31
+# Adders/Subtractors                                   : 32
  12-bit adder                                          : 1
  16-bit adder                                          : 3
  2-bit adder                                           : 1
  27-bit adder                                          : 1
- 32-bit adder                                          : 4
+ 32-bit adder                                          : 5
  32-bit subtractor                                     : 1
- 4-bit adder                                           : 7
+ 4-bit adder                                           : 6
  4-bit subtractor                                      : 1
  5-bit adder                                           : 1
  5-bit subtractor                                      : 2
@@ -1039,10 +1048,10 @@ Macro Statistics
  7-bit subtractor                                      : 1
  8-bit adder                                           : 2
  8-bit addsub                                          : 1
- 9-bit adder                                           : 3
+ 9-bit adder                                           : 4
  9-bit subtractor                                      : 1
-# Registers                                            : 167
- 1-bit register                                        : 74
+# Registers                                            : 170
+ 1-bit register                                        : 76
  10-bit register                                       : 7
  11-bit register                                       : 1
  12-bit register                                       : 2
@@ -1051,28 +1060,27 @@ Macro Statistics
  2-bit register                                        : 12
  20-bit register                                       : 3
  27-bit register                                       : 1
- 32-bit register                                       : 9
- 4-bit register                                        : 7
+ 32-bit register                                       : 10
+ 4-bit register                                        : 6
  5-bit register                                        : 4
  6-bit register                                        : 2
  8-bit register                                        : 7
- 9-bit register                                        : 6
-# Latches                                              : 2
- 1-bit latch                                           : 2
+ 9-bit register                                        : 7
+# Latches                                              : 4
+ 1-bit latch                                           : 4
 # Comparators                                          : 21
  12-bit comparator greater                             : 2
  16-bit comparator greater                             : 4
- 32-bit comparator greater                             : 1
- 32-bit comparator lessequal                           : 1
+ 32-bit comparator greater                             : 2
  4-bit comparator greater                              : 8
  5-bit comparator equal                                : 1
  6-bit comparator greater                              : 2
  9-bit comparator equal                                : 1
  9-bit comparator greater                              : 1
-# Multiplexers                                         : 193
+# Multiplexers                                         : 226
  1-bit 10-to-1 multiplexer                             : 2
  1-bit 19-to-1 multiplexer                             : 1
- 1-bit 2-to-1 multiplexer                              : 107
+ 1-bit 2-to-1 multiplexer                              : 138
  1-bit 3-to-1 multiplexer                              : 2
  10-bit 2-to-1 multiplexer                             : 1
  11-bit 2-to-1 multiplexer                             : 1
@@ -1082,15 +1090,15 @@ Macro Statistics
  19-bit 2-to-1 multiplexer                             : 1
  2-bit 2-to-1 multiplexer                              : 6
  20-bit 2-to-1 multiplexer                             : 6
- 32-bit 2-to-1 multiplexer                             : 14
+ 32-bit 2-to-1 multiplexer                             : 16
  32-bit 3-to-1 multiplexer                             : 1
  32-bit 4-to-1 multiplexer                             : 1
- 4-bit 2-to-1 multiplexer                              : 22
+ 4-bit 2-to-1 multiplexer                              : 21
  4-bit 3-to-1 multiplexer                              : 1
  5-bit 2-to-1 multiplexer                              : 3
  6-bit 2-to-1 multiplexer                              : 2
  8-bit 2-to-1 multiplexer                              : 2
- 9-bit 2-to-1 multiplexer                              : 3
+ 9-bit 2-to-1 multiplexer                              : 4
 # FSMs                                                 : 12
 # Xors                                                 : 20
  1-bit xor2                                            : 20
@@ -1128,6 +1136,7 @@ WARNING:Xst:1293 - FF/Latch <samp_stop_asic_i_1> has a constant value of 1 in bl
 WARNING:Xst:1293 - FF/Latch <samp_stop_asic_i_2> has a constant value of 1 in block <ShftWin_i>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <samp_stop_asic_i_3> has a constant value of 1 in block <ShftWin_i>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <samp_stop_asic_i_4> has a constant value of 1 in block <ShftWin_i>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <i_asic_mask> has a constant value of 1 in block <DigitizeAndShiftOutData_i>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <reg_data_m2s_last> has a constant value of 0 in block <mppc_wrapper_i>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:2677 - Node <regBuffer[1]_value_12> of sequential type is unconnected in block <reg_buffer>.
 WARNING:Xst:2677 - Node <regBuffer[1]_value_13> of sequential type is unconnected in block <reg_buffer>.
@@ -1172,7 +1181,7 @@ WARNING:Xst:2677 - Node <regBuffer[10]_value_15> of sequential type is unconnect
 WARNING:Xst:2677 - Node <regTX_tx_data_19> of sequential type is unconnected in block <mppc_wrapper_i>.
 
 Synthesizing (advanced) Unit <DC_Comm_back>.
-INFO:Xst:3231 - The small RAM <Mram_GND_53_o_GND_53_o_mux_40_OUT> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
+INFO:Xst:3231 - The small RAM <Mram_GND_55_o_GND_55_o_mux_40_OUT> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
     -----------------------------------------------------------------------
     | ram_type           | Distributed                         |          |
     -----------------------------------------------------------------------
@@ -1186,7 +1195,6 @@ INFO:Xst:3231 - The small RAM <Mram_GND_53_o_GND_53_o_mux_40_OUT> will be implem
 Unit <DC_Comm_back> synthesized (advanced).
 
 Synthesizing (advanced) Unit <DC_FPGA_TOP>.
-The following registers are absorbed into counter <window_counter>: 1 register on signal <window_counter>.
 The following registers are absorbed into counter <ctime>: 1 register on signal <ctime>.
 INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_CtrlRegister> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
     -----------------------------------------------------------------------
@@ -1195,7 +1203,7 @@ INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_CtrlRegister> will be implemented on
     | Port A                                                              |
     |     aspect ratio   | 5-word x 16-bit                     |          |
     |     clkA           | connected to signal <DATA_CLK>      | rise     |
-    |     weA            | connected to signal <regOp[1]_GND_17_o_equal_10_o_0_0> | high     |
+    |     weA            | connected to signal <regOp[1]_GND_17_o_equal_13_o_0_0> | high     |
     |     addrA          | connected to signal <regAddr<2:0>>  |          |
     |     diA            | connected to signal <regWrData>     |          |
     |     doA            | connected to internal node          |          |
@@ -1205,6 +1213,10 @@ Unit <DC_FPGA_TOP> synthesized (advanced).
 Synthesizing (advanced) Unit <DigitizeAndShiftOutData>.
 The following registers are absorbed into counter <BUS_RD_WINSEL_i>: 1 register on signal <BUS_RD_WINSEL_i>.
 Unit <DigitizeAndShiftOutData> synthesized (advanced).
+
+Synthesizing (advanced) Unit <QBlink>.
+The following registers are absorbed into counter <v_counter>: 1 register on signal <v_counter>.
+Unit <QBlink> synthesized (advanced).
 
 Synthesizing (advanced) Unit <S6SerialInterfaceIn>.
 The following registers are absorbed into counter <r_slipCount>: 1 register on signal <r_slipCount>.
@@ -1268,44 +1280,44 @@ Macro Statistics
  256x20-bit dual-port block RAM                        : 1
  4x2-bit single-port distributed Read Only RAM         : 1
  5x16-bit single-port distributed RAM                  : 1
-# Adders/Subtractors                                   : 18
+# Adders/Subtractors                                   : 20
  12-bit adder                                          : 1
  16-bit adder                                          : 1
  2-bit adder                                           : 1
- 32-bit adder                                          : 2
+ 32-bit adder                                          : 3
  32-bit subtractor                                     : 1
  4-bit adder                                           : 4
  4-bit subtractor                                      : 2
  5-bit subtractor                                      : 1
  6-bit adder                                           : 2
  7-bit subtractor                                      : 1
- 9-bit adder                                           : 1
+ 9-bit adder                                           : 2
  9-bit subtractor                                      : 1
 # Counters                                             : 13
  16-bit up counter                                     : 2
  27-bit up counter                                     : 1
+ 32-bit down counter                                   : 1
  32-bit up counter                                     : 1
- 4-bit up counter                                      : 3
+ 4-bit up counter                                      : 2
  5-bit up counter                                      : 1
  8-bit up counter                                      : 2
  8-bit updown counter                                  : 1
  9-bit up counter                                      : 2
-# Registers                                            : 1100
- Flip-Flops                                            : 1100
+# Registers                                            : 1111
+ Flip-Flops                                            : 1111
 # Comparators                                          : 21
  12-bit comparator greater                             : 2
  16-bit comparator greater                             : 4
- 32-bit comparator greater                             : 1
- 32-bit comparator lessequal                           : 1
+ 32-bit comparator greater                             : 2
  4-bit comparator greater                              : 8
  5-bit comparator equal                                : 1
  6-bit comparator greater                              : 2
  9-bit comparator equal                                : 1
  9-bit comparator greater                              : 1
-# Multiplexers                                         : 253
+# Multiplexers                                         : 256
  1-bit 10-to-1 multiplexer                             : 2
  1-bit 19-to-1 multiplexer                             : 1
- 1-bit 2-to-1 multiplexer                              : 178
+ 1-bit 2-to-1 multiplexer                              : 177
  1-bit 3-to-1 multiplexer                              : 2
  10-bit 2-to-1 multiplexer                             : 1
  11-bit 2-to-1 multiplexer                             : 1
@@ -1315,7 +1327,7 @@ Macro Statistics
  19-bit 2-to-1 multiplexer                             : 1
  2-bit 2-to-1 multiplexer                              : 6
  20-bit 2-to-1 multiplexer                             : 4
- 32-bit 2-to-1 multiplexer                             : 12
+ 32-bit 2-to-1 multiplexer                             : 15
  32-bit 3-to-1 multiplexer                             : 1
  32-bit 4-to-1 multiplexer                             : 1
  4-bit 2-to-1 multiplexer                              : 19
@@ -1323,7 +1335,7 @@ Macro Statistics
  5-bit 2-to-1 multiplexer                              : 2
  6-bit 2-to-1 multiplexer                              : 2
  8-bit 2-to-1 multiplexer                              : 2
- 9-bit 2-to-1 multiplexer                              : 1
+ 9-bit 2-to-1 multiplexer                              : 2
 # FSMs                                                 : 12
 # Xors                                                 : 20
  1-bit xor2                                            : 20
@@ -1360,13 +1372,13 @@ INFO:Xst:2261 - The FF/Latch <dataWord_5> in Unit <S6SerialInterfaceIn> is equiv
 INFO:Xst:2261 - The FF/Latch <dataWord_7> in Unit <S6SerialInterfaceIn> is equivalent to the following FF/Latch, which will be removed : <dataWordFlipped_6> 
 INFO:Xst:2261 - The FF/Latch <dataWord_9> in Unit <S6SerialInterfaceIn> is equivalent to the following FF/Latch, which will be removed : <dataWordFlipped_8> 
 Analyzing FSM <MFsm> for best encoding.
-Optimizing FSM <FSM_1> on signal <DATA_TRANSFER_STATE[1:2]> with gray encoding.
+Optimizing FSM <FSM_1> on signal <DATA_TRANSFER_STATE[1:2]> with user encoding.
 -------------------------------------------
  State                         | Encoding
 -------------------------------------------
  idle                          | 00
  send_header                   | 01
- send_windows_for_each_channel | 11
+ send_windows_for_each_channel | 10
 -------------------------------------------
 Analyzing FSM <MFsm> for best encoding.
 Optimizing FSM <FSM_0> on signal <ch_number[1:0]> with sequential encoding.
@@ -1498,7 +1510,6 @@ Optimizing FSM <mppc_wrapper_i/DUT/TX_dac_control/FSM_6> on signal <STATE[1:5]> 
  latch_set6          | 10111
  latch_wait6         | 11000
 ---------------------------------
-WARNING:Xst:1293 - FF/Latch <v_counter_31> has a constant value of 0 in block <QBlink>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <r_bitCount_0> has a constant value of 0 in block <S6SerialInterfaceOut>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <r_bitCount_0> has a constant value of 0 in block <S6SerialInterfaceIn>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:2677 - Node <vREG_DATA_data_internal2_19> of sequential type is unconnected in block <tx_dac_control_axi>.
@@ -1569,6 +1580,8 @@ WARNING:Xst:3002 - This design contains one or more registers/latches that are d
   Please refer to http://www.xilinx.com search string "Spartan6 asynchronous set/reset" for more details.
 
   List of register instances with asynchronous set and reset:
+    stateNum_dtransfer_1 in unit <DC_FPGA_TOP>
+    stateNum_dtransfer_0 in unit <DC_FPGA_TOP>
     stateNum_1 in unit <DC_Comm_back>
     stateNum_0 in unit <DC_Comm_back>
 
@@ -1627,6 +1640,7 @@ Optimizing unit <fifo_cc> ...
 Optimizing unit <TARGETX_DAC_CONTROL> ...
 
 Optimizing unit <SamplingLgc> ...
+WARNING:Xst:1293 - FF/Latch <i_asic_mask> has a constant value of 1 in block <DigitizeAndShiftOutData_i>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <samp_stop_asic_i_0> has a constant value of 1 in block <ShftWin_i>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <samp_stop_asic_i_1> has a constant value of 1 in block <ShftWin_i>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <samp_stop_asic_i_2> has a constant value of 1 in block <ShftWin_i>. This FF/Latch will be trimmed during the optimization process.
@@ -1741,32 +1755,33 @@ WARNING:Xst:1293 - FF/Latch <r_alignCnt_10> has a constant value of 0 in block <
 WARNING:Xst:1293 - FF/Latch <r_alignCnt_9> has a constant value of 0 in block <U_ByteLink>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <r_alignCnt_8> has a constant value of 0 in block <U_ByteLink>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <r_alignCnt_7> has a constant value of 0 in block <U_ByteLink>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <v_counter_31> has a constant value of 0 in block <DC_Interface_back>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <v_counter_30> has a constant value of 0 in block <DC_Interface_back>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <v_counter_29> has a constant value of 0 in block <DC_Interface_back>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <v_counter_28> has a constant value of 0 in block <DC_Interface_back>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <v_counter_27> has a constant value of 0 in block <DC_Interface_back>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <v_counter_26> has a constant value of 0 in block <DC_Interface_back>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <v_counter_25> has a constant value of 0 in block <DC_Interface_back>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <v_counter_24> has a constant value of 0 in block <DC_Interface_back>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <v_counter_23> has a constant value of 0 in block <DC_Interface_back>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <v_counter_25> has a constant value of 0 in block <DC_Interface_back>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <v_counter_22> has a constant value of 0 in block <DC_Interface_back>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <v_counter_21> has a constant value of 0 in block <DC_Interface_back>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <v_counter_20> has a constant value of 0 in block <DC_Interface_back>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <v_counter_19> has a constant value of 0 in block <DC_Interface_back>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <v_counter_18> has a constant value of 0 in block <DC_Interface_back>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <v_counter_17> has a constant value of 0 in block <DC_Interface_back>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <v_counter_16> has a constant value of 0 in block <DC_Interface_back>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <v_counter_15> has a constant value of 0 in block <DC_Interface_back>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <v_counter_14> has a constant value of 0 in block <DC_Interface_back>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <v_counter_16> has a constant value of 0 in block <DC_Interface_back>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <v_counter_13> has a constant value of 0 in block <DC_Interface_back>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <v_counter_12> has a constant value of 0 in block <DC_Interface_back>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <v_counter_11> has a constant value of 0 in block <DC_Interface_back>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <v_counter_10> has a constant value of 0 in block <DC_Interface_back>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <v_counter_9> has a constant value of 0 in block <DC_Interface_back>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <v_counter_8> has a constant value of 0 in block <DC_Interface_back>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <v_counter_7> has a constant value of 0 in block <DC_Interface_back>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <v_counter_6> has a constant value of 0 in block <DC_Interface_back>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <v_counter_5> has a constant value of 0 in block <DC_Interface_back>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <v_counter_7> has a constant value of 0 in block <DC_Interface_back>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <v_counter_4> has a constant value of 0 in block <DC_Interface_back>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <v_counter_3> has a constant value of 0 in block <DC_Interface_back>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <v_counter_2> has a constant value of 0 in block <DC_Interface_back>. This FF/Latch will be trimmed during the optimization process.
@@ -1775,10 +1790,23 @@ WARNING:Xst:1293 - FF/Latch <window_counter_0> has a constant value of 0 in bloc
 WARNING:Xst:1293 - FF/Latch <window_counter_1> has a constant value of 0 in block <DC_FPGA_TOP>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <window_counter_2> has a constant value of 0 in block <DC_FPGA_TOP>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <window_counter_3> has a constant value of 0 in block <DC_FPGA_TOP>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <window_counter_4> has a constant value of 0 in block <DC_FPGA_TOP>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <window_counter_5> has a constant value of 0 in block <DC_FPGA_TOP>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <window_counter_6> has a constant value of 0 in block <DC_FPGA_TOP>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <window_counter_7> has a constant value of 0 in block <DC_FPGA_TOP>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <window_counter_8> has a constant value of 0 in block <DC_FPGA_TOP>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:638 - in unit DC_FPGA_TOP Conflict on KEEP property on signal window_counter<0> and window_counter<1> window_counter<1> signal will be lost.
+WARNING:Xst:638 - in unit DC_FPGA_TOP Conflict on KEEP property on signal window_counter<0> and window_counter<2> window_counter<2> signal will be lost.
+WARNING:Xst:638 - in unit DC_FPGA_TOP Conflict on KEEP property on signal window_counter<0> and window_counter<3> window_counter<3> signal will be lost.
+WARNING:Xst:638 - in unit DC_FPGA_TOP Conflict on KEEP property on signal window_counter<0> and window_counter<4> window_counter<4> signal will be lost.
+WARNING:Xst:638 - in unit DC_FPGA_TOP Conflict on KEEP property on signal window_counter<0> and window_counter<5> window_counter<5> signal will be lost.
+WARNING:Xst:638 - in unit DC_FPGA_TOP Conflict on KEEP property on signal window_counter<0> and window_counter<6> window_counter<6> signal will be lost.
+WARNING:Xst:638 - in unit DC_FPGA_TOP Conflict on KEEP property on signal window_counter<0> and window_counter<7> window_counter<7> signal will be lost.
+WARNING:Xst:638 - in unit DC_FPGA_TOP Conflict on KEEP property on signal window_counter<0> and window_counter<8> window_counter<8> signal will be lost.
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block DC_FPGA_TOP, actual ratio is 30.
+Found area constraint ratio of 100 (+ 5) on block DC_FPGA_TOP, actual ratio is 34.
 INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_i> in Unit <U_SerializationFifo> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_fb_i> 
 INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_i> in Unit <U_SerializationFifo> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_fb_i> 
 INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_1> in Unit <U_SerializationFifo> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_0> 
@@ -1908,8 +1936,8 @@ Unit <reg_buffer> processed.
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 780
- Flip-Flops                                            : 780
+# Registers                                            : 813
+ Flip-Flops                                            : 813
 # Shift Registers                                      : 28
  10-bit shift register                                 : 27
  6-bit shift register                                  : 1
@@ -1935,30 +1963,31 @@ Top Level Output File Name         : DC_FPGA_TOP.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 1895
+# BELS                             : 1974
 #      GND                         : 26
-#      INV                         : 47
-#      LUT1                        : 114
-#      LUT2                        : 178
-#      LUT3                        : 155
-#      LUT4                        : 271
-#      LUT5                        : 275
-#      LUT6                        : 349
-#      MUXCY                       : 274
-#      MUXF7                       : 9
+#      INV                         : 51
+#      LUT1                        : 145
+#      LUT2                        : 180
+#      LUT3                        : 158
+#      LUT4                        : 267
+#      LUT5                        : 267
+#      LUT6                        : 332
+#      MUXCY                       : 311
+#      MUXF7                       : 8
 #      VCC                         : 16
-#      XORCY                       : 181
-# FlipFlops/Latches                : 1317
-#      FD                          : 255
+#      XORCY                       : 213
+# FlipFlops/Latches                : 1352
+#      FD                          : 284
 #      FDC                         : 202
 #      FDCE                        : 126
-#      FDE                         : 393
+#      FDE                         : 398
 #      FDP                         : 71
 #      FDPE                        : 12
-#      FDR                         : 146
+#      FDR                         : 143
 #      FDRE                        : 107
+#      FDS                         : 2
 #      IDDR2                       : 1
-#      LD                          : 2
+#      LD                          : 4
 #      ODDR2                       : 2
 # RAMS                             : 24
 #      RAM16X1S                    : 16
@@ -1984,19 +2013,19 @@ Selected Device : 6slx4tqg144-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:            1317  out of   4800    27%  
- Number of Slice LUTs:                 1433  out of   2400    59%  
-    Number used as Logic:              1389  out of   2400    57%  
+ Number of Slice Registers:            1352  out of   4800    28%  
+ Number of Slice LUTs:                 1444  out of   2400    60%  
+    Number used as Logic:              1400  out of   2400    58%  
     Number used as Memory:               44  out of   1200     3%  
        Number used as RAM:               16
        Number used as SRL:               28
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:   1932
-   Number with an unused Flip Flop:     615  out of   1932    31%  
-   Number with an unused LUT:           499  out of   1932    25%  
-   Number of fully used LUT-FF pairs:   818  out of   1932    42%  
-   Number of unique control sets:       136
+ Number of LUT Flip Flop pairs used:   1939
+   Number with an unused Flip Flop:     587  out of   1939    30%  
+   Number with an unused LUT:           495  out of   1939    25%  
+   Number of fully used LUT-FF pairs:   857  out of   1939    44%  
+   Number of unique control sets:       135
 
 IO Utilization: 
  Number of IOs:                          40
@@ -2029,12 +2058,13 @@ Clock Information:
 --------------------------------------------------------+----------------------------------+-------+
 Clock Signal                                            | Clock buffer(FF name)            | Load  |
 --------------------------------------------------------+----------------------------------+-------+
-clk_buffer/pll_base_inst/CLKOUT0                        | BUFG                             | 1058  |
+clk_buffer/pll_base_inst/CLKOUT0                        | BUFG                             | 1091  |
 clk_buffer/pll_base_inst/CLKOUT2                        | BUFG                             | 177   |
 clk_buffer/pll_base_inst/CLKOUT1                        | BUFG                             | 138   |
 u_dc_receiver/stateNum_0_G(u_dc_receiver/stateNum_0_G:O)| NONE(*)(u_dc_receiver/stateNum_0)| 2     |
+stateNum_dtransfer_0_G(stateNum_dtransfer_0_G:O)        | NONE(*)(stateNum_dtransfer_0)    | 2     |
 --------------------------------------------------------+----------------------------------+-------+
-(*) This 1 clock signal(s) are generated by combinatorial logic,
+(*) These 2 clock signal(s) are generated by combinatorial logic,
 and XST is not able to identify which are the primary clock signals.
 Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
 INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
@@ -2047,8 +2077,8 @@ Timing Summary:
 ---------------
 Speed Grade: -3
 
-   Minimum period: 6.256ns (Maximum Frequency: 159.853MHz)
-   Minimum input arrival time before clock: 6.362ns
+   Minimum period: 6.196ns (Maximum Frequency: 161.404MHz)
+   Minimum input arrival time before clock: 2.531ns
    Maximum output required time after clock: 4.521ns
    Maximum combinational path delay: No path found
 
@@ -2058,30 +2088,33 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk_buffer/pll_base_inst/CLKOUT0'
-  Clock period: 6.256ns (frequency: 159.853MHz)
-  Total number of paths / destination ports: 34298 / 2320
+  Clock period: 6.196ns (frequency: 161.404MHz)
+  Total number of paths / destination ports: 39304 / 2361
 -------------------------------------------------------------------------
-Delay:               6.256ns (Levels of Logic = 6)
-  Source:            first_dig_win_4 (FF)
+Delay:               6.196ns (Levels of Logic = 9)
+  Source:            last_dig_win_0 (FF)
   Destination:       DC_RESPONSE_data_0 (FF)
   Source Clock:      clk_buffer/pll_base_inst/CLKOUT0 rising
   Destination Clock: clk_buffer/pll_base_inst/CLKOUT0 rising
 
-  Data Path: first_dig_win_4 to DC_RESPONSE_data_0
+  Data Path: last_dig_win_0 to DC_RESPONSE_data_0
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDE:C->Q              5   0.447   0.819  first_dig_win_4 (first_dig_win_4)
-     LUT2:I0->O            5   0.203   1.059  Madd_GND_17_o_GND_17_o_add_35_OUT_cy<0>6_SW0 (N01)
-     LUT6:I1->O            1   0.203   0.000  Madd_GND_17_o_GND_17_o_add_35_OUT_cy<0>6_SW2_G (N55)
-     MUXF7:I1->O           1   0.140   0.684  Madd_GND_17_o_GND_17_o_add_35_OUT_cy<0>6_SW2 (N14)
-     LUT6:I4->O           14   0.203   0.958  GND_17_o_GND_17_o_LessThan_37_o15 (GND_17_o_GND_17_o_LessThan_37_o14)
-     LUT6:I5->O           17   0.205   1.028  _n0477_inv_rstpot (_n0477_inv_rstpot)
-     LUT5:I4->O            1   0.205   0.000  DC_RESPONSE_data_0_dpot (DC_RESPONSE_data_0_dpot)
-     FDE:D                     0.102          DC_RESPONSE_data_0
+     FDE:C->Q              5   0.447   0.962  last_dig_win_0 (last_dig_win_0)
+     LUT4:I0->O            1   0.203   0.579  Madd_GND_17_o_GND_17_o_add_42_OUT_cy<0>4_SW0 (N2)
+     MUXF7:S->O            4   0.148   0.684  Madd_GND_17_o_GND_17_o_add_42_OUT_cy<0>4 (Madd_GND_17_o_GND_17_o_add_42_OUT_cy<0>3)
+     LUT6:I5->O            1   0.205   0.684  Madd_GND_17_o_GND_17_o_add_42_OUT_cy<0>72 (Madd_GND_17_o_GND_17_o_add_42_OUT_cy<0>6)
+     LUT6:I4->O            1   0.203   0.000  Mcompar_window_counter[8]_GND_17_o_LessThan_44_o_lut<3>1 (Mcompar_window_counter[8]_GND_17_o_LessThan_44_o_lut<3>)
+     MUXCY:S->O            1   0.172   0.000  Mcompar_window_counter[8]_GND_17_o_LessThan_44_o_cy<3> (Mcompar_window_counter[8]_GND_17_o_LessThan_44_o_cy<3>)
+     MUXCY:CI->O          42   0.019   0.000  Mcompar_window_counter[8]_GND_17_o_LessThan_44_o_cy<4> (Mcompar_window_counter[8]_GND_17_o_LessThan_44_o_cy<4>)
+     MUXCY:CI->O           1   0.019   0.000  DATA_TRANSFER_STATE[1]_X_17_o_wide_mux_85_OUT<0>1_cy (Mcompar_window_counter[8]_GND_17_o_LessThan_44_o_cy<4>_l1)
+     MUXCY:CI->O          33   0.258   1.306  DATA_TRANSFER_STATE[1]_X_17_o_wide_mux_85_OUT<0>1_cy1 (DATA_TRANSFER_STATE[1]_X_17_o_wide_mux_85_OUT<0>)
+     LUT5:I4->O            1   0.205   0.000  DC_RESPONSE_data_0_rstpot (DC_RESPONSE_data_0_rstpot)
+     FD:D                      0.102          DC_RESPONSE_data_0
     ----------------------------------------
-    Total                      6.256ns (1.708ns logic, 4.548ns route)
-                                       (27.3% logic, 72.7% route)
+    Total                      6.196ns (1.981ns logic, 4.215ns route)
+                                       (32.0% logic, 68.0% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk_buffer/pll_base_inst/CLKOUT2'
@@ -2123,7 +2156,7 @@ Delay:               3.560ns (Levels of Logic = 3)
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      FDRE:C->Q            10   0.447   1.201  r_slipCount_6 (r_slipCount_6)
-     LUT5:I0->O            2   0.203   0.617  _n0131_inv41 (r_slipCount[15]_GND_62_o_LessThan_10_o_inv)
+     LUT5:I0->O            2   0.203   0.617  _n0131_inv41 (r_slipCount[15]_GND_64_o_LessThan_10_o_inv)
      LUT3:I2->O            1   0.205   0.580  r_flip_rstpot_SW1 (N6)
      LUT6:I5->O            1   0.205   0.000  r_flip_rstpot (r_flip_rstpot)
      FDR:D                     0.102          r_flip
@@ -2132,59 +2165,33 @@ Delay:               3.560ns (Levels of Logic = 3)
                                        (32.6% logic, 67.4% route)
 
 =========================================================================
-Timing constraint: Default OFFSET IN BEFORE for Clock 'clk_buffer/pll_base_inst/CLKOUT0'
-  Total number of paths / destination ports: 400 / 65
--------------------------------------------------------------------------
-Offset:              6.362ns (Levels of Logic = 6)
-  Source:            SYNC_P<0> (PAD)
-  Destination:       DC_RESPONSE_data_0 (FF)
-  Destination Clock: clk_buffer/pll_base_inst/CLKOUT0 rising
-
-  Data Path: SYNC_P<0> to DC_RESPONSE_data_0
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     begin scope: 'DC_IO_BUFF:SYNC_P<0>'
-     IBUFDS:I->O          32   1.222   1.520  Gen_buffers[0].SYNC2_IBUFDS_inst (SYNC<0>)
-     end scope: 'DC_IO_BUFF:SYNC<0>'
-     LUT3:I0->O            1   0.205   0.808  GND_17_o_GND_17_o_LessThan_37_o14_SW3_SW0 (N64)
-     LUT6:I3->O            2   0.205   0.864  GND_17_o_GND_17_o_LessThan_37_o14_SW3 (N49)
-     LUT6:I2->O           17   0.203   1.028  _n0477_inv_rstpot (_n0477_inv_rstpot)
-     LUT5:I4->O            1   0.205   0.000  DC_RESPONSE_data_0_dpot (DC_RESPONSE_data_0_dpot)
-     FDE:D                     0.102          DC_RESPONSE_data_0
-    ----------------------------------------
-    Total                      6.362ns (2.142ns logic, 4.220ns route)
-                                       (33.7% logic, 66.3% route)
-
-=========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk_buffer/pll_base_inst/CLKOUT2'
-  Total number of paths / destination ports: 22 / 12
+  Total number of paths / destination ports: 12 / 7
 -------------------------------------------------------------------------
-Offset:              4.715ns (Levels of Logic = 5)
+Offset:              2.531ns (Levels of Logic = 4)
   Source:            SYNC_P<0> (PAD)
-  Destination:       data_fifos_generation[0].data_fifos/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/RST_FULL_GEN (FF)
+  Destination:       Udc_data/force_test_pattern_i (FF)
   Destination Clock: clk_buffer/pll_base_inst/CLKOUT2 rising
 
-  Data Path: SYNC_P<0> to data_fifos_generation[0].data_fifos/U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/RST_FULL_GEN
+  Data Path: SYNC_P<0> to Udc_data/force_test_pattern_i
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      begin scope: 'DC_IO_BUFF:SYNC_P<0>'
-     IBUFDS:I->O          32   1.222   1.291  Gen_buffers[0].SYNC2_IBUFDS_inst (SYNC<0>)
+     IBUFDS:I->O           7   1.222   1.002  Gen_buffers[0].SYNC2_IBUFDS_inst (SYNC<0>)
      end scope: 'DC_IO_BUFF:SYNC<0>'
-     INV:I->O              2   0.206   0.616  SYNC_inv1_INV_0 (SYNC_inv)
-     begin scope: 'data_fifos_generation[0].data_fifos:s_aresetn'
-     INV:I->O              6   0.206   0.744  U0/xst_fifo_generator/inverted_reset1_INV_0 (U0/xst_fifo_generator/inverted_reset)
-     FDP:PRE                   0.430          U0/xst_fifo_generator/gaxis_fifo.gaxisf.axisf/grf.rf/rstblk/grstd1.grst_full.rst_d1
+     begin scope: 'Udc_data:rst'
+     LUT5:I2->O            1   0.205   0.000  force_test_pattern_i_rstpot1 (force_test_pattern_i_rstpot1)
+     FD:D                      0.102          force_test_pattern_i
     ----------------------------------------
-    Total                      4.715ns (2.064ns logic, 2.651ns route)
-                                       (43.8% logic, 56.2% route)
+    Total                      2.531ns (1.529ns logic, 1.002ns route)
+                                       (60.4% logic, 39.6% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk_buffer/pll_base_inst/CLKOUT1'
   Total number of paths / destination ports: 4 / 2
 -------------------------------------------------------------------------
-Offset:              2.821ns (Levels of Logic = 5)
+Offset:              2.405ns (Levels of Logic = 5)
   Source:            SYNC_P<0> (PAD)
   Destination:       u_dc_receiver/DC_Interface_back/U_SstX5Reset/G_RisingEdgeClock.cdc_reg1 (FF)
   Destination Clock: clk_buffer/pll_base_inst/CLKOUT1 rising
@@ -2194,16 +2201,41 @@ Offset:              2.821ns (Levels of Logic = 5)
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      begin scope: 'DC_IO_BUFF:SYNC_P<0>'
-     IBUFDS:I->O          32   1.222   1.292  Gen_buffers[0].SYNC2_IBUFDS_inst (SYNC<0>)
+     IBUFDS:I->O           7   1.222   0.878  Gen_buffers[0].SYNC2_IBUFDS_inst (SYNC<0>)
      end scope: 'DC_IO_BUFF:SYNC<0>'
      begin scope: 'u_dc_receiver:sync<0>'
      begin scope: 'u_dc_receiver/DC_Interface_back:sync'
      begin scope: 'u_dc_receiver/DC_Interface_back/U_SstX5Reset:asyncBit'
-     LUT2:I1->O            1   0.205   0.000  G_RisingEdgeClock.cdc_reg1_glue_rst (G_RisingEdgeClock.cdc_reg1_glue_rst)
+     LUT2:I0->O            1   0.203   0.000  G_RisingEdgeClock.cdc_reg1_glue_rst (G_RisingEdgeClock.cdc_reg1_glue_rst)
      FD:D                      0.102          G_RisingEdgeClock.cdc_reg1
     ----------------------------------------
-    Total                      2.821ns (1.529ns logic, 1.292ns route)
-                                       (54.2% logic, 45.8% route)
+    Total                      2.405ns (1.527ns logic, 0.878ns route)
+                                       (63.5% logic, 36.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk_buffer/pll_base_inst/CLKOUT0'
+  Total number of paths / destination ports: 2 / 1
+-------------------------------------------------------------------------
+Offset:              2.405ns (Levels of Logic = 5)
+  Source:            SYNC_P<0> (PAD)
+  Destination:       u_dc_receiver/DC_Interface_back/U_SstReset/G_RisingEdgeClock.cdc_reg1 (FF)
+  Destination Clock: clk_buffer/pll_base_inst/CLKOUT0 rising
+
+  Data Path: SYNC_P<0> to u_dc_receiver/DC_Interface_back/U_SstReset/G_RisingEdgeClock.cdc_reg1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     begin scope: 'DC_IO_BUFF:SYNC_P<0>'
+     IBUFDS:I->O           7   1.222   0.878  Gen_buffers[0].SYNC2_IBUFDS_inst (SYNC<0>)
+     end scope: 'DC_IO_BUFF:SYNC<0>'
+     begin scope: 'u_dc_receiver:sync<0>'
+     begin scope: 'u_dc_receiver/DC_Interface_back:sync'
+     begin scope: 'u_dc_receiver/DC_Interface_back/U_SstReset:asyncBit'
+     LUT2:I0->O            1   0.203   0.000  G_RisingEdgeClock.cdc_reg1_glue_rst (G_RisingEdgeClock.cdc_reg1_glue_rst)
+     FD:D                      0.102          G_RisingEdgeClock.cdc_reg1
+    ----------------------------------------
+    Total                      2.405ns (1.527ns logic, 0.878ns route)
+                                       (63.5% logic, 36.5% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk_buffer/pll_base_inst/CLKOUT2'
@@ -2261,7 +2293,7 @@ Clock to Setup on destination clock clk_buffer/pll_base_inst/CLKOUT0
                                 | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock                    |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 --------------------------------+---------+---------+---------+---------+
-clk_buffer/pll_base_inst/CLKOUT0|    6.256|         |         |         |
+clk_buffer/pll_base_inst/CLKOUT0|    6.196|         |         |         |
 clk_buffer/pll_base_inst/CLKOUT1|    1.128|         |         |         |
 clk_buffer/pll_base_inst/CLKOUT2|    1.128|         |         |         |
 --------------------------------+---------+---------+---------+---------+
@@ -2280,8 +2312,16 @@ Clock to Setup on destination clock clk_buffer/pll_base_inst/CLKOUT2
                                 | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock                    |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 --------------------------------+---------+---------+---------+---------+
-clk_buffer/pll_base_inst/CLKOUT0|    4.888|         |         |         |
+clk_buffer/pll_base_inst/CLKOUT0|    4.956|         |         |         |
 clk_buffer/pll_base_inst/CLKOUT2|    4.755|         |         |         |
+--------------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock stateNum_dtransfer_0_G
+--------------------------------+---------+---------+---------+---------+
+                                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                    |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+--------------------------------+---------+---------+---------+---------+
+clk_buffer/pll_base_inst/CLKOUT0|         |         |    2.517|         |
 --------------------------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock u_dc_receiver/stateNum_0_G
@@ -2289,21 +2329,21 @@ Clock to Setup on destination clock u_dc_receiver/stateNum_0_G
                                 | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock                    |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 --------------------------------+---------+---------+---------+---------+
-clk_buffer/pll_base_inst/CLKOUT0|         |         |    2.268|         |
+clk_buffer/pll_base_inst/CLKOUT0|         |         |    2.254|         |
 --------------------------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 22.00 secs
-Total CPU time to Xst completion: 10.32 secs
+Total REAL time to Xst completion: 25.00 secs
+Total CPU time to Xst completion: 10.94 secs
  
 --> 
 
 
-Total memory usage is 518640 kilobytes
+Total memory usage is 518868 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :  311 (   0 filtered)
-Number of infos    :  132 (   0 filtered)
+Number of warnings :  328 (   0 filtered)
+Number of infos    :  133 (   0 filtered)
 

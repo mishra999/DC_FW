@@ -37,12 +37,12 @@ entity ShiftOutSample is
 
         -- control registers
         force_test_pattern : in  std_logic := '0';
-        t_samp_addr_settle : in std_logic_vector(3 downto 0) := "0100";
-        t_sr_clk_strobe    : in std_logic_vector(3 downto 0) := "0000";
+        t_samp_addr_settle : in std_logic_vector(3 downto 0) := "0000";
+        t_sr_clk_strobe    : in std_logic_vector(3 downto 0) := "0001";
         t_strobe_settle    : in std_logic_vector(3 downto 0) := "0000";
-        t_setup_ss_any     : in std_logic_vector(3 downto 0) := "0001";
-        t_sr_clk_high      : in std_logic_vector(3 downto 0) := "0010";
-        t_sr_clk_low       : in std_logic_vector(3 downto 0) := "0001";
+        t_setup_ss_any     : in std_logic_vector(3 downto 0) := "0010";
+        t_sr_clk_high      : in std_logic_vector(3 downto 0) := "0011";
+        t_sr_clk_low       : in std_logic_vector(3 downto 0) := "0010";
 
         -- state machine input parameters
         -- sr_asic_sel        : in  std_logic_vector(4 downto 0) := (others=>'0');

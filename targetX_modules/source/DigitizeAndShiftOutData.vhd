@@ -48,7 +48,7 @@ entity DigitizeAndShiftOutData is
         -- current_asic        : out std_logic_vector(4 downto 0) := "00001"; --by me
 
         -- control registers
-        ramp_length         : in std_logic_vector (5 downto 0); -- std_logic_vector (11 downto 6);
+        ramp_length         : in std_logic_vector (11 downto 6); -- std_logic_vector (11 downto 6);
         force_test_pattern  : in std_logic := '0';
         t_samp_addr_settle  : in std_logic_vector(3 downto 0) := "0110";-- 6
         t_setup_ss_any      : in std_logic_vector(3 downto 0) := "0110";-- 6

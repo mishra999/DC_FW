@@ -2,21 +2,21 @@
 <LicenseInfo
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <ExpirationDate>2023-11-19T23:59:00</ExpirationDate>
-  <Type>Ultimate</Type>
-  <DateIssued>2022-11-18T00:06:19</DateIssued>
+  <ExpirationDate>2023-08-09T23:59:00</ExpirationDate>
+  <Type>Student</Type>
+  <DateIssued>2023-02-07T07:27:29</DateIssued>
   <SerialNumber>
-    u-366b0030-307106f0-400be3ff-e6b73f2f
+    s-96195030-20e20148-201ef4b1-f5118025
   </SerialNumber>
   <Products>All</Products>
   <Features>All</Features>
   <Contact>
-    <Name>Roy Tom</Name>
+    <Name>Mudit Mishra</Name>
     <Address></Address>
     <City></City>
     <ZipCode></ZipCode>
     <Country></Country>
-    <Email>roytom@hawaii.edu</Email>
+    <Email>mmishra4@ncsu.edu</Email>
     <PhoneNumber></PhoneNumber>
     <Company></Company>
     <Remarks></Remarks>
@@ -25,27 +25,12 @@
     <LockInfo>
       <Condition>CanBe</Condition>
       <Option>MacAddress</Option>
-      <Value>DC-1B-A1-71-B8-D5</Value>
-    </LockInfo>
-    <LockInfo>
-      <Condition>CanBe</Condition>
-      <Option>MacAddress</Option>
-      <Value>00-14-3D-28-0C-A2</Value>
-    </LockInfo>
-    <LockInfo>
-      <Condition>CanBe</Condition>
-      <Option>MacAddress</Option>
-      <Value>70-A7-41-D5-A5-BA</Value>
-    </LockInfo>
-    <LockInfo>
-      <Condition>CanBe</Condition>
-      <Option>MacAddress</Option>
-      <Value>5C-80-B6-51-4E-EC</Value>
+      <Value>E0-D0-45-C4-FB-52</Value>
     </LockInfo>
   </Locks>
 </LicenseInfo>
 --- SIGNATURE ---
-BlOH1TF+/67t7rw0Tu/+KBOktbtYeSloYzLUgJD3exK
-GYpklvtTB+/gFvWpgdpHn2OKXeNQNF+ZW4JWMKvjPhg
-2A3g0q8BSTLhlsMu6aPjyAfRE3sZ8emDdMZiM8jkkuJ
-9R3Sp9fITP+JZ07MQrs+OM4gByMPgzQPY2tss8+Y30=
+ewaxewq1IuWENCZIgqbAClZxxMGrZAF5QNivwsiFKlz
+yO1l2R9al0RPwDw8mLl/8td2A04aGffKprWoDed9IOg
+crxkImRSuGn9NyKXYQg9X+Xv2RBgGroXG3vLdbcevkH
+eICBtJS0B6Z4jr03zEQKzerKvYO31ADTtTaA58sf5Q=

@@ -7,22 +7,23 @@ use ieee.std_logic_unsigned.all;
   use work.roling_register_p.all; 
   use work.xgen_axistream_32.all;
   use work.TX_DAC_control_pack.all;   
-
+   
 use work.all; 
 use work.BMD_definitions.all; --need to include BMD_definitions in addition to work.all
 use work.UtilityPkg.all;   
 use work.klm_scint_pkg.all;
 library UNISIM;  
-use UNISIM.VComponents.all;     
-  
+use UNISIM.VComponents.all;       
+    
 entity TargetX_data_tb is	 
     generic (
         NUM_DCs : integer := 0 ;
-        chls : integer :=1
+        chls : integer :=1;
+        counter_win_max : integer := 120000
     ); 
-end entity;      
-   
-   
+end entity;          
+                      
+       
 architecture rtl of TargetX_data_tb is
     -- signal i_clk              : std_logic;
     --constant NUM_DCs :integer := 0;
@@ -53,6 +54,7 @@ architecture rtl of TargetX_data_tb is
     signal CtrlRegister : GPR:= (others => x"00D0");
     signal LOCKED : sl:='0';
     signal RESET : sl:='0';
+    signal RESET1 : sl:='0';
     signal sync1 : slv(NUM_DCs downto 0) := (others =>'0');
     signal Clk_to_QBLink : sl;
     constant ZERO : std_logic_vector(15 downto 0) := x"0000";
@@ -67,7 +69,8 @@ architecture rtl of TargetX_data_tb is
     signal ch_number : std_logic_vector(3 downto 0):= "0000";
     signal  total_wins : std_logic_vector(3 downto 0):= "0000";
     signal sample_counter : std_logic_vector(5 downto 0):= "000000";
-    signal window_counter : slv (3 downto 0) := (others => '0');
+    signal window_counter : slv (8 downto 0) := (others => '0');
+    signal counter_send_win : slv (31 downto 0) := (others => '0');
     constant total_ch : std_logic_vector(3 downto 0):= "0000";
     constant window_samples : std_logic_vector(5 downto 0):= "100000";
     constant HEADER_WORD :std_logic_vector(23 downto 0) := x"DA6AC9";
@@ -414,84 +417,177 @@ Udc_data : entity work.SingleBusProcessing
     m_axis_tdata => qblink_tdata_i(i)
   );
    end generate;
-
-
-    transfer_data: process(DATA_CLK, sync1) --, asic_mask, asic_checklist, sr_asic_sel
+ 
+    transfer_data: process(DATA_CLK) --, asic_mask, asic_checklist, sr_asic_sel
     variable send_header1  :sl := '0';
     begin
         if rising_edge(DATA_CLK) then
-            if sync1(0) = '1' then
-                DATA_TRANSFER_STATE <= IDLE;
-            else
-                Case DATA_TRANSFER_STATE is
-                    When IDLE =>
+            ena <= '0';
+            RES_VALID_data(0) <= '0';
+            for i in 0 to chls-1 loop  --earlier 14
+                qblink_tready_i(i) <= '0';
+            end loop;
+            -- send_header1 := '0';
+            -- if RESET = '1' then
+            --     DATA_TRANSFER_STATE <= IDLE;
+            -- else
+            Case DATA_TRANSFER_STATE is
+                When IDLE =>
+                    ch_number <= "0000";
+                    --total_wins <= "0000";
+                    send_header1 := '0';
+                    RESET1 <= '1';
+                    -- for i in 0 to chls-1 loop  --earlier 14
+                    --     qblink_tready_i(i) <= '0';
+                    -- end loop;
+                    if ( dataReq ='1' ) then   -- start (readout initiated)
                         ch_number <= "0000";
-                        --total_wins <= "0000";
+                        sample_counter <= "000000";
+                        window_counter <="000000000";
+                        counter_send_win <= (others =>'0');
+                        first_dig_win <= regAddr(8 downto 0);
+                        last_dig_win <= regWrData(8 downto 0);
+                        ena <= '1';
+                        force_test_pattern <= regWrData(15);
+                        -- total_wins <= std_logic_vector(unsigned(last_dig_win) - unsigned(first_dig_win)) + '1';
+                        DATA_TRANSFER_STATE <= SEND_HEADER; --SEND_HEADER
+                        send_header1 := '1';
+                        RESET1 <= '0';
+                    else
+                        DATA_TRANSFER_STATE <= IDLE;
+                    end if;
+
+
+                When SEND_HEADER =>
+                    -- qblink_tready_i(to_integer(unsigned(ch_number)))<= '0';
+                    if send_header1 = '1' then
+                        DC_RESPONSE_data <= HEADER_WORD & ch_number & window_counter(3 downto 0);
+                        RES_VALID_data(0) <= '1';
                         send_header1 := '0';
-                        for i in 0 to chls-1 loop  --earlier 14
-                            qblink_tready_i(i) <= '0';
-                        end loop;
-                        if ( dataReq ='1' ) then   -- start (readout initiated)
-                            ch_number <= "0000";
+                        DATA_TRANSFER_STATE <= SEND_WINDOWS_FOR_EACH_CHANNEL;
+                        qblink_tready_i(to_integer(unsigned(ch_number))) <= '1';
+                    else
+                        DATA_TRANSFER_STATE <= IDLE;
+                        -- DATA_TRANSFER_STATE <= SEND_WINDOWS_FOR_EACH_CHANNEL;
+                        -- RES_VALID_data(0) <= '0';
+                        -- qblink_tready_i(to_integer(unsigned(ch_number))) <= '1';
+                    end if;
+
+
+                When SEND_WINDOWS_FOR_EACH_CHANNEL =>
+                    -- RES_VALID_data(0) <= '0';
+                    counter_send_win <= counter_send_win + '1';
+                    qblink_tready_i(to_integer(unsigned(ch_number))) <= '1';
+                    if window_counter < (std_logic_vector(unsigned(last_dig_win) - unsigned(first_dig_win)) + '1') then
+                        if sample_counter < window_samples then
+                            if qblink_tvalid_i(to_integer(unsigned(ch_number))) = '1' and qblink_tready_i(to_integer(unsigned(ch_number))) = '1' then
+                                -- qblink_tready_i(to_integer(unsigned(ch_number))) <= '1';
+                                DC_RESPONSE_data <=  qblink_tdata_i(to_integer(unsigned(ch_number)));
+                                RES_VALID_data(0) <= '1';
+                                sample_counter <= sample_counter + '1';
+                                counter_send_win <= (others =>'0');
+                            end if;
+                        elsif sample_counter = window_samples then
                             sample_counter <= "000000";
-                            window_counter <="0000";
-                            first_dig_win <= regAddr(8 downto 0);
-                            last_dig_win <= regWrData(8 downto 0);
-                            ena <= '1';
-                            force_test_pattern <= regWrData(15);
-                            -- total_wins <= std_logic_vector(unsigned(last_dig_win) - unsigned(first_dig_win)) + '1';
                             DATA_TRANSFER_STATE <= SEND_HEADER;
                             send_header1 := '1';
-                        else
-                            DATA_TRANSFER_STATE <= IDLE;
-                        end if;
-
-
-                    When SEND_HEADER =>
-                        -- qblink_tready_i(to_integer(unsigned(ch_number)))<= '0';
-                        if send_header1 = '1' then
-                            DC_RESPONSE_data <= HEADER_WORD & ch_number & window_counter;
-                            RES_VALID_data(0) <= '1';
-                            send_header1 := '0';
-                        else
-                            DATA_TRANSFER_STATE <= SEND_WINDOWS_FOR_EACH_CHANNEL;
-                            RES_VALID_data(0) <= '0';
-                        end if;
-
-
-                    When SEND_WINDOWS_FOR_EACH_CHANNEL =>
-                        RES_VALID_data(0) <= '0';
-                        for i in 0 to chls-1 loop  --earlier 14
-                            qblink_tready_i(i) <= '0';
-                        end loop;
-                        if window_counter < (std_logic_vector(unsigned(last_dig_win) - unsigned(first_dig_win)) + '1') then
-                            if sample_counter < window_samples then
-                                qblink_tready_i(to_integer(unsigned(ch_number))) <= '1';
-                                if qblink_tvalid_i(to_integer(unsigned(ch_number))) = '1' then
-                                    DC_RESPONSE_data <=  qblink_tdata_i(to_integer(unsigned(ch_number)));
-                                    RES_VALID_data(0) <= '1';
-                                    sample_counter <= sample_counter + '1';
-                                    DATA_TRANSFER_STATE <= SEND_WINDOWS_FOR_EACH_CHANNEL;
-                                end if;
-                            elsif sample_counter = window_samples then
-                                sample_counter <= "000000";
-                                DATA_TRANSFER_STATE <= SEND_HEADER;
-                                send_header1 := '1';
-                                if ch_number < total_ch then
-                                    ch_number <= ch_number + '1';
-                                elsif ch_number = total_ch then   
-                                    window_counter <= window_counter + '1'; 
-                                    ch_number <= "0000";
-                                end if;
-                            end if;     
-                        else
-                            DATA_TRANSFER_STATE <= IDLE;
-                            ena <= '0';
-                        end if;
-                end case;
-            end if;    
+                            qblink_tready_i(to_integer(unsigned(ch_number))) <= '0';
+                            -- for i in 0 to chls-1 loop  --earlier 14
+                            --     qblink_tready_i(i) <= '0';
+                            -- end loop;
+                            if ch_number < total_ch then
+                                ch_number <= ch_number + '1';
+                            elsif ch_number = total_ch then   
+                                window_counter <= window_counter + '1'; 
+                                ch_number <= "0000";
+                            end if;
+                        end if; 
+                        if counter_send_win = counter_win_max then
+                            DATA_TRANSFER_STATE <= IDLE;   
+                        end if; 
+                    else DATA_TRANSFER_STATE <= IDLE;                            
+                    end if;
+            end case;
+            -- end if;    
         end if;
     end process;
+
+    -- transfer_data: process(DATA_CLK, sync1) --, asic_mask, asic_checklist, sr_asic_sel
+    -- variable send_header1  :sl := '0';
+    -- begin
+    --     if rising_edge(DATA_CLK) then
+    --         if sync1(0) = '1' then
+    --             DATA_TRANSFER_STATE <= IDLE;
+    --         else
+    --             Case DATA_TRANSFER_STATE is
+    --                 When IDLE =>
+    --                     ch_number <= "0000";
+    --                     --total_wins <= "0000";
+    --                     send_header1 := '0';
+    --                     for i in 0 to chls-1 loop  --earlier 14
+    --                         qblink_tready_i(i) <= '0';
+    --                     end loop;
+    --                     if ( dataReq ='1' ) then   -- start (readout initiated)
+    --                         ch_number <= "0000";
+    --                         sample_counter <= "000000";
+    --                         window_counter <="0000";
+    --                         first_dig_win <= regAddr(8 downto 0);
+    --                         last_dig_win <= regWrData(8 downto 0);
+    --                         ena <= '1';
+    --                         force_test_pattern <= regWrData(15);
+    --                         -- total_wins <= std_logic_vector(unsigned(last_dig_win) - unsigned(first_dig_win)) + '1';
+    --                         DATA_TRANSFER_STATE <= SEND_HEADER;
+    --                         send_header1 := '1';
+    --                     else
+    --                         DATA_TRANSFER_STATE <= IDLE;
+    --                     end if;
+
+
+    --                 When SEND_HEADER =>
+    --                     -- qblink_tready_i(to_integer(unsigned(ch_number)))<= '0';
+    --                     if send_header1 = '1' then
+    --                         DC_RESPONSE_data <= HEADER_WORD & ch_number & window_counter;
+    --                         RES_VALID_data(0) <= '1';
+    --                         send_header1 := '0';
+    --                     else
+    --                         DATA_TRANSFER_STATE <= SEND_WINDOWS_FOR_EACH_CHANNEL;
+    --                         RES_VALID_data(0) <= '0';
+    --                     end if;
+
+
+    --                 When SEND_WINDOWS_FOR_EACH_CHANNEL =>
+    --                     RES_VALID_data(0) <= '0';
+    --                     for i in 0 to chls-1 loop  --earlier 14
+    --                         qblink_tready_i(i) <= '0';
+    --                     end loop;
+    --                     if window_counter < (std_logic_vector(unsigned(last_dig_win) - unsigned(first_dig_win)) + '1') then
+    --                         if sample_counter < window_samples then
+    --                             qblink_tready_i(to_integer(unsigned(ch_number))) <= '1';
+    --                             if qblink_tvalid_i(to_integer(unsigned(ch_number))) = '1' then
+    --                                 DC_RESPONSE_data <=  qblink_tdata_i(to_integer(unsigned(ch_number)));
+    --                                 RES_VALID_data(0) <= '1';
+    --                                 sample_counter <= sample_counter + '1';
+    --                                 DATA_TRANSFER_STATE <= SEND_WINDOWS_FOR_EACH_CHANNEL;
+    --                             end if;
+    --                         elsif sample_counter = window_samples then
+    --                             sample_counter <= "000000";
+    --                             DATA_TRANSFER_STATE <= SEND_HEADER;
+    --                             send_header1 := '1';
+    --                             if ch_number < total_ch then
+    --                                 ch_number <= ch_number + '1';
+    --                             elsif ch_number = total_ch then   
+    --                                 window_counter <= window_counter + '1'; 
+    --                                 ch_number <= "0000";
+    --                             end if;
+    --                         end if;     
+    --                     else
+    --                         DATA_TRANSFER_STATE <= IDLE;
+    --                         ena <= '0';
+    --                     end if;
+    --             end case;
+    --         end if;    
+    --     end if;
+    -- end process;
 
 
 
@@ -666,7 +762,7 @@ Udc_data : entity work.SingleBusProcessing
     --   txDataReady <= '0';
       wait for usrClk_period*10;
       wait until txdatalast='1';
-      txDataReady <= '0';
+    --   txDataReady <= '0';
     --   wait;
 
     -- READ OUT DATA
@@ -725,9 +821,72 @@ Udc_data : entity work.SingleBusProcessing
       wait for usrClk_period*10;
     --   txDataReady <= '0';
       wait for usrClk_period*10;
-      wait until txdatalast='1';
-      txDataReady <= '0';
+    --   wait until txdatalast='1';
+    --   txDataReady <= '0';
+    --   wait;
+
+
+    -- READ OUT DATA again
+    -- wait until cmd_int_state <= "00000";
+    wait for usrClk_period*11170;
+    -- wait for 1600 ns;
+
+	
+		rxDataValid <= '1';
+		rxDataLast <= '0';
+		rxData <= WORD_HEADER_C;  
+		
+		
+      wait until rxDataReady = '1';
+		wait for usrClk_period;
+
+		rxData <= WORD_PACKET_SIZE_C;
+
+		wait for usrClk_period;
+
+		rxData <= WORD_COMMAND_C;
+		wait for usrClk_period;
+
+		rxData <= wordDC_01;     --wordDC_01;          --wordScrodRevC;
+		
+		wait for usrClk_period;
+		
+		rxData <= WORD_COMMAND_ID_C;
+		wait for usrClk_period;
+		--WORD_PING_C | WORD_WRITE_C | WORD_READ_C depending upon type of command
+		rxData <= WORD_READ_DATA;  --WORD_PING_C
+--- only for Reg Wr/Rd command--	
+-- first 4 MSBs are Reg Value, last 4 [LSBs] are Reg Addr
+-- For Reg Read command, Reg Value [4 MSBs] = 0000 by default, give address in last 4.
+      wait for usrClk_period;
+      rxData <= x"01030100";  --       
+-----------------------------		
+		wait for usrClk_period;
+
+	-- Command Checksum: for ping x"70696e79" -- for write (Reg 2 value 1: 00010002)=>x"726A7479"	
+	-- for Read (Reg 2: 00000002) => x"72656178"
+		rxData <= x"73682236";        
+		txDataReady <= '1';
+
+        -- rxDataValid <= '0';
+		
+        BUS_DO   <= "1";
+		wait for usrClk_period;
+
+		-- rxData <= PACKET_CHECKSUM;
+        wait for usrClk_period;
+        rxDataLast <= '1';
+        wait for usrClk_period;
+        rxDataLast <= '0';
+        rxDataValid <= '0';
+        -- txDataReady <= '0';
+      wait for usrClk_period*10;
+    --   txDataReady <= '0';
+      wait for usrClk_period*10;
+    --   wait until txdatalast='1';
+    --   txDataReady <= '0';
       wait;
+
 
     end process;
 
