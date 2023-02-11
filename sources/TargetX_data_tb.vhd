@@ -71,7 +71,7 @@ architecture rtl of TargetX_data_tb is
     signal sample_counter : std_logic_vector(5 downto 0):= "000000";
     signal window_counter : slv (8 downto 0) := (others => '0');
     signal counter_send_win : slv (31 downto 0) := (others => '0');
-    constant total_ch : std_logic_vector(3 downto 0):= "0000";
+    constant total_ch : std_logic_vector(3 downto 0):= "0001";
     constant window_samples : std_logic_vector(5 downto 0):= "100000";
     constant HEADER_WORD :std_logic_vector(23 downto 0) := x"DA6AC9";
     signal DC_RESPONSE_data : slv (31 downto 0) := (others => '0'); 
@@ -189,6 +189,7 @@ architecture rtl of TargetX_data_tb is
    signal regReq1 : std_logic;
    signal regOp1 : std_logic;
 	signal ldqblink : std_logic;
+    signal twin       : std_logic_vector(8 downto 0);
    signal regRdData1 : std_logic_vector(15 downto 0) := (others => '0');
    signal regAck : std_logic := '0';
  	--Outputs
@@ -202,7 +203,7 @@ architecture rtl of TargetX_data_tb is
    signal rxDataLast : std_logic := '0';
    signal txDataReady : std_logic := '0';
    signal cmd_int_state : std_logic_vector(4 downto 0);
-
+    signal data_flag: sl := '0';
 	signal trgLinkSync1 : std_logic_vector(0 downto 0) := (others => '0');
 	signal serialClkLck1 : std_logic_vector(0 downto 0) := (others => '0');
     signal QB_RST1 : std_logic_vector(0 downto 0) := (others => '0');
@@ -223,9 +224,9 @@ architecture rtl of TargetX_data_tb is
 
 begin
     --mux to select data line or read/write registers
-    DC_RESPONSE <= DC_RESPONSE_data when RES_VALID_reg ="0" else 
-                   DC_RESPONSE_reg when RES_VALID_reg ="1";
-    RES_VALID <= RES_VALID_data when RES_VALID_reg ="0"  else RES_VALID_reg;
+    DC_RESPONSE <= DC_RESPONSE_data when data_flag ='1' else 
+                   DC_RESPONSE_reg when data_flag ='0';
+    RES_VALID <= RES_VALID_data when data_flag ='1'  else RES_VALID_reg;
     sync1 <= SYNC;
 
 
@@ -419,7 +420,6 @@ Udc_data : entity work.SingleBusProcessing
    end generate;
  
     transfer_data: process(DATA_CLK) --, asic_mask, asic_checklist, sr_asic_sel
-    variable send_header1  :sl := '0';
     begin
         if rising_edge(DATA_CLK) then
             ena <= '0';
@@ -435,8 +435,11 @@ Udc_data : entity work.SingleBusProcessing
                 When IDLE =>
                     ch_number <= "0000";
                     --total_wins <= "0000";
-                    send_header1 := '0';
+                    -- send_header1 := '0';
                     RESET1 <= '1';
+                    data_flag <='0';
+                    first_dig_win <= regAddr(8 downto 0);
+                    last_dig_win <= regWrData(8 downto 0);
                     -- for i in 0 to chls-1 loop  --earlier 14
                     --     qblink_tready_i(i) <= '0';
                     -- end loop;
@@ -445,13 +448,13 @@ Udc_data : entity work.SingleBusProcessing
                         sample_counter <= "000000";
                         window_counter <="000000000";
                         counter_send_win <= (others =>'0');
-                        first_dig_win <= regAddr(8 downto 0);
-                        last_dig_win <= regWrData(8 downto 0);
+                        -- twin <= (std_logic_vector(unsigned(last_dig_win) - unsigned(first_dig_win))) + '1';
                         ena <= '1';
                         force_test_pattern <= regWrData(15);
                         -- total_wins <= std_logic_vector(unsigned(last_dig_win) - unsigned(first_dig_win)) + '1';
                         DATA_TRANSFER_STATE <= SEND_HEADER; --SEND_HEADER
-                        send_header1 := '1';
+                        -- send_header1 := '1';
+                        data_flag <='1';
                         RESET1 <= '0';
                     else
                         DATA_TRANSFER_STATE <= IDLE;
@@ -460,10 +463,14 @@ Udc_data : entity work.SingleBusProcessing
 
                 When SEND_HEADER =>
                     -- qblink_tready_i(to_integer(unsigned(ch_number)))<= '0';
-                    if send_header1 = '1' then
-                        DC_RESPONSE_data <= HEADER_WORD & ch_number & window_counter(3 downto 0);
+                    data_flag <='1';
+                    twin <= (std_logic_vector(unsigned(last_dig_win) - unsigned(first_dig_win)));
+                    if data_flag = '1' then
+                        DC_RESPONSE_data(31 downto 8) <= HEADER_WORD;
+                        DC_RESPONSE_data(7 downto 4) <= ch_number;
+                        DC_RESPONSE_data(3 downto 0) <= window_counter(3 downto 0);
                         RES_VALID_data(0) <= '1';
-                        send_header1 := '0';
+                        -- send_header1 := '0';
                         DATA_TRANSFER_STATE <= SEND_WINDOWS_FOR_EACH_CHANNEL;
                         qblink_tready_i(to_integer(unsigned(ch_number))) <= '1';
                     else
@@ -476,39 +483,44 @@ Udc_data : entity work.SingleBusProcessing
 
                 When SEND_WINDOWS_FOR_EACH_CHANNEL =>
                     -- RES_VALID_data(0) <= '0';
+                    data_flag <='1';
                     counter_send_win <= counter_send_win + '1';
-                    qblink_tready_i(to_integer(unsigned(ch_number))) <= '1';
-                    if window_counter < (std_logic_vector(unsigned(last_dig_win) - unsigned(first_dig_win)) + '1') then
-                        if sample_counter < window_samples then
-                            if qblink_tvalid_i(to_integer(unsigned(ch_number))) = '1' and qblink_tready_i(to_integer(unsigned(ch_number))) = '1' then
-                                -- qblink_tready_i(to_integer(unsigned(ch_number))) <= '1';
-                                DC_RESPONSE_data <=  qblink_tdata_i(to_integer(unsigned(ch_number)));
-                                RES_VALID_data(0) <= '1';
-                                sample_counter <= sample_counter + '1';
-                                counter_send_win <= (others =>'0');
-                            end if;
-                        elsif sample_counter = window_samples then
-                            sample_counter <= "000000";
-                            DATA_TRANSFER_STATE <= SEND_HEADER;
-                            send_header1 := '1';
-                            qblink_tready_i(to_integer(unsigned(ch_number))) <= '0';
-                            -- for i in 0 to chls-1 loop  --earlier 14
-                            --     qblink_tready_i(i) <= '0';
-                            -- end loop;
-                            if ch_number < total_ch then
-                                ch_number <= ch_number + '1';
-                            elsif ch_number = total_ch then   
+                    qblink_tready_i(to_integer(unsigned(ch_number))) <= '1';                    
+                    if sample_counter < window_samples then
+                        if qblink_tvalid_i(to_integer(unsigned(ch_number))) = '1' and qblink_tready_i(to_integer(unsigned(ch_number))) = '1' then
+                            -- qblink_tready_i(to_integer(unsigned(ch_number))) <= '1';
+                            DC_RESPONSE_data <=  qblink_tdata_i(to_integer(unsigned(ch_number)));
+                            RES_VALID_data(0) <= '1';
+                            sample_counter <= sample_counter + '1';
+                            counter_send_win <= (others =>'0');
+                        else
+                            DATA_TRANSFER_STATE <= SEND_WINDOWS_FOR_EACH_CHANNEL;
+                        end if;
+                    elsif sample_counter = window_samples then
+                        -- for i in 0 to chls-1 loop  --earlier 14
+                        --     qblink_tready_i(i) <= '0';
+                        -- end loop;
+                        if ch_number = (total_ch - '1') then 
+                            if window_counter < twin then
                                 window_counter <= window_counter + '1'; 
-                                ch_number <= "0000";
-                            end if;
-                        end if; 
-                        if counter_send_win = counter_win_max then
-                            DATA_TRANSFER_STATE <= IDLE;   
-                        end if; 
-                    else DATA_TRANSFER_STATE <= IDLE;                            
-                    end if;
-            end case;
-            -- end if;    
+                                ch_number <= "0000"; 
+                                sample_counter <= "000000";
+                                DATA_TRANSFER_STATE <= SEND_HEADER;
+                                -- send_header1 := '1';
+                                qblink_tready_i(to_integer(unsigned(ch_number))) <= '0';
+                            else
+                                DATA_TRANSFER_STATE <= IDLE;                                        
+                            end if;  
+                        else
+                            ch_number <= ch_number + '1';                            
+                        end if;
+                    end if; 
+                    -- end if;
+                    if counter_send_win = counter_win_max then
+                        DATA_TRANSFER_STATE <= IDLE;   
+                    end if; 
+
+            end case;   
         end if;
     end process;
 

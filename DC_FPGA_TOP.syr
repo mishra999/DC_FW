@@ -5,14 +5,14 @@ Parameter TMPDIR set to xst/projnav.tmp
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.05 secs
+Total CPU time to Xst completion: 0.00 secs
  
 --> 
 Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.05 secs
+Total CPU time to Xst completion: 0.00 secs
  
 --> 
 Reading design: DC_FPGA_TOP.prj
@@ -229,9 +229,9 @@ Parsing architecture <Behaviorial> of entity <dc_comm_back>.
 Parsing VHDL file "/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" into library work
 Parsing entity <DC_FPGA_TOP>.
 Parsing architecture <rtl> of entity <dc_fpga_top>.
-WARNING:HDLCompiler:946 - "/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" Line 422: Actual for formal port s_aresetn is neither a static name nor a globally static expression
-WARNING:HDLCompiler:946 - "/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" Line 425: Actual for formal port s_axis_tdata is neither a static name nor a globally static expression
-WARNING:HDLCompiler:946 - "/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" Line 571: Actual for formal port c1 is neither a static name nor a globally static expression
+WARNING:HDLCompiler:946 - "/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" Line 423: Actual for formal port s_aresetn is neither a static name nor a globally static expression
+WARNING:HDLCompiler:946 - "/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" Line 426: Actual for formal port s_axis_tdata is neither a static name nor a globally static expression
+WARNING:HDLCompiler:946 - "/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" Line 577: Actual for formal port c1 is neither a static name nor a globally static expression
 
 =========================================================================
 *                            HDL Elaboration                            *
@@ -241,13 +241,13 @@ Elaborating entity <DC_FPGA_TOP> (architecture <rtl>) with generics from library
 WARNING:HDLCompiler:871 - "/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" Line 74: Using initial value "0" for qb_rst since it is never assigned
 WARNING:HDLCompiler:871 - "/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" Line 97: Using initial value '0' for reset since it is never assigned
 WARNING:HDLCompiler:871 - "/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" Line 134: Using initial value '1' for asic_mask since it is never assigned
-WARNING:HDLCompiler:871 - "/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" Line 138: Using initial value "011110" for ramp_length since it is never assigned
-WARNING:HDLCompiler:871 - "/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" Line 140: Using initial value "0110" for t_samp_addr_settle since it is never assigned
-WARNING:HDLCompiler:871 - "/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" Line 141: Using initial value "0110" for t_setup_ss_any since it is never assigned
-WARNING:HDLCompiler:871 - "/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" Line 142: Using initial value "0100" for t_strobe_settle since it is never assigned
-WARNING:HDLCompiler:871 - "/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" Line 143: Using initial value "0010" for t_sr_clk_high since it is never assigned
-WARNING:HDLCompiler:871 - "/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" Line 144: Using initial value "0010" for t_sr_clk_low since it is never assigned
-WARNING:HDLCompiler:871 - "/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" Line 145: Using initial value "0110" for t_sr_clk_strobe since it is never assigned
+WARNING:HDLCompiler:871 - "/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" Line 139: Using initial value "011110" for ramp_length since it is never assigned
+WARNING:HDLCompiler:871 - "/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" Line 141: Using initial value "0110" for t_samp_addr_settle since it is never assigned
+WARNING:HDLCompiler:871 - "/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" Line 142: Using initial value "0110" for t_setup_ss_any since it is never assigned
+WARNING:HDLCompiler:871 - "/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" Line 143: Using initial value "0100" for t_strobe_settle since it is never assigned
+WARNING:HDLCompiler:871 - "/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" Line 144: Using initial value "0010" for t_sr_clk_high since it is never assigned
+WARNING:HDLCompiler:871 - "/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" Line 145: Using initial value "0010" for t_sr_clk_low since it is never assigned
+WARNING:HDLCompiler:871 - "/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" Line 146: Using initial value "0110" for t_sr_clk_strobe since it is never assigned
 
 Elaborating entity <clk_gen1> (architecture <xilinx>) from library <work>.
 
@@ -342,17 +342,17 @@ Synthesizing Unit <DC_FPGA_TOP>.
     Set property "MARK_DEBUG = TRUE" for signal <window_counter>.
     Set property "MARK_DEBUG = TRUE" for signal <stateNum_dtransfer<1>>.
     Set property "MARK_DEBUG = TRUE" for signal <stateNum_dtransfer<0>>.
-INFO:Xst:3210 - "/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" line 258: Output port <LOCKED> of the instance <clk_buffer> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" line 293: Output port <SERIAL_CLK_LCK> of the instance <u_dc_receiver> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" line 293: Output port <TRIG_LINK_SYNC> of the instance <u_dc_receiver> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" line 320: Output port <TX_DAC_control_out_REG_CLR> of the instance <mppc_wrapper_i> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" line 362: Output port <ShiftOutWinBusy> of the instance <Udc_data> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" line 362: Output port <ShiftOutSampBusy> of the instance <Udc_data> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" line 418: Output port <s_axis_tready> of the instance <data_fifos_generation[0].data_fifos> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" line 534: Output port <cur_win> of the instance <UUT_sampling> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" line 534: Output port <samp_mod8> of the instance <UUT_sampling> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" line 534: Output port <cur_win_ii> of the instance <UUT_sampling> is unconnected or connected to loadless signal.
-INFO:Xst:3210 - "/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" line 534: Output port <BUSB_WR_ADDRCLR> of the instance <UUT_sampling> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" line 259: Output port <LOCKED> of the instance <clk_buffer> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" line 294: Output port <SERIAL_CLK_LCK> of the instance <u_dc_receiver> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" line 294: Output port <TRIG_LINK_SYNC> of the instance <u_dc_receiver> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" line 321: Output port <TX_DAC_control_out_REG_CLR> of the instance <mppc_wrapper_i> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" line 363: Output port <ShiftOutWinBusy> of the instance <Udc_data> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" line 363: Output port <ShiftOutSampBusy> of the instance <Udc_data> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" line 419: Output port <s_axis_tready> of the instance <data_fifos_generation[0].data_fifos> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" line 540: Output port <cur_win> of the instance <UUT_sampling> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" line 540: Output port <samp_mod8> of the instance <UUT_sampling> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" line 540: Output port <cur_win_ii> of the instance <UUT_sampling> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" line 540: Output port <BUSB_WR_ADDRCLR> of the instance <UUT_sampling> is unconnected or connected to loadless signal.
 WARNING:Xst:3035 - Index value(s) does not match array range for signal <CtrlRegister>, simulation mismatch.
     Found 5x16-bit single-port RAM <Mram_CtrlRegister> for signal <CtrlRegister>.
     Found 1-bit register for signal <RES_VALID_reg>.
@@ -365,20 +365,21 @@ WARNING:Xst:3035 - Index value(s) does not match array range for signal <CtrlReg
     Found 4-bit register for signal <ch_number>.
     Found 1-bit register for signal <RESET1>.
     Found 1-bit register for signal <data_flag>.
+    Found 9-bit register for signal <first_dig_win>.
+    Found 9-bit register for signal <last_dig_win>.
     Found 6-bit register for signal <sample_counter>.
     Found 9-bit register for signal <window_counter>.
     Found 32-bit register for signal <counter_send_win>.
-    Found 9-bit register for signal <first_dig_win>.
-    Found 9-bit register for signal <last_dig_win>.
     Found 1-bit register for signal <force_test_pattern>.
     Found 2-bit register for signal <DATA_TRANSFER_STATE>.
+    Found 9-bit register for signal <twin>.
     Found 32-bit register for signal <DC_RESPONSE_data>.
     Found 27-bit register for signal <ctime>.
-    Found finite state machine <FSM_1> for signal <DATA_TRANSFER_STATE>.
+    Found finite state machine <FSM_0> for signal <DATA_TRANSFER_STATE>.
     -----------------------------------------------------------------------
     | States             | 3                                              |
-    | Transitions        | 9                                              |
-    | Inputs             | 6                                              |
+    | Transitions        | 10                                             |
+    | Inputs             | 9                                              |
     | Outputs            | 6                                              |
     | Clock              | DATA_CLK (rising_edge)                         |
     | Power Up State     | idle                                           |
@@ -386,40 +387,28 @@ WARNING:Xst:3035 - Index value(s) does not match array range for signal <CtrlReg
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found finite state machine <FSM_0> for signal <ch_number>.
-    -----------------------------------------------------------------------
-    | States             | 1                                              |
-    | Transitions        | 2                                              |
-    | Inputs             | 5                                              |
-    | Outputs            | 1                                              |
-    | Clock              | DATA_CLK (rising_edge)                         |
-    | Power Up State     | 0000                                           |
-    | Recovery State     | 0000                                           |
-    | Encoding           | auto                                           |
-    | Implementation     | LUT                                            |
-    -----------------------------------------------------------------------
-    Found 32-bit adder for signal <counter_send_win[31]_GND_17_o_add_39_OUT> created at line 497.
-    Found 9-bit adder for signal <GND_17_o_GND_17_o_add_42_OUT> created at line 499.
-    Found 6-bit adder for signal <sample_counter[5]_GND_17_o_add_45_OUT> created at line 505.
-    Found 9-bit adder for signal <window_counter[8]_GND_17_o_add_52_OUT> created at line 519.
-    Found 27-bit adder for signal <ctime[26]_GND_17_o_add_95_OUT> created at line 559.
-    Found 9-bit subtractor for signal <n0308> created at line 0.
+    Found 32-bit adder for signal <counter_send_win[31]_GND_17_o_add_38_OUT> created at line 499.
+    Found 6-bit adder for signal <sample_counter[5]_GND_17_o_add_41_OUT> created at line 506.
+    Found 9-bit adder for signal <window_counter[8]_GND_17_o_add_49_OUT> created at line 517.
+    Found 4-bit adder for signal <ch_number[3]_GND_17_o_add_55_OUT> created at line 527.
+    Found 27-bit adder for signal <ctime[26]_GND_17_o_add_96_OUT> created at line 565.
+    Found 9-bit subtractor for signal <GND_17_o_GND_17_o_sub_35_OUT<8:0>> created at line 479.
     Found 1-bit 3-to-1 multiplexer for signal <DATA_TRANSFER_STATE[1]_X_17_o_wide_mux_85_OUT<0>> created at line 446.
     Found 1-bit 3-to-1 multiplexer for signal <DATA_TRANSFER_STATE[1]_X_17_o_wide_mux_86_OUT<0>> created at line 446.
-    Found 32-bit 4-to-1 multiplexer for signal <GND_17_o_GND_17_o_mux_17_OUT> created at line 345.
+    Found 32-bit 4-to-1 multiplexer for signal <GND_17_o_GND_17_o_mux_17_OUT> created at line 346.
 WARNING:Xst:737 - Found 1-bit latch for signal <stateNum_dtransfer<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 WARNING:Xst:737 - Found 1-bit latch for signal <stateNum_dtransfer<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-    Found 9-bit comparator greater for signal <window_counter[8]_GND_17_o_LessThan_44_o> created at line 499
-    Found 6-bit comparator greater for signal <sample_counter[5]_PWR_17_o_LessThan_45_o> created at line 500
+    Found 6-bit comparator greater for signal <sample_counter[5]_PWR_17_o_LessThan_41_o> created at line 501
+    Found 9-bit comparator greater for signal <window_counter[8]_twin[8]_LessThan_49_o> created at line 516
 INFO:Xst:2774 - HDL ADVISOR - MARK_DEBUG, INIT properties attached to signal window_counter may hinder XST clustering optimizations.
     Summary:
 	inferred   1 RAM(s).
 	inferred   6 Adder/Subtractor(s).
-	inferred 195 D-type flip-flop(s).
+	inferred 208 D-type flip-flop(s).
 	inferred   2 Latch(s).
 	inferred   2 Comparator(s).
-	inferred  54 Multiplexer(s).
-	inferred   2 Finite State Machine(s).
+	inferred  58 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
 Unit <DC_FPGA_TOP> synthesized.
 
 Synthesizing Unit <clk_gen1>.
@@ -451,7 +440,7 @@ Synthesizing Unit <DC_Comm_back>.
     Found 1-bit register for signal <r_regReq>.
     Found 2-bit register for signal <r_regOp>.
     Found 1-bit register for signal <r_dataReq>.
-    Found finite state machine <FSM_2> for signal <r_state>.
+    Found finite state machine <FSM_1> for signal <r_state>.
     -----------------------------------------------------------------------
     | States             | 3                                              |
     | Transitions        | 11                                             |
@@ -540,7 +529,7 @@ INFO:Xst:3210 - "/home/ise/git/DC_backwards/DC_backwards/QBLink/source/S6SerialI
     Found 16-bit register for signal <r_slipCount>.
     Found 1-bit register for signal <r_flip>.
     Found 5-bit register for signal <risingWord>.
-    Found finite state machine <FSM_3> for signal <r_state>.
+    Found finite state machine <FSM_2> for signal <r_state>.
     -----------------------------------------------------------------------
     | States             | 3                                              |
     | Transitions        | 7                                              |
@@ -582,7 +571,7 @@ WARNING:Xst:37 - Detected unknown constraint/property "mark_debug1". This constr
     Found 10-bit register for signal <r_txData10b>.
     Found 32-bit register for signal <r_alignCnt>.
     Found 10-bit register for signal <inputRxData10b>.
-    Found finite state machine <FSM_4> for signal <r_state>.
+    Found finite state machine <FSM_3> for signal <r_state>.
     -----------------------------------------------------------------------
     | States             | 3                                              |
     | Transitions        | 5                                              |
@@ -658,7 +647,7 @@ INFO:Xst:3210 - "/home/ise/git/DC_backwards/DC_backwards/target_x_dac_control/sr
     Found 19-bit register for signal <REG_DATA>.
     Found 2-bit register for signal <state>.
     Found 1-bit register for signal <vREG_DATA_data_isvalid>.
-    Found finite state machine <FSM_5> for signal <state>.
+    Found finite state machine <FSM_4> for signal <state>.
     -----------------------------------------------------------------------
     | States             | 4                                              |
     | Transitions        | 9                                              |
@@ -753,7 +742,7 @@ Synthesizing Unit <TARGETX_DAC_CONTROL>.
     Found 1-bit register for signal <ENABLE_COUNTER>.
     Found 5-bit register for signal <STATE>.
     Found 16-bit register for signal <INTERNAL_COUNTER>.
-    Found finite state machine <FSM_6> for signal <STATE>.
+    Found finite state machine <FSM_5> for signal <STATE>.
     -----------------------------------------------------------------------
     | States             | 25                                             |
     | Transitions        | 38                                             |
@@ -839,7 +828,7 @@ Synthesizing Unit <DigitizeAndShiftOutData>.
     Found 1-bit register for signal <shift_ena>.
     Found 5-bit register for signal <shift_samp_start>.
     Found 1-bit register for signal <ena_i>.
-    Found finite state machine <FSM_7> for signal <digNshift_state>.
+    Found finite state machine <FSM_6> for signal <digNshift_state>.
     -----------------------------------------------------------------------
     | States             | 5                                              |
     | Transitions        | 12                                             |
@@ -875,7 +864,7 @@ Synthesizing Unit <DigitizingLgcTX>.
     Found 1-bit register for signal <BUS_RAMP>.
     Found 12-bit register for signal <dig_st_fms_ctr>.
     Found 2-bit register for signal <ena_i>.
-    Found finite state machine <FSM_8> for signal <digitization_state>.
+    Found finite state machine <FSM_7> for signal <digitization_state>.
     -----------------------------------------------------------------------
     | States             | 4                                              |
     | Transitions        | 8                                              |
@@ -913,7 +902,7 @@ Synthesizing Unit <ShiftOutWindow>.
     Found 1-bit register for signal <shift_out_samp_ena>.
     Found 5-bit register for signal <samp_stop_asic_i>.
     Found 2-bit register for signal <ena_i>.
-    Found finite state machine <FSM_9> for signal <shift_win_state>.
+    Found finite state machine <FSM_8> for signal <shift_win_state>.
     -----------------------------------------------------------------------
     | States             | 4                                              |
     | Transitions        | 9                                              |
@@ -959,7 +948,7 @@ Synthesizing Unit <ShiftOutSample>.
     Found 2-bit register for signal <rx_bits_state>.
     Found 12-bit register for signal <sample_data<0>>.
     Found 2-bit register for signal <ena_i>.
-    Found finite state machine <FSM_11> for signal <rx_bits_state>.
+    Found finite state machine <FSM_10> for signal <rx_bits_state>.
     -----------------------------------------------------------------------
     | States             | 3                                              |
     | Transitions        | 6                                              |
@@ -971,7 +960,7 @@ Synthesizing Unit <ShiftOutSample>.
     | Encoding           | auto                                           |
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
-    Found finite state machine <FSM_10> for signal <sr_ctrl_state>.
+    Found finite state machine <FSM_9> for signal <sr_ctrl_state>.
     -----------------------------------------------------------------------
     | States             | 9                                              |
     | Transitions        | 19                                             |
@@ -1040,7 +1029,7 @@ Macro Statistics
  27-bit adder                                          : 1
  32-bit adder                                          : 5
  32-bit subtractor                                     : 1
- 4-bit adder                                           : 6
+ 4-bit adder                                           : 7
  4-bit subtractor                                      : 1
  5-bit adder                                           : 1
  5-bit subtractor                                      : 2
@@ -1048,9 +1037,9 @@ Macro Statistics
  7-bit subtractor                                      : 1
  8-bit adder                                           : 2
  8-bit addsub                                          : 1
- 9-bit adder                                           : 4
+ 9-bit adder                                           : 3
  9-bit subtractor                                      : 1
-# Registers                                            : 170
+# Registers                                            : 172
  1-bit register                                        : 76
  10-bit register                                       : 7
  11-bit register                                       : 1
@@ -1061,11 +1050,11 @@ Macro Statistics
  20-bit register                                       : 3
  27-bit register                                       : 1
  32-bit register                                       : 10
- 4-bit register                                        : 6
+ 4-bit register                                        : 7
  5-bit register                                        : 4
  6-bit register                                        : 2
  8-bit register                                        : 7
- 9-bit register                                        : 7
+ 9-bit register                                        : 8
 # Latches                                              : 4
  1-bit latch                                           : 4
 # Comparators                                          : 21
@@ -1077,10 +1066,10 @@ Macro Statistics
  6-bit comparator greater                              : 2
  9-bit comparator equal                                : 1
  9-bit comparator greater                              : 1
-# Multiplexers                                         : 226
+# Multiplexers                                         : 230
  1-bit 10-to-1 multiplexer                             : 2
  1-bit 19-to-1 multiplexer                             : 1
- 1-bit 2-to-1 multiplexer                              : 138
+ 1-bit 2-to-1 multiplexer                              : 141
  1-bit 3-to-1 multiplexer                              : 2
  10-bit 2-to-1 multiplexer                             : 1
  11-bit 2-to-1 multiplexer                             : 1
@@ -1090,16 +1079,16 @@ Macro Statistics
  19-bit 2-to-1 multiplexer                             : 1
  2-bit 2-to-1 multiplexer                              : 6
  20-bit 2-to-1 multiplexer                             : 6
- 32-bit 2-to-1 multiplexer                             : 16
+ 32-bit 2-to-1 multiplexer                             : 15
  32-bit 3-to-1 multiplexer                             : 1
  32-bit 4-to-1 multiplexer                             : 1
- 4-bit 2-to-1 multiplexer                              : 21
+ 4-bit 2-to-1 multiplexer                              : 23
  4-bit 3-to-1 multiplexer                              : 1
  5-bit 2-to-1 multiplexer                              : 3
  6-bit 2-to-1 multiplexer                              : 2
  8-bit 2-to-1 multiplexer                              : 2
  9-bit 2-to-1 multiplexer                              : 4
-# FSMs                                                 : 12
+# FSMs                                                 : 11
 # Xors                                                 : 20
  1-bit xor2                                            : 20
 
@@ -1286,12 +1275,12 @@ Macro Statistics
  2-bit adder                                           : 1
  32-bit adder                                          : 3
  32-bit subtractor                                     : 1
- 4-bit adder                                           : 4
+ 4-bit adder                                           : 5
  4-bit subtractor                                      : 2
  5-bit subtractor                                      : 1
  6-bit adder                                           : 2
  7-bit subtractor                                      : 1
- 9-bit adder                                           : 2
+ 9-bit adder                                           : 1
  9-bit subtractor                                      : 1
 # Counters                                             : 13
  16-bit up counter                                     : 2
@@ -1303,8 +1292,8 @@ Macro Statistics
  8-bit up counter                                      : 2
  8-bit updown counter                                  : 1
  9-bit up counter                                      : 2
-# Registers                                            : 1111
- Flip-Flops                                            : 1111
+# Registers                                            : 1124
+ Flip-Flops                                            : 1124
 # Comparators                                          : 21
  12-bit comparator greater                             : 2
  16-bit comparator greater                             : 4
@@ -1314,10 +1303,10 @@ Macro Statistics
  6-bit comparator greater                              : 2
  9-bit comparator equal                                : 1
  9-bit comparator greater                              : 1
-# Multiplexers                                         : 256
+# Multiplexers                                         : 260
  1-bit 10-to-1 multiplexer                             : 2
  1-bit 19-to-1 multiplexer                             : 1
- 1-bit 2-to-1 multiplexer                              : 177
+ 1-bit 2-to-1 multiplexer                              : 180
  1-bit 3-to-1 multiplexer                              : 2
  10-bit 2-to-1 multiplexer                             : 1
  11-bit 2-to-1 multiplexer                             : 1
@@ -1327,16 +1316,16 @@ Macro Statistics
  19-bit 2-to-1 multiplexer                             : 1
  2-bit 2-to-1 multiplexer                              : 6
  20-bit 2-to-1 multiplexer                             : 4
- 32-bit 2-to-1 multiplexer                             : 15
+ 32-bit 2-to-1 multiplexer                             : 14
  32-bit 3-to-1 multiplexer                             : 1
  32-bit 4-to-1 multiplexer                             : 1
- 4-bit 2-to-1 multiplexer                              : 19
+ 4-bit 2-to-1 multiplexer                              : 21
  4-bit 3-to-1 multiplexer                              : 1
  5-bit 2-to-1 multiplexer                              : 2
  6-bit 2-to-1 multiplexer                              : 2
  8-bit 2-to-1 multiplexer                              : 2
  9-bit 2-to-1 multiplexer                              : 2
-# FSMs                                                 : 12
+# FSMs                                                 : 11
 # Xors                                                 : 20
  1-bit xor2                                            : 20
 
@@ -1372,7 +1361,7 @@ INFO:Xst:2261 - The FF/Latch <dataWord_5> in Unit <S6SerialInterfaceIn> is equiv
 INFO:Xst:2261 - The FF/Latch <dataWord_7> in Unit <S6SerialInterfaceIn> is equivalent to the following FF/Latch, which will be removed : <dataWordFlipped_6> 
 INFO:Xst:2261 - The FF/Latch <dataWord_9> in Unit <S6SerialInterfaceIn> is equivalent to the following FF/Latch, which will be removed : <dataWordFlipped_8> 
 Analyzing FSM <MFsm> for best encoding.
-Optimizing FSM <FSM_1> on signal <DATA_TRANSFER_STATE[1:2]> with user encoding.
+Optimizing FSM <FSM_0> on signal <DATA_TRANSFER_STATE[1:2]> with user encoding.
 -------------------------------------------
  State                         | Encoding
 -------------------------------------------
@@ -1381,14 +1370,7 @@ Optimizing FSM <FSM_1> on signal <DATA_TRANSFER_STATE[1:2]> with user encoding.
  send_windows_for_each_channel | 10
 -------------------------------------------
 Analyzing FSM <MFsm> for best encoding.
-Optimizing FSM <FSM_0> on signal <ch_number[1:0]> with sequential encoding.
--------------------
- State | Encoding
--------------------
- 0000  | 
--------------------
-Analyzing FSM <MFsm> for best encoding.
-Optimizing FSM <Udc_data/DigitizeAndShiftOutData_i/FSM_7> on signal <digNshift_state[1:3]> with gray encoding.
+Optimizing FSM <Udc_data/DigitizeAndShiftOutData_i/FSM_6> on signal <digNshift_state[1:3]> with gray encoding.
 ----------------------------------------
  State                      | Encoding
 ----------------------------------------
@@ -1399,7 +1381,7 @@ Optimizing FSM <Udc_data/DigitizeAndShiftOutData_i/FSM_7> on signal <digNshift_s
  wait_shift_out             | 110
 ----------------------------------------
 Analyzing FSM <MFsm> for best encoding.
-Optimizing FSM <Udc_data/DigitizeAndShiftOutData_i/ShftWin_i/FSM_9> on signal <shift_win_state[1:2]> with user encoding.
+Optimizing FSM <Udc_data/DigitizeAndShiftOutData_i/ShftWin_i/FSM_8> on signal <shift_win_state[1:2]> with user encoding.
 -------------------------------------
  State                   | Encoding
 -------------------------------------
@@ -1409,7 +1391,7 @@ Optimizing FSM <Udc_data/DigitizeAndShiftOutData_i/ShftWin_i/FSM_9> on signal <s
  wait_shift_out_sample   | 11
 -------------------------------------
 Analyzing FSM <MFsm> for best encoding.
-Optimizing FSM <Udc_data/DigitizeAndShiftOutData_i/ShftWin_i/U0/FSM_11> on signal <rx_bits_state[1:2]> with gray encoding.
+Optimizing FSM <Udc_data/DigitizeAndShiftOutData_i/ShftWin_i/U0/FSM_10> on signal <rx_bits_state[1:2]> with gray encoding.
 ----------------------
  State    | Encoding
 ----------------------
@@ -1418,7 +1400,7 @@ Optimizing FSM <Udc_data/DigitizeAndShiftOutData_i/ShftWin_i/U0/FSM_11> on signa
  shifting | 11
 ----------------------
 Analyzing FSM <MFsm> for best encoding.
-Optimizing FSM <Udc_data/DigitizeAndShiftOutData_i/ShftWin_i/U0/FSM_10> on signal <sr_ctrl_state[1:4]> with user encoding.
+Optimizing FSM <Udc_data/DigitizeAndShiftOutData_i/ShftWin_i/U0/FSM_9> on signal <sr_ctrl_state[1:4]> with user encoding.
 -----------------------------------------------------
  State                                   | Encoding
 -----------------------------------------------------
@@ -1433,7 +1415,7 @@ Optimizing FSM <Udc_data/DigitizeAndShiftOutData_i/ShftWin_i/U0/FSM_10> on signa
  wait_t_sr_clk_low                       | 1000
 -----------------------------------------------------
 Analyzing FSM <MFsm> for best encoding.
-Optimizing FSM <Udc_data/DigitizeAndShiftOutData_i/DigLgc_i/FSM_8> on signal <digitization_state[1:2]> with gray encoding.
+Optimizing FSM <Udc_data/DigitizeAndShiftOutData_i/DigLgc_i/FSM_7> on signal <digitization_state[1:2]> with gray encoding.
 -----------------------------------
  State                 | Encoding
 -----------------------------------
@@ -1443,7 +1425,7 @@ Optimizing FSM <Udc_data/DigitizeAndShiftOutData_i/DigLgc_i/FSM_8> on signal <di
  wait_ramp_length      | 10
 -----------------------------------
 Analyzing FSM <MFsm> for best encoding.
-Optimizing FSM <u_dc_receiver/FSM_2> on signal <r_state[1:2]> with user encoding.
+Optimizing FSM <u_dc_receiver/FSM_1> on signal <r_state[1:2]> with user encoding.
 -----------------------------
  State           | Encoding
 -----------------------------
@@ -1452,7 +1434,7 @@ Optimizing FSM <u_dc_receiver/FSM_2> on signal <r_state[1:2]> with user encoding
  read_addr_value | 10
 -----------------------------
 Analyzing FSM <MFsm> for best encoding.
-Optimizing FSM <u_dc_receiver/DC_Interface_back/U_SerialInterfaceIn/FSM_3> on signal <r_state[1:2]> with gray encoding.
+Optimizing FSM <u_dc_receiver/DC_Interface_back/U_SerialInterfaceIn/FSM_2> on signal <r_state[1:2]> with gray encoding.
 -------------------------
  State       | Encoding
 -------------------------
@@ -1461,7 +1443,7 @@ Optimizing FSM <u_dc_receiver/DC_Interface_back/U_SerialInterfaceIn/FSM_3> on si
  bitslip_s   | 11
 -------------------------
 Analyzing FSM <MFsm> for best encoding.
-Optimizing FSM <u_dc_receiver/DC_Interface_back/U_ByteLink/FSM_4> on signal <r_state[1:2]> with gray encoding.
+Optimizing FSM <u_dc_receiver/DC_Interface_back/U_ByteLink/FSM_3> on signal <r_state[1:2]> with gray encoding.
 ------------------------
  State      | Encoding
 ------------------------
@@ -1470,7 +1452,7 @@ Optimizing FSM <u_dc_receiver/DC_Interface_back/U_ByteLink/FSM_4> on signal <r_s
  locked_s   | 11
 ------------------------
 Analyzing FSM <MFsm> for best encoding.
-Optimizing FSM <mppc_wrapper_i/DUT/FSM_5> on signal <state[1:2]> with gray encoding.
+Optimizing FSM <mppc_wrapper_i/DUT/FSM_4> on signal <state[1:2]> with gray encoding.
 ----------------------
  State    | Encoding
 ----------------------
@@ -1480,7 +1462,7 @@ Optimizing FSM <mppc_wrapper_i/DUT/FSM_5> on signal <state[1:2]> with gray encod
  waiting  | 10
 ----------------------
 Analyzing FSM <MFsm> for best encoding.
-Optimizing FSM <mppc_wrapper_i/DUT/TX_dac_control/FSM_6> on signal <STATE[1:5]> with sequential encoding.
+Optimizing FSM <mppc_wrapper_i/DUT/TX_dac_control/FSM_5> on signal <STATE[1:5]> with sequential encoding.
 ---------------------------------
  State               | Encoding
 ---------------------------------
@@ -1786,27 +1768,14 @@ WARNING:Xst:1293 - FF/Latch <v_counter_4> has a constant value of 0 in block <DC
 WARNING:Xst:1293 - FF/Latch <v_counter_3> has a constant value of 0 in block <DC_Interface_back>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <v_counter_2> has a constant value of 0 in block <DC_Interface_back>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <vREG_DATA_data_isvalid> has a constant value of 0 in block <DUT>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <window_counter_0> has a constant value of 0 in block <DC_FPGA_TOP>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <window_counter_1> has a constant value of 0 in block <DC_FPGA_TOP>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <window_counter_2> has a constant value of 0 in block <DC_FPGA_TOP>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <window_counter_3> has a constant value of 0 in block <DC_FPGA_TOP>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <window_counter_4> has a constant value of 0 in block <DC_FPGA_TOP>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <window_counter_5> has a constant value of 0 in block <DC_FPGA_TOP>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <window_counter_6> has a constant value of 0 in block <DC_FPGA_TOP>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <window_counter_7> has a constant value of 0 in block <DC_FPGA_TOP>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <window_counter_8> has a constant value of 0 in block <DC_FPGA_TOP>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:638 - in unit DC_FPGA_TOP Conflict on KEEP property on signal window_counter<0> and window_counter<1> window_counter<1> signal will be lost.
-WARNING:Xst:638 - in unit DC_FPGA_TOP Conflict on KEEP property on signal window_counter<0> and window_counter<2> window_counter<2> signal will be lost.
-WARNING:Xst:638 - in unit DC_FPGA_TOP Conflict on KEEP property on signal window_counter<0> and window_counter<3> window_counter<3> signal will be lost.
-WARNING:Xst:638 - in unit DC_FPGA_TOP Conflict on KEEP property on signal window_counter<0> and window_counter<4> window_counter<4> signal will be lost.
-WARNING:Xst:638 - in unit DC_FPGA_TOP Conflict on KEEP property on signal window_counter<0> and window_counter<5> window_counter<5> signal will be lost.
-WARNING:Xst:638 - in unit DC_FPGA_TOP Conflict on KEEP property on signal window_counter<0> and window_counter<6> window_counter<6> signal will be lost.
-WARNING:Xst:638 - in unit DC_FPGA_TOP Conflict on KEEP property on signal window_counter<0> and window_counter<7> window_counter<7> signal will be lost.
-WARNING:Xst:638 - in unit DC_FPGA_TOP Conflict on KEEP property on signal window_counter<0> and window_counter<8> window_counter<8> signal will be lost.
+WARNING:Xst:1293 - FF/Latch <ch_number_0> has a constant value of 0 in block <DC_FPGA_TOP>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <ch_number_1> has a constant value of 0 in block <DC_FPGA_TOP>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <ch_number_2> has a constant value of 0 in block <DC_FPGA_TOP>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <ch_number_3> has a constant value of 0 in block <DC_FPGA_TOP>. This FF/Latch will be trimmed during the optimization process.
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block DC_FPGA_TOP, actual ratio is 34.
+Found area constraint ratio of 100 (+ 5) on block DC_FPGA_TOP, actual ratio is 35.
 INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_i> in Unit <U_SerializationFifo> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_fb_i> 
 INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_i> in Unit <U_SerializationFifo> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.rd/gras.rsts/ram_empty_fb_i> 
 INFO:Xst:2260 - The FF/Latch <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_1> in Unit <U_SerializationFifo> is equivalent to the following FF/Latch : <U0/xst_fifo_generator/gconvfifo.rf/grf.rf/rstblk/ngwrdrst.grst.wr_rst_reg_0> 
@@ -1936,8 +1905,8 @@ Unit <reg_buffer> processed.
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 813
- Flip-Flops                                            : 813
+# Registers                                            : 831
+ Flip-Flops                                            : 831
 # Shift Registers                                      : 28
  10-bit shift register                                 : 27
  6-bit shift register                                  : 1
@@ -1963,28 +1932,28 @@ Top Level Output File Name         : DC_FPGA_TOP.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 1974
+# BELS                             : 2057
 #      GND                         : 26
 #      INV                         : 51
 #      LUT1                        : 145
 #      LUT2                        : 180
-#      LUT3                        : 158
-#      LUT4                        : 267
-#      LUT5                        : 267
-#      LUT6                        : 332
-#      MUXCY                       : 311
-#      MUXF7                       : 8
+#      LUT3                        : 186
+#      LUT4                        : 290
+#      LUT5                        : 252
+#      LUT6                        : 363
+#      MUXCY                       : 321
+#      MUXF7                       : 5
 #      VCC                         : 16
-#      XORCY                       : 213
-# FlipFlops/Latches                : 1352
-#      FD                          : 284
+#      XORCY                       : 222
+# FlipFlops/Latches                : 1370
+#      FD                          : 280
 #      FDC                         : 202
 #      FDCE                        : 126
-#      FDE                         : 398
+#      FDE                         : 448
 #      FDP                         : 71
 #      FDPE                        : 12
-#      FDR                         : 143
-#      FDRE                        : 107
+#      FDR                         : 142
+#      FDRE                        : 80
 #      FDS                         : 2
 #      IDDR2                       : 1
 #      LD                          : 4
@@ -2013,19 +1982,19 @@ Selected Device : 6slx4tqg144-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:            1352  out of   4800    28%  
- Number of Slice LUTs:                 1444  out of   2400    60%  
-    Number used as Logic:              1400  out of   2400    58%  
+ Number of Slice Registers:            1370  out of   4800    28%  
+ Number of Slice LUTs:                 1511  out of   2400    62%  
+    Number used as Logic:              1467  out of   2400    61%  
     Number used as Memory:               44  out of   1200     3%  
        Number used as RAM:               16
        Number used as SRL:               28
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:   1939
-   Number with an unused Flip Flop:     587  out of   1939    30%  
-   Number with an unused LUT:           495  out of   1939    25%  
-   Number of fully used LUT-FF pairs:   857  out of   1939    44%  
-   Number of unique control sets:       135
+ Number of LUT Flip Flop pairs used:   1991
+   Number with an unused Flip Flop:     621  out of   1991    31%  
+   Number with an unused LUT:           480  out of   1991    24%  
+   Number of fully used LUT-FF pairs:   890  out of   1991    44%  
+   Number of unique control sets:       137
 
 IO Utilization: 
  Number of IOs:                          40
@@ -2058,7 +2027,7 @@ Clock Information:
 --------------------------------------------------------+----------------------------------+-------+
 Clock Signal                                            | Clock buffer(FF name)            | Load  |
 --------------------------------------------------------+----------------------------------+-------+
-clk_buffer/pll_base_inst/CLKOUT0                        | BUFG                             | 1091  |
+clk_buffer/pll_base_inst/CLKOUT0                        | BUFG                             | 1109  |
 clk_buffer/pll_base_inst/CLKOUT2                        | BUFG                             | 177   |
 clk_buffer/pll_base_inst/CLKOUT1                        | BUFG                             | 138   |
 u_dc_receiver/stateNum_0_G(u_dc_receiver/stateNum_0_G:O)| NONE(*)(u_dc_receiver/stateNum_0)| 2     |
@@ -2077,7 +2046,7 @@ Timing Summary:
 ---------------
 Speed Grade: -3
 
-   Minimum period: 6.196ns (Maximum Frequency: 161.404MHz)
+   Minimum period: 5.975ns (Maximum Frequency: 167.365MHz)
    Minimum input arrival time before clock: 2.531ns
    Maximum output required time after clock: 4.521ns
    Maximum combinational path delay: No path found
@@ -2088,33 +2057,30 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk_buffer/pll_base_inst/CLKOUT0'
-  Clock period: 6.196ns (frequency: 161.404MHz)
-  Total number of paths / destination ports: 39304 / 2361
+  Clock period: 5.975ns (frequency: 167.365MHz)
+  Total number of paths / destination ports: 27585 / 2374
 -------------------------------------------------------------------------
-Delay:               6.196ns (Levels of Logic = 9)
-  Source:            last_dig_win_0 (FF)
-  Destination:       DC_RESPONSE_data_0 (FF)
+Delay:               5.975ns (Levels of Logic = 5)
+  Source:            mppc_wrapper_i/DUT/reg_fifo/fifo_cc/e_fifo_cc/i_cnt_6 (FF)
+  Destination:       mppc_wrapper_i/DUT/reg_fifo/fifo_cc/e_fifo_cc/i_cnt_0 (FF)
   Source Clock:      clk_buffer/pll_base_inst/CLKOUT0 rising
   Destination Clock: clk_buffer/pll_base_inst/CLKOUT0 rising
 
-  Data Path: last_dig_win_0 to DC_RESPONSE_data_0
+  Data Path: mppc_wrapper_i/DUT/reg_fifo/fifo_cc/e_fifo_cc/i_cnt_6 to mppc_wrapper_i/DUT/reg_fifo/fifo_cc/e_fifo_cc/i_cnt_0
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDE:C->Q              5   0.447   0.962  last_dig_win_0 (last_dig_win_0)
-     LUT4:I0->O            1   0.203   0.579  Madd_GND_17_o_GND_17_o_add_42_OUT_cy<0>4_SW0 (N2)
-     MUXF7:S->O            4   0.148   0.684  Madd_GND_17_o_GND_17_o_add_42_OUT_cy<0>4 (Madd_GND_17_o_GND_17_o_add_42_OUT_cy<0>3)
-     LUT6:I5->O            1   0.205   0.684  Madd_GND_17_o_GND_17_o_add_42_OUT_cy<0>72 (Madd_GND_17_o_GND_17_o_add_42_OUT_cy<0>6)
-     LUT6:I4->O            1   0.203   0.000  Mcompar_window_counter[8]_GND_17_o_LessThan_44_o_lut<3>1 (Mcompar_window_counter[8]_GND_17_o_LessThan_44_o_lut<3>)
-     MUXCY:S->O            1   0.172   0.000  Mcompar_window_counter[8]_GND_17_o_LessThan_44_o_cy<3> (Mcompar_window_counter[8]_GND_17_o_LessThan_44_o_cy<3>)
-     MUXCY:CI->O          42   0.019   0.000  Mcompar_window_counter[8]_GND_17_o_LessThan_44_o_cy<4> (Mcompar_window_counter[8]_GND_17_o_LessThan_44_o_cy<4>)
-     MUXCY:CI->O           1   0.019   0.000  DATA_TRANSFER_STATE[1]_X_17_o_wide_mux_85_OUT<0>1_cy (Mcompar_window_counter[8]_GND_17_o_LessThan_44_o_cy<4>_l1)
-     MUXCY:CI->O          33   0.258   1.306  DATA_TRANSFER_STATE[1]_X_17_o_wide_mux_85_OUT<0>1_cy1 (DATA_TRANSFER_STATE[1]_X_17_o_wide_mux_85_OUT<0>)
-     LUT5:I4->O            1   0.205   0.000  DC_RESPONSE_data_0_rstpot (DC_RESPONSE_data_0_rstpot)
-     FD:D                      0.102          DC_RESPONSE_data_0
+     FDE:C->Q              3   0.447   0.879  i_cnt_6 (i_cnt_6)
+     LUT3:I0->O            2   0.205   0.617  i_full<7>_SW0 (N6)
+     LUT6:I5->O           13   0.205   0.933  i_full<7> (full)
+     end scope: 'mppc_wrapper_i/DUT/reg_fifo/fifo_cc/e_fifo_cc:full'
+     LUT2:I1->O           23   0.205   1.154  Mmux_wen11 (wen)
+     begin scope: 'mppc_wrapper_i/DUT/reg_fifo/fifo_cc/e_fifo_cc:wen'
+     LUT4:I3->O            8   0.205   0.802  _n0070_inv1 (_n0070_inv)
+     FDE:CE                    0.322          i_cnt_0
     ----------------------------------------
-    Total                      6.196ns (1.981ns logic, 4.215ns route)
-                                       (32.0% logic, 68.0% route)
+    Total                      5.975ns (1.589ns logic, 4.386ns route)
+                                       (26.6% logic, 73.4% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk_buffer/pll_base_inst/CLKOUT2'
@@ -2293,7 +2259,7 @@ Clock to Setup on destination clock clk_buffer/pll_base_inst/CLKOUT0
                                 | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock                    |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 --------------------------------+---------+---------+---------+---------+
-clk_buffer/pll_base_inst/CLKOUT0|    6.196|         |         |         |
+clk_buffer/pll_base_inst/CLKOUT0|    5.975|         |         |         |
 clk_buffer/pll_base_inst/CLKOUT1|    1.128|         |         |         |
 clk_buffer/pll_base_inst/CLKOUT2|    1.128|         |         |         |
 --------------------------------+---------+---------+---------+---------+
@@ -2312,7 +2278,7 @@ Clock to Setup on destination clock clk_buffer/pll_base_inst/CLKOUT2
                                 | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock                    |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 --------------------------------+---------+---------+---------+---------+
-clk_buffer/pll_base_inst/CLKOUT0|    4.956|         |         |         |
+clk_buffer/pll_base_inst/CLKOUT0|    4.791|         |         |         |
 clk_buffer/pll_base_inst/CLKOUT2|    4.755|         |         |         |
 --------------------------------+---------+---------+---------+---------+
 
@@ -2321,7 +2287,7 @@ Clock to Setup on destination clock stateNum_dtransfer_0_G
                                 | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock                    |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 --------------------------------+---------+---------+---------+---------+
-clk_buffer/pll_base_inst/CLKOUT0|         |         |    2.517|         |
+clk_buffer/pll_base_inst/CLKOUT0|         |         |    2.616|         |
 --------------------------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock u_dc_receiver/stateNum_0_G
@@ -2335,15 +2301,15 @@ clk_buffer/pll_base_inst/CLKOUT0|         |         |    2.254|         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 25.00 secs
-Total CPU time to Xst completion: 10.94 secs
+Total REAL time to Xst completion: 22.00 secs
+Total CPU time to Xst completion: 9.75 secs
  
 --> 
 
 
-Total memory usage is 518868 kilobytes
+Total memory usage is 518876 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :  328 (   0 filtered)
+Number of warnings :  315 (   0 filtered)
 Number of infos    :  133 (   0 filtered)
 

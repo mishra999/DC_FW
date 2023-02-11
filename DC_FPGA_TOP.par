@@ -1,7 +1,7 @@
 Release 14.7 par P.20131013 (lin64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-localhost.localdomain::  Wed Feb 08 12:51:29 2023
+localhost.localdomain::  Thu Feb 09 10:50:45 2023
 
 par -w -intstyle ise -ol high -mt off DC_FPGA_TOP_map.ncd DC_FPGA_TOP.ncd
 DC_FPGA_TOP.pcf 
@@ -28,39 +28,39 @@ Device speed data version:  "PRODUCTION 1.23 2013-10-13".
 Device Utilization Summary:
 
 Slice Logic Utilization:
-  Number of Slice Registers:                 1,767 out of   4,800   36%
-    Number used as Flip Flops:               1,763
+  Number of Slice Registers:                 1,785 out of   4,800   37%
+    Number used as Flip Flops:               1,781
     Number used as Latches:                      4
     Number used as Latch-thrus:                  0
     Number used as AND/OR logics:                0
-  Number of Slice LUTs:                      1,649 out of   2,400   68%
-    Number used as logic:                    1,416 out of   2,400   59%
-      Number using O6 output only:             878
-      Number using O5 output only:             222
-      Number using O5 and O6:                  316
+  Number of Slice LUTs:                      1,711 out of   2,400   71%
+    Number used as logic:                    1,461 out of   2,400   60%
+      Number using O6 output only:             899
+      Number using O5 output only:             221
+      Number using O5 and O6:                  341
       Number used as ROM:                        0
-    Number used as Memory:                     139 out of   1,200   11%
+    Number used as Memory:                     140 out of   1,200   11%
       Number used as Dual Port RAM:              0
       Number used as Single Port RAM:            8
         Number using O6 output only:             0
         Number using O5 output only:             0
         Number using O5 and O6:                  8
-      Number used as Shift Register:           131
-        Number using O6 output only:           111
-        Number using O5 output only:             2
-        Number using O5 and O6:                 18
-    Number used exclusively as route-thrus:     94
-      Number with same-slice register load:     73
-      Number with same-slice carry load:        21
+      Number used as Shift Register:           132
+        Number using O6 output only:           112
+        Number using O5 output only:             3
+        Number using O5 and O6:                 17
+    Number used exclusively as route-thrus:    110
+      Number with same-slice register load:     90
+      Number with same-slice carry load:        20
       Number with other load:                    0
 
 Slice Logic Distribution:
-  Number of occupied Slices:                   599 out of     600   99%
-  Number of MUXCYs used:                       544 out of   1,200   45%
-  Number of LUT Flip Flop pairs used:        1,967
-    Number with an unused Flip Flop:           468 out of   1,967   23%
-    Number with an unused LUT:                 318 out of   1,967   16%
-    Number of fully used LUT-FF pairs:       1,181 out of   1,967   60%
+  Number of occupied Slices:                   594 out of     600   99%
+  Number of MUXCYs used:                       560 out of   1,200   46%
+  Number of LUT Flip Flop pairs used:        1,970
+    Number with an unused Flip Flop:           490 out of   1,970   24%
+    Number with an unused LUT:                 259 out of   1,970   13%
+    Number of fully used LUT-FF pairs:       1,221 out of   1,970   61%
     Number of slice register sites lost
       to control set restrictions:               0 out of   4,800    0%
 
@@ -113,35 +113,35 @@ Specific Feature Utilization:
 Overall effort level (-ol):   High 
 Router effort level (-rl):    High 
 
-Starting initial Timing Analysis.  REAL time: 4 secs 
-Finished initial Timing Analysis.  REAL time: 5 secs 
+Starting initial Timing Analysis.  REAL time: 5 secs 
+Finished initial Timing Analysis.  REAL time: 6 secs 
 
 Starting Router
 
 
-Phase  1  : 10048 unrouted;      REAL time: 5 secs 
+Phase  1  : 10286 unrouted;      REAL time: 6 secs 
 
-Phase  2  : 7832 unrouted;      REAL time: 6 secs 
+Phase  2  : 8045 unrouted;      REAL time: 7 secs 
 
-Phase  3  : 3103 unrouted;      REAL time: 9 secs 
+Phase  3  : 3225 unrouted;      REAL time: 10 secs 
 
-Phase  4  : 3103 unrouted; (Setup:0, Hold:15001, Component Switching Limit:0)     REAL time: 10 secs 
+Phase  4  : 3225 unrouted; (Setup:0, Hold:23321, Component Switching Limit:0)     REAL time: 11 secs 
 
 Updating file: DC_FPGA_TOP.ncd with current fully routed design.
 
-Phase  5  : 0 unrouted; (Setup:0, Hold:13124, Component Switching Limit:0)     REAL time: 13 secs 
+Phase  5  : 0 unrouted; (Setup:0, Hold:22740, Component Switching Limit:0)     REAL time: 13 secs 
 
-Phase  6  : 0 unrouted; (Setup:0, Hold:13124, Component Switching Limit:0)     REAL time: 13 secs 
+Phase  6  : 0 unrouted; (Setup:0, Hold:22740, Component Switching Limit:0)     REAL time: 13 secs 
 
-Phase  7  : 0 unrouted; (Setup:0, Hold:13124, Component Switching Limit:0)     REAL time: 13 secs 
+Phase  7  : 0 unrouted; (Setup:0, Hold:22740, Component Switching Limit:0)     REAL time: 13 secs 
 
-Phase  8  : 0 unrouted; (Setup:0, Hold:13124, Component Switching Limit:0)     REAL time: 13 secs 
+Phase  8  : 0 unrouted; (Setup:0, Hold:22740, Component Switching Limit:0)     REAL time: 13 secs 
 
-Phase  9  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 13 secs 
+Phase  9  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 14 secs 
 
 Phase 10  : 0 unrouted; (Setup:0, Hold:0, Component Switching Limit:0)     REAL time: 14 secs 
 Total REAL time to Router completion: 14 secs 
-Total CPU time to Router completion: 14 secs 
+Total CPU time to Router completion: 13 secs 
 
 Partition Implementation Status
 -------------------------------
@@ -159,23 +159,23 @@ Generating Clock Report
 +---------------------+--------------+------+------+------------+-------------+
 |        Clock Net    |   Resource   |Locked|Fanout|Net Skew(ns)|Max Delay(ns)|
 +---------------------+--------------+------+------+------------+-------------+
-|            DATA_CLK |  BUFGMUX_X2Y4| No   |  347 |  0.121     |  1.189      |
+|            DATA_CLK |  BUFGMUX_X2Y4| No   |  345 |  0.121     |  1.189      |
 +---------------------+--------------+------+------+------------+-------------+
-|       Clk_to_QBLink |  BUFGMUX_X2Y2| No   |   45 |  0.592     |  1.660      |
+|       Clk_to_QBLink |  BUFGMUX_X2Y2| No   |   44 |  0.582     |  1.660      |
 +---------------------+--------------+------+------+------------+-------------+
-|             sys_clk | BUFGMUX_X3Y13| No   |  112 |  0.553     |  1.621      |
+|             sys_clk | BUFGMUX_X3Y13| No   |  107 |  0.553     |  1.621      |
 +---------------------+--------------+------+------+------------+-------------+
-|    icon_control0<0> |  BUFGMUX_X2Y1| No   |  101 |  0.114     |  1.186      |
+|    icon_control0<0> |  BUFGMUX_X2Y1| No   |   97 |  0.118     |  1.188      |
 +---------------------+--------------+------+------+------------+-------------+
 |U_icon_pro/U0/iUPDAT |              |      |      |            |             |
-|               E_OUT |         Local|      |    1 |  0.000     |  0.877      |
+|               E_OUT |         Local|      |    1 |  0.000     |  2.099      |
 +---------------------+--------------+------+------+------------+-------------+
-|   icon_control1<13> |         Local|      |    4 |  0.000     |  0.936      |
+|   icon_control1<13> |         Local|      |    4 |  0.000     |  3.462      |
 +---------------------+--------------+------+------+------------+-------------+
-|   icon_control0<13> |         Local|      |    4 |  0.000     |  2.037      |
+|   icon_control0<13> |         Local|      |    4 |  0.000     |  2.521      |
 +---------------------+--------------+------+------+------------+-------------+
 |stateNum_dtransfer_0 |              |      |      |            |             |
-|                  _G |         Local|      |    1 |  0.000     |  0.720      |
+|                  _G |         Local|      |    1 |  0.000     |  0.469      |
 +---------------------+--------------+------+------+------------+-------------+
 
 * Net Skew is the difference between the minimum and maximum routing
@@ -197,41 +197,41 @@ Asterisk (*) preceding a constraint indicates it was not met.
   Constraint                                |    Check    | Worst Case |  Best Case | Timing |   Timing   
                                             |             |    Slack   | Achievable | Errors |    Score   
 ----------------------------------------------------------------------------------------------------------
-  TS_clk_buffer_clkout2 = PERIOD TIMEGRP "c | SETUP       |     0.951ns|     7.049ns|       0|           0
-  lk_buffer_clkout2" TS_DATA_CLK_P / 5      | HOLD        |     0.011ns|            |       0|           0
+  TS_clk_buffer_clkout2 = PERIOD TIMEGRP "c | SETUP       |     0.763ns|     7.237ns|       0|           0
+  lk_buffer_clkout2" TS_DATA_CLK_P / 5      | HOLD        |     0.065ns|            |       0|           0
       HIGH 50%                              |             |            |            |        |            
 ----------------------------------------------------------------------------------------------------------
-  TS_clk_buffer_clkout0 = PERIOD TIMEGRP "c | SETUP       |     1.183ns|    68.170ns|       0|           0
-  lk_buffer_clkout0" TS_DATA_CLK_P /        | HOLD        |     0.207ns|            |       0|           0
+  TS_clk_buffer_clkout0 = PERIOD TIMEGRP "c | SETUP       |     3.802ns|    41.980ns|       0|           0
+  lk_buffer_clkout0" TS_DATA_CLK_P /        | HOLD        |     0.158ns|            |       0|           0
     0.5 HIGH 50%                            |             |            |            |        |            
 ----------------------------------------------------------------------------------------------------------
-  TS_U_TO_J = MAXDELAY FROM TIMEGRP "U_CLK" | SETUP       |     9.435ns|     5.565ns|       0|           0
-   TO TIMEGRP "J_CLK" 15 ns                 | HOLD        |     0.051ns|            |       0|           0
+  TS_U_TO_J = MAXDELAY FROM TIMEGRP "U_CLK" | SETUP       |     8.303ns|     6.697ns|       0|           0
+   TO TIMEGRP "J_CLK" 15 ns                 | HOLD        |     0.713ns|            |       0|           0
 ----------------------------------------------------------------------------------------------------------
-  TS_clk_buffer_clkout1 = PERIOD TIMEGRP "c | SETUP       |    10.542ns|     5.458ns|       0|           0
-  lk_buffer_clkout1" TS_DATA_CLK_P /        | HOLD        |     0.049ns|            |       0|           0
+  TS_clk_buffer_clkout1 = PERIOD TIMEGRP "c | SETUP       |     9.162ns|     6.838ns|       0|           0
+  lk_buffer_clkout1" TS_DATA_CLK_P /        | HOLD        |     0.317ns|            |       0|           0
     2.5 HIGH 50%                            |             |            |            |        |            
 ----------------------------------------------------------------------------------------------------------
   TS_DATA_CLK_P = PERIOD TIMEGRP "DATA_CLK_ | MINLOWPULSE |    30.000ns|    10.000ns|       0|           0
   P<0>" 40 ns HIGH 50%                      |             |            |            |        |            
 ----------------------------------------------------------------------------------------------------------
-  TS_U_TO_U = MAXDELAY FROM TIMEGRP "U_CLK" | SETUP       |    13.449ns|     1.551ns|       0|           0
-   TO TIMEGRP "U_CLK" 15 ns                 | HOLD        |     0.442ns|            |       0|           0
+  TS_U_TO_U = MAXDELAY FROM TIMEGRP "U_CLK" | SETUP       |    13.399ns|     1.601ns|       0|           0
+   TO TIMEGRP "U_CLK" 15 ns                 | HOLD        |     0.480ns|            |       0|           0
 ----------------------------------------------------------------------------------------------------------
-  TS_J_CLK = PERIOD TIMEGRP "J_CLK" 30 ns H | SETUP       |    18.869ns|    11.131ns|       0|           0
-  IGH 50%                                   | HOLD        |     0.382ns|            |       0|           0
+  TS_J_CLK = PERIOD TIMEGRP "J_CLK" 30 ns H | SETUP       |    19.471ns|    10.529ns|       0|           0
+  IGH 50%                                   | HOLD        |     0.402ns|            |       0|           0
 ----------------------------------------------------------------------------------------------------------
-  PATH "TS_J4_TO_D2_ila_pro_0_path" TIG     | MAXDELAY    |         N/A|     7.109ns|     N/A|           0
+  PATH "TS_J4_TO_D2_ila_pro_0_path" TIG     | MAXDELAY    |         N/A|     9.909ns|     N/A|           0
 ----------------------------------------------------------------------------------------------------------
   PATH "TS_J3_TO_D2_ila_pro_0_path" TIG     | N/A         |         N/A|         N/A|     N/A|         N/A
 ----------------------------------------------------------------------------------------------------------
   PATH "TS_J2_TO_D2_ila_pro_0_path" TIG     | N/A         |         N/A|         N/A|     N/A|         N/A
 ----------------------------------------------------------------------------------------------------------
-  PATH "TS_D2_TO_T2_ila_pro_0_path" TIG     | SETUP       |         N/A|     7.559ns|     N/A|           0
+  PATH "TS_D2_TO_T2_ila_pro_0_path" TIG     | SETUP       |         N/A|     7.143ns|     N/A|           0
 ----------------------------------------------------------------------------------------------------------
-  PATH "TS_J_TO_D_path" TIG                 | SETUP       |         N/A|    10.959ns|     N/A|           0
+  PATH "TS_J_TO_D_path" TIG                 | SETUP       |         N/A|    11.787ns|     N/A|           0
 ----------------------------------------------------------------------------------------------------------
-  PATH "TS_D_TO_J_path" TIG                 | SETUP       |         N/A|     7.220ns|     N/A|           0
+  PATH "TS_D_TO_J_path" TIG                 | SETUP       |         N/A|     6.479ns|     N/A|           0
 ----------------------------------------------------------------------------------------------------------
   PATH "TS_J4_TO_D2_ila_pro_1_path" TIG     | N/A         |         N/A|         N/A|     N/A|         N/A
 ----------------------------------------------------------------------------------------------------------
@@ -253,10 +253,10 @@ Derived Constraints for TS_DATA_CLK_P
 |           Constraint          | Requirement |-------------+-------------|-------------+-------------|-------------+-------------|
 |                               |             |   Direct    | Derivative  |   Direct    | Derivative  |   Direct    | Derivative  |
 +-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
-|TS_DATA_CLK_P                  |     40.000ns|     10.000ns|     35.245ns|            0|            0|            0|        43357|
-| TS_clk_buffer_clkout1         |     16.000ns|      5.458ns|          N/A|            0|            0|          837|            0|
-| TS_clk_buffer_clkout0         |     80.000ns|     68.170ns|          N/A|            0|            0|        39718|            0|
-| TS_clk_buffer_clkout2         |      8.000ns|      7.049ns|          N/A|            0|            0|         2802|            0|
+|TS_DATA_CLK_P                  |     40.000ns|     10.000ns|     36.185ns|            0|            0|            0|        31934|
+| TS_clk_buffer_clkout1         |     16.000ns|      6.838ns|          N/A|            0|            0|          837|            0|
+| TS_clk_buffer_clkout0         |     80.000ns|     41.980ns|          N/A|            0|            0|        28295|            0|
+| TS_clk_buffer_clkout2         |      8.000ns|      7.237ns|          N/A|            0|            0|         2802|            0|
 +-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
 
 All constraints were met.
@@ -271,10 +271,10 @@ Generating Pad Report.
 
 All signals are completely routed.
 
-Total REAL time to PAR completion: 17 secs 
+Total REAL time to PAR completion: 16 secs 
 Total CPU time to PAR completion: 15 secs 
 
-Peak Memory Usage:  656 MB
+Peak Memory Usage:  657 MB
 
 Placer: Placement generated during map.
 Routing: Completed - No errors found.

@@ -22,23 +22,4 @@ at 0 ps: Note: WARNING: Behavioral models for independent clock FIFO configurati
 at 0 ps: Note: WARNING: Behavioral models for independent clock FIFO configurations do not model synchronization delays. The behavioral models are functionally correct, and will represent the behavior of the configured FIFO. See the FIFO Generator User Guide for more information. (/targetx_data_tb/\data_fifos_generation(0)\/data_fifos/U0/gaxis_fifo/gaxisf/axisf/).
 Finished circuit initialization process.
 # run 250.00us
-ISim P.20131013 (signature 0xfbc00daa)
-----------------------------------------------------------------------
-WARNING:Security:42 - Your software subscription period has lapsed. Your current version of Xilinx tools will continue to function, but you no longer qualify for Xilinx software updates or new releases.
-
-
-----------------------------------------------------------------------
-This is a Full version of ISim.
-# run 1000 ns
-Simulator is doing circuit initialization process.
-at 0 ps: Note: WARNING: Behavioral models for independent clock FIFO configurations do not model synchronization delays. The behavioral models are functionally correct, and will represent the behavior of the configured FIFO. See the FIFO Generator User Guide for more information. (/targetx_data_tb/u_dc_receiver/DC_Interface_back/U_SerialInterfaceOut/U_SerializationFifo/U0/gconvfifo/inst_conv_fifo/).
-at 0 ps: Note: WARNING: Behavioral models for independent clock FIFO configurations do not model synchronization delays. The behavioral models are functionally correct, and will represent the behavior of the configured FIFO. See the FIFO Generator User Guide for more information. (/targetx_data_tb/u_dc_receiver/DC_Interface_back/U_SerialInterfaceIn/U_SerializationFifo/U0/gconvfifo/inst_conv_fifo/).
-at 0 ps: Note: WARNING: Behavioral models for independent clock FIFO configurations do not model synchronization delays. The behavioral models are functionally correct, and will represent the behavior of the configured FIFO. See the FIFO Generator User Guide for more information. (/targetx_data_tb/u_dc_receiver/DC_Interface_back/QBlink_TX_FIFO_W32R8/U0/gconvfifo/inst_conv_fifo/).
-at 0 ps: Note: WARNING: Behavioral models for independent clock FIFO configurations do not model synchronization delays. The behavioral models are functionally correct, and will represent the behavior of the configured FIFO. See the FIFO Generator User Guide for more information. (/targetx_data_tb/uut_dccomm/DC_Interface/U_SerialInterfaceOut/U_SerializationFifo/U0/gconvfifo/inst_conv_fifo/).
-at 0 ps: Note: WARNING: Behavioral models for independent clock FIFO configurations do not model synchronization delays. The behavioral models are functionally correct, and will represent the behavior of the configured FIFO. See the FIFO Generator User Guide for more information. (/targetx_data_tb/uut_dccomm/DC_Interface/U_SerialInterfaceIn/U_SerializationFifo/U0/gconvfifo/inst_conv_fifo/).
-at 0 ps: Note: WARNING: Behavioral models for independent clock FIFO configurations do not model synchronization delays. The behavioral models are functionally correct, and will represent the behavior of the configured FIFO. See the FIFO Generator User Guide for more information. (/targetx_data_tb/uut_dccomm/DC_Interface/QBlink_TX_FIFO_W32R8/U0/gconvfifo/inst_conv_fifo/).
-at 0 ps: Note: WARNING: Behavioral models for independent clock FIFO configurations do not model synchronization delays. The behavioral models are functionally correct, and will represent the behavior of the configured FIFO. See the FIFO Generator User Guide for more information. (/targetx_data_tb/uut1/data_fifo_out/U0/gaxis_fifo/gaxisf/axisf/).
-at 0 ps: Note: WARNING: Behavioral models for independent clock FIFO configurations do not model synchronization delays. The behavioral models are functionally correct, and will represent the behavior of the configured FIFO. See the FIFO Generator User Guide for more information. (/targetx_data_tb/\data_fifos_generation(0)\/data_fifos/U0/gaxis_fifo/gaxisf/axisf/).
-Finished circuit initialization process.
-# run 250.00us
 # exit 0
