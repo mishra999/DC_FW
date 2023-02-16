@@ -1,1 +1,1 @@
--intstyle "ise" -incremental -lib "secureip" -o "/home/ise/git/DC_backwards/DC_backwards/TargetX_data_tb_isim_beh.exe" -prj "/home/ise/git/DC_backwards/DC_backwards/TargetX_data_tb_beh.prj" "work.TargetX_data_tb" 
+-intstyle "ise" -incremental -lib "secureip" -o "/home/ise/git/DC_backwards/DC_backwards/TX_DAC_control_w_regInterface_tb_isim_beh.exe" -prj "/home/ise/git/DC_backwards/DC_backwards/TX_DAC_control_w_regInterface_tb_beh.prj" "work.TX_DAC_control_w_regInterface_tb" 

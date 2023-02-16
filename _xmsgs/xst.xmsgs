@@ -20,43 +20,43 @@
 <msg type="warning" file="HDLCompiler" num="946" delta="old" >"/home/ise/git/DC_backwards/DC_backwards/QBLink/source/QBlink.vhd" Line 270: Actual for formal port <arg fmt="%s" index="1">s_aresetn</arg> is neither a static name nor a globally static expression
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="946" delta="old" >"/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" Line 423: Actual for formal port <arg fmt="%s" index="1">s_aresetn</arg> is neither a static name nor a globally static expression
+<msg type="warning" file="HDLCompiler" num="946" delta="old" >"/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" Line 462: Actual for formal port <arg fmt="%s" index="1">s_aresetn</arg> is neither a static name nor a globally static expression
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="946" delta="old" >"/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" Line 426: Actual for formal port <arg fmt="%s" index="1">s_axis_tdata</arg> is neither a static name nor a globally static expression
+<msg type="warning" file="HDLCompiler" num="946" delta="old" >"/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" Line 465: Actual for formal port <arg fmt="%s" index="1">s_axis_tdata</arg> is neither a static name nor a globally static expression
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="946" delta="old" >"/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" Line 577: Actual for formal port <arg fmt="%s" index="1">c1</arg> is neither a static name nor a globally static expression
+<msg type="warning" file="HDLCompiler" num="946" delta="old" >"/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" Line 616: Actual for formal port <arg fmt="%s" index="1">c1</arg> is neither a static name nor a globally static expression
 </msg>
 
 <msg type="warning" file="HDLCompiler" num="871" delta="old" >"/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" Line 74: Using initial value <arg fmt="%s" index="1">&quot;0&quot;</arg> for <arg fmt="%s" index="2">qb_rst</arg> since it is never assigned
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="871" delta="old" >"/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" Line 97: Using initial value <arg fmt="%s" index="1">&apos;0&apos;</arg> for <arg fmt="%s" index="2">reset</arg> since it is never assigned
+<msg type="warning" file="HDLCompiler" num="871" delta="old" >"/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" Line 98: Using initial value <arg fmt="%s" index="1">&apos;0&apos;</arg> for <arg fmt="%s" index="2">reset</arg> since it is never assigned
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="871" delta="old" >"/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" Line 134: Using initial value <arg fmt="%s" index="1">&apos;1&apos;</arg> for <arg fmt="%s" index="2">asic_mask</arg> since it is never assigned
+<msg type="warning" file="HDLCompiler" num="871" delta="old" >"/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" Line 135: Using initial value <arg fmt="%s" index="1">&apos;1&apos;</arg> for <arg fmt="%s" index="2">asic_mask</arg> since it is never assigned
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="871" delta="old" >"/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" Line 139: Using initial value <arg fmt="%s" index="1">&quot;011110&quot;</arg> for <arg fmt="%s" index="2">ramp_length</arg> since it is never assigned
+<msg type="warning" file="HDLCompiler" num="871" delta="old" >"/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" Line 140: Using initial value <arg fmt="%s" index="1">&quot;010000&quot;</arg> for <arg fmt="%s" index="2">ramp_length</arg> since it is never assigned
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="871" delta="old" >"/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" Line 141: Using initial value <arg fmt="%s" index="1">&quot;0110&quot;</arg> for <arg fmt="%s" index="2">t_samp_addr_settle</arg> since it is never assigned
+<msg type="warning" file="HDLCompiler" num="871" delta="old" >"/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" Line 142: Using initial value <arg fmt="%s" index="1">&quot;0000&quot;</arg> for <arg fmt="%s" index="2">t_samp_addr_settle</arg> since it is never assigned
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="871" delta="old" >"/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" Line 142: Using initial value <arg fmt="%s" index="1">&quot;0110&quot;</arg> for <arg fmt="%s" index="2">t_setup_ss_any</arg> since it is never assigned
+<msg type="warning" file="HDLCompiler" num="871" delta="old" >"/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" Line 143: Using initial value <arg fmt="%s" index="1">&quot;0010&quot;</arg> for <arg fmt="%s" index="2">t_setup_ss_any</arg> since it is never assigned
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="871" delta="old" >"/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" Line 143: Using initial value <arg fmt="%s" index="1">&quot;0100&quot;</arg> for <arg fmt="%s" index="2">t_strobe_settle</arg> since it is never assigned
+<msg type="warning" file="HDLCompiler" num="871" delta="old" >"/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" Line 144: Using initial value <arg fmt="%s" index="1">&quot;0000&quot;</arg> for <arg fmt="%s" index="2">t_strobe_settle</arg> since it is never assigned
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="871" delta="old" >"/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" Line 144: Using initial value <arg fmt="%s" index="1">&quot;0010&quot;</arg> for <arg fmt="%s" index="2">t_sr_clk_high</arg> since it is never assigned
+<msg type="warning" file="HDLCompiler" num="871" delta="old" >"/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" Line 145: Using initial value <arg fmt="%s" index="1">&quot;0011&quot;</arg> for <arg fmt="%s" index="2">t_sr_clk_high</arg> since it is never assigned
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="871" delta="old" >"/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" Line 145: Using initial value <arg fmt="%s" index="1">&quot;0010&quot;</arg> for <arg fmt="%s" index="2">t_sr_clk_low</arg> since it is never assigned
+<msg type="warning" file="HDLCompiler" num="871" delta="old" >"/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" Line 146: Using initial value <arg fmt="%s" index="1">&quot;0010&quot;</arg> for <arg fmt="%s" index="2">t_sr_clk_low</arg> since it is never assigned
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="871" delta="old" >"/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" Line 146: Using initial value <arg fmt="%s" index="1">&quot;0110&quot;</arg> for <arg fmt="%s" index="2">t_sr_clk_strobe</arg> since it is never assigned
+<msg type="warning" file="HDLCompiler" num="871" delta="old" >"/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd" Line 147: Using initial value <arg fmt="%s" index="1">&quot;0001&quot;</arg> for <arg fmt="%s" index="2">t_sr_clk_strobe</arg> since it is never assigned
 </msg>
 
 <msg type="warning" file="HDLCompiler" num="1127" delta="old" >"/home/ise/git/DC_backwards/DC_backwards/QBLink/source/Encode8b10b.vhd" Line 132: Assignment to <arg fmt="%s" index="1">illegalk</arg> ignored, since the identifier is never used
@@ -83,9 +83,6 @@
 <msg type="warning" file="HDLCompiler" num="1127" delta="old" >"/home/ise/git/DC_backwards/DC_backwards/QBLink/source/Decode8b10b.vhd" Line 156: Assignment to <arg fmt="%s" index="1">k28</arg> ignored, since the identifier is never used
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="92" delta="old" >"/home/ise/git/DC_backwards/DC_backwards/sources/DC_Comm_back.vhd" Line 185: <arg fmt="%s" index="1">cmd_data</arg> should be on the sensitivity list of the process
-</msg>
-
 <msg type="warning" file="HDLCompiler" num="92" delta="old" >"/home/ise/git/DC_backwards/DC_backwards/sources/DC_Comm_back.vhd" Line 189: <arg fmt="%s" index="1">cmd_data</arg> should be on the sensitivity list of the process
 </msg>
 
@@ -95,64 +92,64 @@
 <msg type="warning" file="HDLCompiler" num="92" delta="old" >"/home/ise/git/DC_backwards/DC_backwards/sources/DC_Comm_back.vhd" Line 197: <arg fmt="%s" index="1">cmd_data</arg> should be on the sensitivity list of the process
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="92" delta="old" >"/home/ise/git/DC_backwards/DC_backwards/sources/DC_Comm_back.vhd" Line 208: <arg fmt="%s" index="1">cmd_data</arg> should be on the sensitivity list of the process
+<msg type="warning" file="HDLCompiler" num="92" delta="old" >"/home/ise/git/DC_backwards/DC_backwards/sources/DC_Comm_back.vhd" Line 201: <arg fmt="%s" index="1">cmd_data</arg> should be on the sensitivity list of the process
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="92" delta="old" >"/home/ise/git/DC_backwards/DC_backwards/sources/DC_Comm_back.vhd" Line 216: <arg fmt="%s" index="1">cmd_data</arg> should be on the sensitivity list of the process
+<msg type="warning" file="HDLCompiler" num="92" delta="old" >"/home/ise/git/DC_backwards/DC_backwards/sources/DC_Comm_back.vhd" Line 212: <arg fmt="%s" index="1">cmd_data</arg> should be on the sensitivity list of the process
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="92" delta="old" >"/home/ise/git/DC_backwards/DC_backwards/sources/DC_Comm_back.vhd" Line 217: <arg fmt="%s" index="1">cmd_data</arg> should be on the sensitivity list of the process
+<msg type="warning" file="HDLCompiler" num="92" delta="old" >"/home/ise/git/DC_backwards/DC_backwards/sources/DC_Comm_back.vhd" Line 220: <arg fmt="%s" index="1">cmd_data</arg> should be on the sensitivity list of the process
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="92" delta="old" >"/home/ise/git/DC_backwards/DC_backwards/sources/DC_Comm_back.vhd" Line 225: <arg fmt="%s" index="1">cmd_data</arg> should be on the sensitivity list of the process
+<msg type="warning" file="HDLCompiler" num="92" delta="old" >"/home/ise/git/DC_backwards/DC_backwards/sources/DC_Comm_back.vhd" Line 221: <arg fmt="%s" index="1">cmd_data</arg> should be on the sensitivity list of the process
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="92" delta="old" >"/home/ise/git/DC_backwards/DC_backwards/sources/DC_Comm_back.vhd" Line 226: <arg fmt="%s" index="1">cmd_data</arg> should be on the sensitivity list of the process
+<msg type="warning" file="HDLCompiler" num="92" delta="old" >"/home/ise/git/DC_backwards/DC_backwards/sources/DC_Comm_back.vhd" Line 229: <arg fmt="%s" index="1">cmd_data</arg> should be on the sensitivity list of the process
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="92" delta="old" >"/home/ise/git/DC_backwards/DC_backwards/sources/DC_Comm_back.vhd" Line 234: <arg fmt="%s" index="1">cmd_data</arg> should be on the sensitivity list of the process
+<msg type="warning" file="HDLCompiler" num="92" delta="old" >"/home/ise/git/DC_backwards/DC_backwards/sources/DC_Comm_back.vhd" Line 230: <arg fmt="%s" index="1">cmd_data</arg> should be on the sensitivity list of the process
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="92" delta="old" >"/home/ise/git/DC_backwards/DC_backwards/sources/DC_Comm_back.vhd" Line 235: <arg fmt="%s" index="1">cmd_data</arg> should be on the sensitivity list of the process
+<msg type="warning" file="HDLCompiler" num="92" delta="old" >"/home/ise/git/DC_backwards/DC_backwards/sources/DC_Comm_back.vhd" Line 238: <arg fmt="%s" index="1">cmd_data</arg> should be on the sensitivity list of the process
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="92" delta="old" >"/home/ise/git/DC_backwards/DC_backwards/sources/DC_Comm_back.vhd" Line 239: <arg fmt="%s" index="1">cmd_data</arg> should be on the sensitivity list of the process
 </msg>
 
 <msg type="warning" file="HDLCompiler" num="1127" delta="old" >"/home/ise/git/DC_backwards/DC_backwards/targetX_modules/source/SingleBusProcessing.vhd" Line 409: Assignment to <arg fmt="%s" index="1">dignshift_done</arg> ignored, since the identifier is never used
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd</arg>&quot; line <arg fmt="%s" index="2">259</arg>: Output port &lt;<arg fmt="%s" index="3">LOCKED</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">clk_buffer</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd</arg>&quot; line <arg fmt="%s" index="2">271</arg>: Output port &lt;<arg fmt="%s" index="3">LOCKED</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">clk_buffer</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd</arg>&quot; line <arg fmt="%s" index="2">294</arg>: Output port &lt;<arg fmt="%s" index="3">SERIAL_CLK_LCK</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">u_dc_receiver</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd</arg>&quot; line <arg fmt="%s" index="2">306</arg>: Output port &lt;<arg fmt="%s" index="3">SERIAL_CLK_LCK</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">u_dc_receiver</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd</arg>&quot; line <arg fmt="%s" index="2">294</arg>: Output port &lt;<arg fmt="%s" index="3">TRIG_LINK_SYNC</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">u_dc_receiver</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd</arg>&quot; line <arg fmt="%s" index="2">306</arg>: Output port &lt;<arg fmt="%s" index="3">TRIG_LINK_SYNC</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">u_dc_receiver</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd</arg>&quot; line <arg fmt="%s" index="2">321</arg>: Output port &lt;<arg fmt="%s" index="3">TX_DAC_control_out_REG_CLR</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">mppc_wrapper_i</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd</arg>&quot; line <arg fmt="%s" index="2">356</arg>: Output port &lt;<arg fmt="%s" index="3">busy</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">TARGETX_control</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd</arg>&quot; line <arg fmt="%s" index="2">363</arg>: Output port &lt;<arg fmt="%s" index="3">ShiftOutWinBusy</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">Udc_data</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd</arg>&quot; line <arg fmt="%s" index="2">402</arg>: Output port &lt;<arg fmt="%s" index="3">ShiftOutWinBusy</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">Udc_data</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd</arg>&quot; line <arg fmt="%s" index="2">363</arg>: Output port &lt;<arg fmt="%s" index="3">ShiftOutSampBusy</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">Udc_data</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd</arg>&quot; line <arg fmt="%s" index="2">402</arg>: Output port &lt;<arg fmt="%s" index="3">ShiftOutSampBusy</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">Udc_data</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd</arg>&quot; line <arg fmt="%s" index="2">419</arg>: Output port &lt;<arg fmt="%s" index="3">s_axis_tready</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">data_fifos_generation[0].data_fifos</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd</arg>&quot; line <arg fmt="%s" index="2">458</arg>: Output port &lt;<arg fmt="%s" index="3">s_axis_tready</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">data_fifos_generation[0].data_fifos</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd</arg>&quot; line <arg fmt="%s" index="2">540</arg>: Output port &lt;<arg fmt="%s" index="3">cur_win</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">UUT_sampling</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd</arg>&quot; line <arg fmt="%s" index="2">579</arg>: Output port &lt;<arg fmt="%s" index="3">cur_win</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">UUT_sampling</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd</arg>&quot; line <arg fmt="%s" index="2">540</arg>: Output port &lt;<arg fmt="%s" index="3">samp_mod8</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">UUT_sampling</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd</arg>&quot; line <arg fmt="%s" index="2">579</arg>: Output port &lt;<arg fmt="%s" index="3">samp_mod8</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">UUT_sampling</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd</arg>&quot; line <arg fmt="%s" index="2">540</arg>: Output port &lt;<arg fmt="%s" index="3">cur_win_ii</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">UUT_sampling</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd</arg>&quot; line <arg fmt="%s" index="2">579</arg>: Output port &lt;<arg fmt="%s" index="3">cur_win_ii</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">UUT_sampling</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd</arg>&quot; line <arg fmt="%s" index="2">540</arg>: Output port &lt;<arg fmt="%s" index="3">BUSB_WR_ADDRCLR</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">UUT_sampling</arg>&gt; is unconnected or connected to loadless signal.
-</msg>
-
-<msg type="warning" file="Xst" num="3035" delta="old" >Index value(s) does not match array range for signal &lt;<arg fmt="%s" index="1">CtrlRegister</arg>&gt;, simulation mismatch.
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/ise/git/DC_backwards/DC_backwards/sources/DC_FPGA_TOP.vhd</arg>&quot; line <arg fmt="%s" index="2">579</arg>: Output port &lt;<arg fmt="%s" index="3">BUSB_WR_ADDRCLR</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">UUT_sampling</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
 <msg type="warning" file="Xst" num="737" delta="old" >Found <arg fmt="%d" index="1">1</arg>-bit latch for signal &lt;<arg fmt="%s" index="2">stateNum_dtransfer&lt;1&gt;</arg>&gt;. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
@@ -194,21 +191,6 @@
 <msg type="warning" file="Xst" num="37" delta="old" >Detected unknown constraint/property &quot;<arg fmt="%s" index="1">mark_debug1</arg>&quot;. This constraint/property is not supported by the current software release and will be ignored.
 </msg>
 
-<msg type="warning" file="Xst" num="647" delta="old" >Input &lt;<arg fmt="%s" index="1">rst</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-</msg>
-
-<msg type="warning" file="Xst" num="2935" delta="old" >Signal &apos;<arg fmt="%s" index="1">TX_DAC_control_out_REG_CLR</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">TX_DAC_control_w_regInterface</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">0</arg>).
-</msg>
-
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">/home/ise/git/DC_backwards/DC_backwards/target_x_dac_control/src/TX_dac_control_axi.vhd</arg>&quot; line <arg fmt="%s" index="2">52</arg>: Output port &lt;<arg fmt="%s" index="3">counter</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">reg_fifo</arg>&gt; is unconnected or connected to loadless signal.
-</msg>
-
-<msg type="warning" file="Xst" num="647" delta="old" >Input &lt;<arg fmt="%s" index="1">RX_m2s_data&lt;31:19&gt;</arg>&gt; is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-</msg>
-
-<msg type="warning" file="Xst" num="2935" delta="old" >Signal &apos;<arg fmt="%s" index="1">TX_m2s_data&lt;31:19&gt;</arg>&apos;, unconnected in block &apos;<arg fmt="%s" index="2">fifo_cc_axi_32</arg>&apos;, is tied to its initial value (<arg fmt="%s" index="3">0000000000000</arg>).
-</msg>
-
 <msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">dataWord_0</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">U_SerialInterfaceIn</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;dataWordFlipped_1&gt; </arg>
 </msg>
 
@@ -239,9 +221,6 @@
 <msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">dataWord_9</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">U_SerialInterfaceIn</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;dataWordFlipped_8&gt; </arg>
 </msg>
 
-<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">regTX_tx_data_19</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">mppc_wrapper_i</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">12 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;regTX_tx_data_20&gt; &lt;regTX_tx_data_21&gt; &lt;regTX_tx_data_22&gt; &lt;regTX_tx_data_23&gt; &lt;regTX_tx_data_24&gt; &lt;regTX_tx_data_25&gt; &lt;regTX_tx_data_26&gt; &lt;regTX_tx_data_27&gt; &lt;regTX_tx_data_28&gt; &lt;regTX_tx_data_29&gt; &lt;regTX_tx_data_30&gt; &lt;regTX_tx_data_31&gt; </arg>
-</msg>
-
 <msg type="warning" file="Xst" num="1426" delta="old" >The value init of the FF/Latch <arg fmt="%s" index="1">asic_sel_i</arg> hinder the constant cleaning in the block <arg fmt="%s" index="2">U0</arg>.
 You should achieve better results by setting this init to <arg fmt="%i" index="3">1</arg>.
 </msg>
@@ -264,184 +243,11 @@ You should achieve better results by setting this init to <arg fmt="%i" index="3
 <msg type="warning" file="Xst" num="1293" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">i_asic_mask</arg>&gt; has a constant value of <arg fmt="%d" index="2">1</arg> in block &lt;<arg fmt="%s" index="3">DigitizeAndShiftOutData_i</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1293" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">reg_data_m2s_last</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">mppc_wrapper_i</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">regBuffer[1]_value_12</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">reg_buffer</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">regBuffer[1]_value_13</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">reg_buffer</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">regBuffer[1]_value_14</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">reg_buffer</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">regBuffer[1]_value_15</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">reg_buffer</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">regBuffer[2]_value_12</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">reg_buffer</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">regBuffer[2]_value_13</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">reg_buffer</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">regBuffer[2]_value_14</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">reg_buffer</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">regBuffer[2]_value_15</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">reg_buffer</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">regBuffer[3]_value_12</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">reg_buffer</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">regBuffer[3]_value_13</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">reg_buffer</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">regBuffer[3]_value_14</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">reg_buffer</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">regBuffer[3]_value_15</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">reg_buffer</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">regBuffer[4]_value_12</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">reg_buffer</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">regBuffer[4]_value_13</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">reg_buffer</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">regBuffer[4]_value_14</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">reg_buffer</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">regBuffer[4]_value_15</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">reg_buffer</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">regBuffer[5]_value_12</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">reg_buffer</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">regBuffer[5]_value_13</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">reg_buffer</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">regBuffer[5]_value_14</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">reg_buffer</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">regBuffer[5]_value_15</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">reg_buffer</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">regBuffer[6]_value_12</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">reg_buffer</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">regBuffer[6]_value_13</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">reg_buffer</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">regBuffer[6]_value_14</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">reg_buffer</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">regBuffer[6]_value_15</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">reg_buffer</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">regBuffer[7]_value_12</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">reg_buffer</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">regBuffer[7]_value_13</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">reg_buffer</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">regBuffer[7]_value_14</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">reg_buffer</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">regBuffer[7]_value_15</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">reg_buffer</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">regBuffer[8]_value_12</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">reg_buffer</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">regBuffer[8]_value_13</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">reg_buffer</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">regBuffer[8]_value_14</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">reg_buffer</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">regBuffer[8]_value_15</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">reg_buffer</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">regBuffer[9]_value_12</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">reg_buffer</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">regBuffer[9]_value_13</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">reg_buffer</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">regBuffer[9]_value_14</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">reg_buffer</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">regBuffer[9]_value_15</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">reg_buffer</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">regBuffer[10]_value_12</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">reg_buffer</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">regBuffer[10]_value_13</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">reg_buffer</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">regBuffer[10]_value_14</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">reg_buffer</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">regBuffer[10]_value_15</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">reg_buffer</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">regTX_tx_data_19</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">mppc_wrapper_i</arg>&gt;.
-</msg>
-
 <msg type="info" file="Xst" num="3231" delta="old" >The small RAM &lt;<arg fmt="%s" index="1">Mram_GND_55_o_GND_55_o_mux_40_OUT</arg>&gt; will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
 </msg>
 
-<msg type="info" file="Xst" num="3218" delta="old" >HDL ADVISOR - The RAM &lt;<arg fmt="%s" index="1">Mram_CtrlRegister</arg>&gt; will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
-</msg>
-
-<msg type="info" file="Xst" num="3226" delta="old" >The RAM &lt;<arg fmt="%s" index="1">Mram_mem</arg>&gt; will be implemented as a BLOCK RAM, absorbing the following register(s):</msg>
-
 <msg type="warning" file="Xst" num="1426" delta="old" >The value init of the FF/Latch <arg fmt="%s" index="1">asic_sel_i</arg> hinder the constant cleaning in the block <arg fmt="%s" index="2">ShiftOutSample</arg>.
 You should achieve better results by setting this init to <arg fmt="%i" index="3">1</arg>.
-</msg>
-
-<msg type="warning" file="Xst" num="1293" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">reg_data_m2s_last</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">TX_DAC_control_w_regInterface</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">regTX_tx_data_19</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">TX_DAC_control_w_regInterface</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">regTX_tx_data_20</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">TX_DAC_control_w_regInterface</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">regTX_tx_data_21</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">TX_DAC_control_w_regInterface</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">regTX_tx_data_22</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">TX_DAC_control_w_regInterface</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">regTX_tx_data_23</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">TX_DAC_control_w_regInterface</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">regTX_tx_data_24</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">TX_DAC_control_w_regInterface</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">regTX_tx_data_25</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">TX_DAC_control_w_regInterface</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">regTX_tx_data_26</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">TX_DAC_control_w_regInterface</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">regTX_tx_data_27</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">TX_DAC_control_w_regInterface</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">regTX_tx_data_28</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">TX_DAC_control_w_regInterface</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">regTX_tx_data_29</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">TX_DAC_control_w_regInterface</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">regTX_tx_data_30</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">TX_DAC_control_w_regInterface</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">regTX_tx_data_31</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">TX_DAC_control_w_regInterface</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
 <msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">dataWord_0</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">S6SerialInterfaceIn</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;dataWordFlipped_1&gt; </arg>
@@ -478,45 +284,6 @@ You should achieve better results by setting this init to <arg fmt="%i" index="3
 </msg>
 
 <msg type="warning" file="Xst" num="1293" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">r_bitCount_0</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">S6SerialInterfaceIn</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">vREG_DATA_data_internal2_19</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">tx_dac_control_axi</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">vREG_DATA_data_internal2_20</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">tx_dac_control_axi</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">vREG_DATA_data_internal2_21</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">tx_dac_control_axi</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">vREG_DATA_data_internal2_22</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">tx_dac_control_axi</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">vREG_DATA_data_internal2_23</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">tx_dac_control_axi</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">vREG_DATA_data_internal2_24</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">tx_dac_control_axi</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">vREG_DATA_data_internal2_25</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">tx_dac_control_axi</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">vREG_DATA_data_internal2_26</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">tx_dac_control_axi</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">vREG_DATA_data_internal2_27</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">tx_dac_control_axi</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">vREG_DATA_data_internal2_28</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">tx_dac_control_axi</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">vREG_DATA_data_internal2_29</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">tx_dac_control_axi</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">vREG_DATA_data_internal2_30</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">tx_dac_control_axi</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">vREG_DATA_data_internal2_31</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">tx_dac_control_axi</arg>&gt;.
 </msg>
 
 <msg type="warning" file="Xst" num="1293" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">DC_RESPONSE_reg_16</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">DC_FPGA_TOP</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
@@ -639,13 +406,7 @@ Xilinx highly recommends one of the following:
 <msg type="warning" file="Xst" num="1293" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">rx_fsm_ctr_3</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ShiftOutSample</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1293" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">rx_fsm_ctr_2</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ShiftOutSample</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1293" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">rx_fsm_ctr_2</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ShiftOutSample</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">rx_fsm_ctr_3</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ShiftOutSample</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1293" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">rx_fsm_ctr_3</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ShiftOutSample</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
 <msg type="warning" file="Xst" num="1293" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">sr_ctrl_fsm_ctr_3</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">ShiftOutSample</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
@@ -669,163 +430,7 @@ Xilinx highly recommends one of the following:
 <msg type="warning" file="Xst" num="1293" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">samp_stop_asic_i_4</arg>&gt; has a constant value of <arg fmt="%d" index="2">1</arg> in block &lt;<arg fmt="%s" index="3">ShftWin_i</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">p_readout.fifo_buffer1_0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">fifo_cc</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">p_readout.fifo_buffer_0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">fifo_cc</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">TX_Last</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">fifo_cc</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">regBuffer[1]_value_12</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">reg_buffer</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">regBuffer[1]_value_13</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">reg_buffer</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">regBuffer[1]_value_14</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">reg_buffer</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">regBuffer[1]_value_15</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">reg_buffer</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">regBuffer[1]_address_7</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">reg_buffer</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">regBuffer[2]_value_12</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">reg_buffer</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">regBuffer[2]_value_13</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">reg_buffer</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">regBuffer[2]_value_14</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">reg_buffer</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">regBuffer[2]_value_15</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">reg_buffer</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">regBuffer[2]_address_7</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">reg_buffer</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">regBuffer[3]_address_7</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">reg_buffer</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">regBuffer[3]_value_12</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">reg_buffer</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">regBuffer[3]_value_13</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">reg_buffer</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">regBuffer[3]_value_14</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">reg_buffer</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">regBuffer[3]_value_15</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">reg_buffer</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">regBuffer[4]_address_7</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">reg_buffer</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">regBuffer[4]_value_12</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">reg_buffer</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">regBuffer[4]_value_13</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">reg_buffer</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">regBuffer[4]_value_14</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">reg_buffer</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">regBuffer[4]_value_15</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">reg_buffer</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">regBuffer[5]_address_7</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">reg_buffer</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">regBuffer[5]_value_12</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">reg_buffer</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">regBuffer[5]_value_13</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">reg_buffer</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">regBuffer[5]_value_14</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">reg_buffer</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">regBuffer[5]_value_15</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">reg_buffer</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">regBuffer[6]_address_7</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">reg_buffer</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">regBuffer[6]_value_12</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">reg_buffer</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">regBuffer[6]_value_13</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">reg_buffer</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">regBuffer[6]_value_14</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">reg_buffer</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">regBuffer[6]_value_15</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">reg_buffer</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">regBuffer[7]_value_12</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">reg_buffer</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">regBuffer[7]_value_13</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">reg_buffer</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">regBuffer[7]_value_14</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">reg_buffer</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">regBuffer[7]_value_15</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">reg_buffer</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">regBuffer[7]_address_7</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">reg_buffer</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">regBuffer[8]_address_7</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">reg_buffer</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">regBuffer[8]_value_12</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">reg_buffer</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">regBuffer[8]_value_13</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">reg_buffer</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">regBuffer[8]_value_14</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">reg_buffer</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">regBuffer[8]_value_15</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">reg_buffer</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">regBuffer[9]_address_7</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">reg_buffer</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">regBuffer[9]_value_12</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">reg_buffer</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">regBuffer[9]_value_13</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">reg_buffer</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">regBuffer[9]_value_14</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">reg_buffer</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">regBuffer[9]_value_15</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">reg_buffer</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">regBuffer[10]_address_7</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">reg_buffer</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">regBuffer[10]_value_12</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">reg_buffer</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">regBuffer[10]_value_13</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">reg_buffer</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">regBuffer[10]_value_14</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">reg_buffer</arg>&gt;.
-</msg>
-
-<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">regBuffer[10]_value_15</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">reg_buffer</arg>&gt;.
+<msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">busy</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">TARGETX_control</arg>&gt;.
 </msg>
 
 <msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">cur_win_0</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">UUT_sampling</arg>&gt;.
@@ -892,6 +497,9 @@ Xilinx highly recommends one of the following:
 </msg>
 
 <msg type="warning" file="Xst" num="2677" delta="old" >Node &lt;<arg fmt="%s" index="1">cur_win_i_8</arg>&gt; of sequential type is unconnected in block &lt;<arg fmt="%s" index="2">UUT_sampling</arg>&gt;.
+</msg>
+
+<msg type="warning" file="Xst" num="1293" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">sr_ctrl_fsm_ctr_3</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">U0</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
 <msg type="warning" file="Xst" num="1293" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">dig_st_fms_ctr_11</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">DigLgc_i</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
@@ -1086,19 +694,16 @@ Xilinx highly recommends one of the following:
 <msg type="warning" file="Xst" num="1293" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">v_counter_2</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">DC_Interface_back</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1293" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">vREG_DATA_data_isvalid</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">DUT</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1293" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">ch_number_0</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">DC_FPGA_TOP</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1293" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">ch_number_0</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">DC_FPGA_TOP</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1293" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">ch_number_1</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">DC_FPGA_TOP</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1293" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">ch_number_1</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">DC_FPGA_TOP</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1293" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">ch_number_2</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">DC_FPGA_TOP</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1293" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">ch_number_2</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">DC_FPGA_TOP</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
-</msg>
-
-<msg type="warning" file="Xst" num="1293" delta="new" >FF/Latch &lt;<arg fmt="%s" index="1">ch_number_3</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">DC_FPGA_TOP</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1293" delta="old" >FF/Latch &lt;<arg fmt="%s" index="1">ch_number_3</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">DC_FPGA_TOP</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
 <msg type="info" file="Xst" num="2260" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_i</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">U_SerializationFifo</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg> : <arg fmt="%s" index="4">&lt;U0/xst_fifo_generator/gconvfifo.rf/grf.rf/gntv_or_sync_fifo.gl0.wr/gwas.wsts/ram_full_fb_i&gt; </arg>

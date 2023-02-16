@@ -59,9 +59,6 @@
 <msg type="warning" file="HDLCompiler" num="89" delta="new" >"/home/ise/git/DC_backwards/DC_backwards/_ngo/cs_ila_pro_0/tmp/_cg/_bbx/chipscope_lib_v1_03_a/cs_bram_simple_s6_ramb9.vhd" Line 130: &lt;<arg fmt="%s" index="1">ramb8bwer</arg>&gt; remains a black-box since it has no binding entity.
 </msg>
 
-<msg type="warning" file="HDLCompiler" num="746" delta="new" >"/home/ise/git/DC_backwards/DC_backwards/_ngo/cs_ila_pro_0/tmp/_cg/_bbx/chipscope_ila_v1_05_a/ila_trace_buffer.vhd" Line 201: Range is empty (null range)
-</msg>
-
 <msg type="warning" file="HDLCompiler" num="634" delta="new" >"/home/ise/git/DC_backwards/DC_backwards/_ngo/cs_ila_pro_0/tmp/_cg/_bbx/chipscope_ila_v1_05_a/ila_core.vhd" Line 383: Net &lt;<arg fmt="%s" index="1">iCFG_EN_VEC[15]</arg>&gt; does not have a driver.
 </msg>
 

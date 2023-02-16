@@ -31,7 +31,7 @@ entity DigitizingLgcTX is
         busy               : out std_logic := '0';
         -- control registers
         -- force_test_pattern : in std_logic := '0';
-        ramp_length        : in  std_logic_vector (11 downto 6) := "000111"; -- std_logic_vector (11 downto 6) := "000111";
+        ramp_length        : in  std_logic_vector (11 downto 6) := "010000"; -- std_logic_vector (11 downto 6) := "000111";
         -- pins to TargetX
         BUS_RD_ENA         : out std_logic := '0';
         BUS_CLR            : out std_logic := '0';

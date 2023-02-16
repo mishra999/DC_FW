@@ -3,10 +3,10 @@
 <!--The data in this file is primarily intended for consumption by Xilinx tools.
 The structure and the elements are likely to change over the next few releases.
 This means code written to parse this file will need to be revisited each subsequent release.-->
-<application name="pn" timeStamp="Thu Feb  9 10:50:43 2023">
+<application name="pn" timeStamp="Sun Feb 12 17:18:36 2023">
 <section name="Project Information" visible="false">
 <property name="ProjectID" value="E34ABA26FFE3D1E9528989164FB6EF8F" type="project"/>
-<property name="ProjectIteration" value="97" type="project"/>
+<property name="ProjectIteration" value="99" type="project"/>
 <property name="ProjectFile" value="/home/ise/git/DC_backwards/DC_backwards/DC_backwards.xise" type="project"/>
 <property name="ProjectCreationTimestamp" value="2022-09-15T14:08:49" type="project"/>
 </section>
@@ -17,7 +17,7 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="PROP_LastAppliedStrategy" value="Xilinx Default (unlocked)" type="design"/>
 <property name="PROP_ManualCompileOrderImp" value="false" type="design"/>
 <property name="PROP_PropSpecInProjFile" value="Store all values" type="design"/>
-<property name="PROP_SelectedInstanceHierarchicalPath" value="/TargetX_data_tb" type="process"/>
+<property name="PROP_SelectedInstanceHierarchicalPath" value="/TX_DAC_control_w_regInterface_tb" type="process"/>
 <property name="PROP_Simulator" value="ISim (VHDL/Verilog)" type="design"/>
 <property name="PROP_SynthOptEffort_spartan6" value="High" type="process"/>
 <property name="PROP_SynthTopFile" value="changed" type="process"/>
@@ -28,10 +28,10 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="PROP_VHDLSourceAnalysisStandard" value="VHDL-200X" type="process"/>
 <property name="PROP_intProjectCreationTimestamp" value="2022-09-15T14:08:49" type="design"/>
 <property name="PROP_intWbtProjectID" value="E34ABA26FFE3D1E9528989164FB6EF8F" type="design"/>
-<property name="PROP_intWbtProjectIteration" value="97" type="process"/>
+<property name="PROP_intWbtProjectIteration" value="99" type="process"/>
 <property name="PROP_intWorkingDirLocWRTProjDir" value="Same" type="design"/>
 <property name="PROP_intWorkingDirUsed" value="No" type="design"/>
-<property name="PROP_selectedSimRootSourceNode_behav" value="work.TargetX_data_tb" type="process"/>
+<property name="PROP_selectedSimRootSourceNode_behav" value="work.TX_DAC_control_w_regInterface_tb" type="process"/>
 <property name="PROP_xilxBitgStart_IntDone" value="true" type="process"/>
 <property name="PROP_xilxSynthKeepHierarchy" value="Soft" type="process"/>
 <property name="PROP_AutoTop" value="true" type="design"/>
@@ -46,7 +46,7 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="FILE_CDC" value="1" type="source"/>
 <property name="FILE_COREGEN" value="8" type="source"/>
 <property name="FILE_UCF" value="1" type="source"/>
-<property name="FILE_VHDL" value="39" type="source"/>
+<property name="FILE_VHDL" value="38" type="source"/>
 </section>
 </application>
 </document>

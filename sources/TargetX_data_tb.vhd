@@ -94,7 +94,7 @@ architecture rtl of TargetX_data_tb is
     signal first_dig_win      : std_logic_vector(8 downto 0);
     signal last_dig_win       : std_logic_vector(8 downto 0);
     -- SCROD config registers
-    signal ramp_length        : std_logic_vector(11 downto 6) := (others => '0');
+    signal ramp_length        : std_logic_vector(11 downto 6) := "010000";
     signal  force_test_pattern    :std_logic := '0';
     signal  t_samp_addr_settle    :std_logic_vector(3 downto 0) := "0110";-- 6
     signal  t_setup_ss_any        : std_logic_vector(3 downto 0) := "0110";-- 6

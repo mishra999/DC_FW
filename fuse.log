@@ -1,117 +1,33 @@
-Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -lib secureip -o /home/ise/git/DC_backwards/DC_backwards/TargetX_data_tb_isim_beh.exe -prj /home/ise/git/DC_backwards/DC_backwards/TargetX_data_tb_beh.prj work.TargetX_data_tb 
+Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -lib secureip -o /home/ise/git/DC_backwards/DC_backwards/TX_DAC_control_w_regInterface_tb_isim_beh.exe -prj /home/ise/git/DC_backwards/DC_backwards/TX_DAC_control_w_regInterface_tb_beh.prj work.TX_DAC_control_w_regInterface_tb 
 ISim P.20131013 (signature 0xfbc00daa)
 Number of CPUs detected in this system: 2
 Turning on mult-threading, number of parallel sub-compilation jobs: 4 
 Determining compilation order of HDL files
-Parsing VHDL file "/home/ise/git/DC_backwards/DC_backwards/cores/coregen/QBLtxFIFO.vhd" into library work
-Parsing VHDL file "/home/ise/git/DC_backwards/DC_backwards/cores/coregen/serializationFifo.vhd" into library work
-Parsing VHDL file "/home/ise/git/DC_backwards/DC_backwards/cores/ipcore_dir/axi_fifo_32w_32d.vhd" into library work
-Parsing VHDL file "/home/ise/git/DC_backwards/DC_backwards/ipcore_dir/serial_data_window_fifo_w32d1024.vhd" into library work
-Parsing VHDL file "/home/ise/git/DC_backwards/DC_backwards/ipcore_dir/fifo_data_w32_d32.vhd" into library work
-Parsing VHDL file "/home/ise/git/DC_backwards/DC_backwards/targetX_modules/source/b2tt_symbols.vhd" into library work
-Parsing VHDL file "/home/ise/git/DC_backwards/DC_backwards/targetX_modules/source/klm_scrod_pkg.vhd" into library work
-Parsing VHDL file "/home/ise/git/DC_backwards/DC_backwards/targetX_modules/source/conc_intfc_pkg.vhd" into library work
-Parsing VHDL file "/home/ise/git/DC_backwards/DC_backwards/targetX_modules/source/klm_scint_pkg.vhd" into library work
-Parsing VHDL file "/home/ise/git/DC_backwards/DC_backwards/QBLink/source/UtilityPkg.vhd" into library work
-Parsing VHDL file "/home/ise/git/DC_backwards/DC_backwards/targetX_modules/source/ShiftOutSample.vhd" into library work
-Parsing VHDL file "/home/ise/git/DC_backwards/DC_backwards/QBLink/source/Encode8b10b.vhd" into library work
-Parsing VHDL file "/home/ise/git/DC_backwards/DC_backwards/QBLink/source/Decode8b10b.vhd" into library work
-Parsing VHDL file "/home/ise/git/DC_backwards/DC_backwards/targetX_modules/source/ShiftOutWindow.vhd" into library work
-Parsing VHDL file "/home/ise/git/DC_backwards/DC_backwards/targetX_modules/source/DigitizingLgcTX.vhd" into library work
-Parsing VHDL file "/home/ise/git/DC_backwards/DC_backwards/QBLink/source/SyncBit.vhd" into library work
-Parsing VHDL file "/home/ise/git/DC_backwards/DC_backwards/QBLink/source/S6SerialInterfaceOut.vhd" into library work
-WARNING:HDLCompiler:946 - "/home/ise/git/DC_backwards/DC_backwards/QBLink/source/S6SerialInterfaceOut.vhd" Line 67: Actual for formal port rd_en is neither a static name nor a globally static expression
-WARNING:HDLCompiler:946 - "/home/ise/git/DC_backwards/DC_backwards/QBLink/source/S6SerialInterfaceOut.vhd" Line 132: Actual for formal port c1 is neither a static name nor a globally static expression
-Parsing VHDL file "/home/ise/git/DC_backwards/DC_backwards/QBLink/source/S6SerialInterfaceIn.vhd" into library work
-WARNING:HDLCompiler:946 - "/home/ise/git/DC_backwards/DC_backwards/QBLink/source/S6SerialInterfaceIn.vhd" Line 133: Actual for formal port c1 is neither a static name nor a globally static expression
-WARNING:HDLCompiler:946 - "/home/ise/git/DC_backwards/DC_backwards/QBLink/source/S6SerialInterfaceIn.vhd" Line 250: Actual for formal port rd_en is neither a static name nor a globally static expression
-Parsing VHDL file "/home/ise/git/DC_backwards/DC_backwards/QBLink/source/ByteLink.vhd" into library work
-Parsing VHDL file "/home/ise/git/DC_backwards/DC_backwards/targetX_modules/source/DigitizeAndShiftOutData.vhd" into library work
-Parsing VHDL file "/home/ise/git/DC_backwards/DC_backwards/QBLink/source/QBlink.vhd" into library work
-WARNING:HDLCompiler:946 - "/home/ise/git/DC_backwards/DC_backwards/QBLink/source/QBlink.vhd" Line 270: Actual for formal port s_aresetn is neither a static name nor a globally static expression
-Parsing VHDL file "/home/ise/git/DC_backwards/DC_backwards/QBLink/source/BMD_definitions.vhd" into library work
 Parsing VHDL file "/home/ise/git/DC_backwards/DC_backwards/target_x_dac_control/src/xgen_klm_scrod_bus.vhd" into library work
 Parsing VHDL file "/home/ise/git/DC_backwards/DC_backwards/target_x_dac_control/src/xgen_axistream_32.vhd" into library work
+Parsing VHDL file "/home/ise/git/DC_backwards/DC_backwards/target_x_dac_control/src/tx_dac_control.vhd" into library work
 Parsing VHDL file "/home/ise/git/DC_backwards/DC_backwards/target_x_dac_control/src/roling_register_p.vhd" into library work
-Parsing VHDL file "/home/ise/git/DC_backwards/DC_backwards/targetX_modules/source/SingleBusProcessing.vhd" into library work
-Parsing VHDL file "/home/ise/git/DC_backwards/DC_backwards/sources/DC_Comm_back.vhd" into library work
-Parsing VHDL file "/home/ise/git/DC_backwards/DC_backwards/SCROD_modules/DC_Comm.vhd" into library work
-Parsing VHDL file "/home/ise/git/DC_backwards/DC_backwards/SCROD_modules/CommandInterpreter_n.vhd" into library work
-WARNING:HDLCompiler:946 - "/home/ise/git/DC_backwards/DC_backwards/SCROD_modules/CommandInterpreter_n.vhd" Line 978: Actual for formal port s_aresetn is neither a static name nor a globally static expression
-Parsing VHDL file "/home/ise/git/DC_backwards/DC_backwards/sources/TargetX_data_tb.vhd" into library work
-WARNING:HDLCompiler:946 - "/home/ise/git/DC_backwards/DC_backwards/sources/TargetX_data_tb.vhd" Line 412: Actual for formal port s_aresetn is neither a static name nor a globally static expression
-WARNING:HDLCompiler:946 - "/home/ise/git/DC_backwards/DC_backwards/sources/TargetX_data_tb.vhd" Line 415: Actual for formal port s_axis_tdata is neither a static name nor a globally static expression
+Parsing VHDL file "/home/ise/git/DC_backwards/DC_backwards/target_x_dac_control/src/TargetX_DAC_TB.vhd" into library work
 Starting static elaboration
 Completed static elaboration
-Fuse Memory Usage: 132012 KB
-Fuse CPU Usage: 3120 ms
+Fuse Memory Usage: 99144 KB
+Fuse CPU Usage: 1220 ms
 Compiling package standard
 Compiling package std_logic_1164
-Compiling package numeric_std
-Compiling package std_logic_arith
-Compiling package std_logic_unsigned
-Compiling package roling_register_p
-Compiling package xgen_axistream_32
-Compiling package tx_dac_control_pack
-Compiling package bmd_definitions
-Compiling package utilitypkg
-Compiling package math_real
-Compiling package conc_intfc_pkg
-Compiling package b2tt_symbols
-Compiling package klm_scrod_pkg
-Compiling package klm_scint_pkg
-Compiling package vcomponents
 Compiling package attributes
 Compiling package std_logic_misc
-Compiling architecture fdre_v of entity FDRE [\FDRE('1')\]
-Compiling architecture structural of entity SyncBit_QBL [\SyncBit_QBL(2,'1','1','1',1000)...]
-Compiling package textio
-Compiling package vital_timing
-Compiling package vital_primitives
-Compiling package vpkg
-Compiling architecture behavioral of entity fifo_generator_v9_3_bhv_as [\fifo_generator_v9_3_bhv_as(10,"...]
-Compiling architecture behavioral of entity fifo_generator_v9_3_conv [\fifo_generator_v9_3_conv(0,0,4,...]
-Compiling architecture behavioral of entity fifo_generator_v9_3 [\fifo_generator_v9_3(0,0,4,"Blan...]
-Compiling architecture serializationfifo_a of entity serializationFifo [serializationfifo_default]
-Compiling architecture oddr2_v of entity ODDR2 [\ODDR2("C0",'0',"ASYNC")(1,2,1,5...]
-Compiling architecture behavioral of entity S6SerialInterfaceOut [s6serialinterfaceout_default]
-Compiling architecture iddr2_v of entity IDDR2 [\IDDR2("C0",'0','0',"SYNC")(1,2,...]
-Compiling architecture behavioral of entity S6SerialInterfaceIn [s6serialinterfacein_default]
-Compiling architecture rtl of entity Encode8b10b [\Encode8b10b(1000)\]
-Compiling architecture rtl of entity Decode8b10b [\Decode8b10b(1000)\]
-Compiling architecture rtl of entity ByteLink [\ByteLink(100,1000)\]
-Compiling architecture behavioral of entity fifo_generator_v9_3_bhv_as [\fifo_generator_v9_3_bhv_as(32,"...]
-Compiling architecture behavioral of entity fifo_generator_v9_3_bhv_preload0 [\fifo_generator_v9_3_bhv_preload...]
-Compiling architecture behavioral of entity fifo_generator_v9_3_conv [\fifo_generator_v9_3_conv(0,0,10...]
-Compiling architecture behavioral of entity fifo_generator_v9_3 [\fifo_generator_v9_3(0,0,10,"Bla...]
-Compiling architecture qbltxfifo_a of entity QBLtxFIFO [qbltxfifo_default]
-Compiling architecture behavioral of entity fifo_generator_v9_3_bhv_ss [\fifo_generator_v9_3_bhv_ss(11,3...]
-Compiling architecture behavioral of entity fifo_generator_v9_3_bhv_preload0 [\fifo_generator_v9_3_bhv_preload...]
-Compiling architecture behavioral of entity fifo_generator_v9_3_conv [\fifo_generator_v9_3_conv(1,0,11...]
-Compiling architecture behavioral of entity fifo_generator_v9_3 [\fifo_generator_v9_3(1,0,10,"Bla...]
-Compiling architecture axi_fifo_32w_32d_a of entity axi_fifo_32w_32d [axi_fifo_32w_32d_default]
-Compiling architecture behavioral of entity QBlink [qblink_default]
-Compiling architecture behaviorial of entity DC_Comm_back [dc_comm_back_default]
-Compiling architecture behaviorial of entity DC_Comm [dc_comm_default]
-Compiling architecture behavioral of entity fifo_generator_v9_3_bhv_as [\fifo_generator_v9_3_bhv_as(32,"...]
-Compiling architecture behavioral of entity fifo_generator_v9_3_conv [\fifo_generator_v9_3_conv(0,0,6,...]
-Compiling architecture behavioral of entity fifo_generator_v9_3 [\fifo_generator_v9_3(0,0,10,"Bla...]
-Compiling architecture fifo_data_w32_d32_a of entity fifo_data_w32_d32 [fifo_data_w32_d32_default]
-Compiling architecture rtl of entity CommandInterpreter [commandinterpreter_default]
-Compiling architecture behavioral of entity DigitizingLgcTX [digitizinglgctx_default]
-Compiling architecture behavioral of entity ShiftOutSample [shiftoutsample_default]
-Compiling architecture behavioral of entity ShiftOutWindow [shiftoutwindow_default]
-Compiling architecture behavioral of entity DigitizeAndShiftOutData [digitizeandshiftoutdata_default]
-Compiling architecture behavioral of entity SingleBusProcessing [singlebusprocessing_default]
-Compiling architecture behavioral of entity fifo_generator_v9_3_bhv_as [\fifo_generator_v9_3_bhv_as(32,"...]
-Compiling architecture behavioral of entity fifo_generator_v9_3_conv [\fifo_generator_v9_3_conv(0,0,5,...]
-Compiling architecture behavioral of entity fifo_generator_v9_3 [\fifo_generator_v9_3(0,0,10,"Bla...]
-Compiling architecture serial_data_window_fifo_w32d1024_a of entity serial_data_window_fifo_w32d1024 [serial_data_window_fifo_w32d1024...]
-Compiling architecture rtl of entity targetx_data_tb
+Compiling package numeric_std
+Compiling package roling_register_p
+Compiling package std_logic_arith
+Compiling package std_logic_unsigned
+Compiling package xgen_axistream_32
+Compiling package tx_dac_control_pack
+Compiling architecture behavioral of entity TARGETX_DAC_CONTROL [targetx_dac_control_default]
+Compiling architecture behavioral of entity tx_dac_control_w_reginterface_tb
 Time Resolution for simulation is 1ps.
 Waiting for 1 sub-compilation(s) to finish...
-Compiled 103 VHDL Units
-Built simulation executable /home/ise/git/DC_backwards/DC_backwards/TargetX_data_tb_isim_beh.exe
-Fuse Memory Usage: 482520 KB
-Fuse CPU Usage: 5520 ms
-GCC CPU Usage: 8130 ms
+Compiled 13 VHDL Units
+Built simulation executable /home/ise/git/DC_backwards/DC_backwards/TX_DAC_control_w_regInterface_tb_isim_beh.exe
+Fuse Memory Usage: 421520 KB
+Fuse CPU Usage: 1530 ms
+GCC CPU Usage: 690 ms

@@ -40,7 +40,8 @@ entity DC_Comm_back is
               regWrData : out std_logic_vector(15 downto 0);
               regReq    : out sl;
               regOp     : out std_logic_vector(1 downto 0);
-              dataReq    : out sl
+              dataReq    : out sl;
+              write_dac   : out sl
             --   start_win  : out slv(8 downto 0);
             --   stop_win  : out slv(8 downto 0)
 
@@ -79,6 +80,7 @@ type RegType is record
     -- start_win  : slv(15 downto 0);
     -- stop_win  : slv(15 downto 0);
     dataReq    : sl;
+    write_dac    : sl;
 
 end record RegType;  
 
@@ -94,7 +96,8 @@ constant REG_INIT_C : RegType := (
     regOp => "00",
     -- start_win  => (others => '0'),
     -- stop_win  => (others => '0'),
-    dataReq     => '0'
+    dataReq     => '0',
+    write_dac     => '0'
 );
 
 -- constant N_GPR : integer := 20;--127;
@@ -167,7 +170,8 @@ PORT MAP(
     --   RES_VALID(0) <= '0';
     v.regReq := '0';
     v.dataReq := '0';
-    v.regOp := "00";      
+    v.regOp := "00"; 
+    v.write_dac := '0';     
       -- State machine 
     case(r.state) is
         when IDLE =>
@@ -237,6 +241,7 @@ PORT MAP(
                     -- v.write := "11";
                     v.regOp := "10";
                     v.regReq := '1';
+                    v.write_dac := '1';
                     v.timeoutCnt  := (others => '0');
                     v.state    := IDLE;
                 else 
@@ -264,6 +269,7 @@ PORT MAP(
       regReq      <= r.regReq;
       dataReq      <= r.dataReq;
       regOp       <= r.regOp;
+      write_dac       <= r.write_dac;
     --   start_win    <= r.start_win(8 downto 0);
     --   stop_win    <= r.stop_win(8 downto 0);
     --   rxData8b      <= r.rxData8b;

@@ -1,0 +1,5 @@
+vhdl work "target_x_dac_control/src/xgen_klm_scrod_bus.vhd"
+vhdl work "target_x_dac_control/src/xgen_axistream_32.vhd"
+vhdl work "target_x_dac_control/src/tx_dac_control.vhd"
+vhdl work "target_x_dac_control/src/roling_register_p.vhd"
+vhdl work "target_x_dac_control/src/TargetX_DAC_TB.vhd"

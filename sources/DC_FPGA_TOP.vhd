@@ -82,6 +82,7 @@ architecture rtl of DC_FPGA_TOP is
     signal regReq    : sl:= '0';
     signal regOp     : slv(1 downto 0):= "00";
     signal dataReq    : sl:= '0';
+    signal write_dac    : sl:= '0';
     signal DC_RESPONSE : slv (31 downto 0) := (others => '0'); 
     signal RES_VALID : slv( NUM_DCs downto 0):= (others => '0'); 
     signal DC_RESPONSE_reg : slv (31 downto 0) := (others => '0'); 
@@ -101,8 +102,8 @@ architecture rtl of DC_FPGA_TOP is
     constant ZERO : std_logic_vector(15 downto 0) := x"0000";
     constant ZERO1 : std_logic_vector(19 downto 0) := x"00000";
 -- mppc dac
-   signal regg      : registerT := registerT_null;
-   signal TX_DAC_control1 : TX_DAC_control := TX_DAC_control_null; 
+--    signal regg      : registerT := registerT_null;
+--    signal TX_DAC_control1 : TX_DAC_control := TX_DAC_control_null; 
 -- dsp_FSM:
     type FIFO_ch_window_readout_machine is (IDLE, SEND_HEADER, SEND_WINDOWS_FOR_EACH_CHANNEL);
     signal DATA_TRANSFER_STATE : FIFO_ch_window_readout_machine := IDLE;
@@ -136,14 +137,14 @@ architecture rtl of DC_FPGA_TOP is
     signal last_dig_win       : std_logic_vector(8 downto 0);
     signal twin       : std_logic_vector(8 downto 0);
     -- SCROD config registers
-    signal ramp_length        : std_logic_vector(11 downto 6) := "011110";
+    signal ramp_length        : std_logic_vector(11 downto 6) := "010000"; --16
     signal  force_test_pattern    :std_logic := '0';
-    signal  t_samp_addr_settle    :std_logic_vector(3 downto 0) := "0110";-- 6
-    signal  t_setup_ss_any        : std_logic_vector(3 downto 0) := "0110";-- 6
-    signal  t_strobe_settle       :std_logic_vector(3 downto 0) := "0100";-- 4
-    signal   t_sr_clk_high         : std_logic_vector(3 downto 0) := "0010";-- 2
+    signal  t_samp_addr_settle    :std_logic_vector(3 downto 0) := "0000";-- 0
+    signal  t_setup_ss_any        : std_logic_vector(3 downto 0) := "0010";-- 2
+    signal  t_strobe_settle       :std_logic_vector(3 downto 0) := "0000";-- 0
+    signal   t_sr_clk_high         : std_logic_vector(3 downto 0) := "0011";-- 3
     signal  t_sr_clk_low          : std_logic_vector(3 downto 0) := "0010";-- 2
-    signal   t_sr_clk_strobe       : std_logic_vector(3 downto 0) := "0110";-- 6
+    signal   t_sr_clk_strobe       : std_logic_vector(3 downto 0) := "0001";-- 1
             -- status registers
     -- signal  debug_we              : std_logic := '0';
     -- signal  debug_wave            : std_logic_vector(11 downto 0) := (others => '0');
@@ -212,6 +213,17 @@ architecture rtl of DC_FPGA_TOP is
     -- signal  USE_PULSE_HEIGHT_HIST  : std_logic := '0';
     -- signal  USE_DBG_WAVE_FIFO      : std_logic := '0';
     -- signal  N_BITS_AVG_g           : integer;
+    --!  targetx_dac_control_i (targetx_dac_control):
+    signal asic_sin               : std_logic := '0';
+    signal asic_pclk              : std_logic := '0';
+    signal asic_sclk              : std_logic := '0';
+    signal tx_dac_load_period  : std_logic_vector(15 downto 0) := (others => '0');
+    signal tx_dac_latch_period  : std_logic_vector(15 downto 0) := (others => '0');
+    signal tx_dac_update : std_logic := '0';
+    signal tx_dac_reg_data : std_logic_vector(18 downto 0) := (others => '0');
+    signal tx_dac_busy : std_logic := '0';
+
+
     signal BUSB_WR_ADDRCLR : std_logic := '0';
     signal cur_win_ii : std_logic_vector(8 downto 0) := "000000000";
     signal cur_win : std_logic_vector(8 downto 0) := "000000000";
@@ -240,9 +252,9 @@ begin
                             "01" when DATA_TRANSFER_STATE = SEND_HEADER else
                             "10" when DATA_TRANSFER_STATE = SEND_WINDOWS_FOR_EACH_CHANNEL;
 
-    SCLK <= TX_DAC_control1.SCLK;
-    PCLK <= TX_DAC_control1.PCLK;
-    SIN <= TX_DAC_control1.SIN; 
+    SCLK <= asic_sclk;
+    PCLK <= asic_pclk;
+    SIN <= asic_sin; 
 
     BUS_RD_ROWSEL <= BUS_RD_WINSEL(2 downto 0);
     BUS_RD_COLSEL <= BUS_RD_WINSEL(8 downto 3);
@@ -306,7 +318,8 @@ begin
         regReq  => regReq,
         regOp => regOp,       
         sync => sync1, --QB_RST --sync1
-        dataReq => dataReq
+        dataReq => dataReq,
+        write_dac => write_dac
     );
 
     -- DC_reset_process : process(DATA_CLK) --unused for now 10/01
@@ -318,24 +331,50 @@ begin
     --     --    DC_RESET <= CtrlRegister(2)(NUM_DCs downto 0); --by me
     --     END IF;
     -- end process;
-   mppc_wrapper_i : entity work.TX_DAC_control_w_regInterface
-   port map (
-    clk    => DATA_CLK,
-    rst    => sync1(0),
 
 
-    reg      => regg,
 
 
-    TX_DAC_control_out =>  TX_DAC_control1
+--    mppc_wrapper_i : entity work.TX_DAC_control_w_regInterface
+--    port map (
+--     clk    => DATA_CLK,
+--     rst    => sync1(0),
+
+
+--     reg      => regg,
+
+
+--     TX_DAC_control_out =>  TX_DAC_control1
     
-  );
+--   );
+
+tx_dac_reg_data     <= CtrlRegister(1)(6 downto 0) & CtrlRegister(2)(11 downto 0);
+tx_dac_load_period  <= CtrlRegister(3);
+tx_dac_latch_period <= CtrlRegister(4);
+tx_dac_update <= write_dac; 
+
+TARGETX_control: entity work.TARGETX_DAC_CONTROL
+PORT MAP(
+	--------------INPUTS-----------------------------
+	CLK 				=> DATA_CLK,
+	LOAD_PERIOD 	=> tx_dac_load_period, --comes from ctrl register 3
+	LATCH_PERIOD 	=> tx_dac_latch_period,--comes from ctrl register 4
+	UPDATE 			=> tx_dac_update,      --comes from DC_COMM_PARSER
+	REG_DATA 		=> tx_dac_reg_data,    --comes from ctrl register 1 bit 6-0 and 2 bit 11-0
+	--------------OUTPUTS----------------------------
+	busy				=>	tx_dac_busy,    	  --unconnected
+	SIN 				=> asic_sin, 					  --hardware signals to targetx
+	SCLK 				=> asic_sclk,					  --hardware signals to targetx
+	PCLK 				=> asic_pclk);				  --hardware signals to targetx
+
+
+
 
     seqnn : process (DATA_CLK) is
     begin
         if (rising_edge(DATA_CLK)) then
             RES_VALID_reg(0) <= '0';
-            regg <= registerT_null;
+            -- regg <= registerT_null;
             DC_RESPONSE_reg  <= (others => '0');
             if QB_RST = "1" then
                 DC_RESPONSE_reg  <= (others => '0');
@@ -351,8 +390,8 @@ begin
                     DC_RESPONSE_reg <=  ZERO & regAddr;
                     RES_VALID_reg(0) <= '1';  
                 elsif regOp = "10" then
-                    regg.address <= regAddr; 
-                    regg.value <= regWrData; 
+                    CtrlRegister(1) <= regAddr; 
+                    CtrlRegister(2) <= regWrData; 
                     DC_RESPONSE_reg <=  ZERO & regAddr;
                     RES_VALID_reg(0) <= '1';               
                 end if;

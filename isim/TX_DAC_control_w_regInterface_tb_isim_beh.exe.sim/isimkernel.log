@@ -1,0 +1,28 @@
+Command line:
+   TX_DAC_control_w_regInterface_tb_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  40689
+
+Sun Feb 12 16:06:40 2023
+
+
+ Elaboration Time: 0.13 sec
+
+ Current Memory Usage: 199.008 Meg
+
+ Total Signals          : 29
+ Total Nets             : 194
+ Total Signal Drivers   : 19
+ Total Blocks           : 11
+ Total Primitive Blocks : 10
+ Total Processes        : 10
+ Total Traceable Variables  : 34
+ Total Scalar Nets and Variables : 1302
+
+ Total Simulation Time: 0.26 sec
+
+ Current Memory Usage: 276.607 Meg
+
+Sun Feb 12 16:09:09 2023
+
